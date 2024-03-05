@@ -9,17 +9,27 @@ const Header = () => {
     <div className="header-container">
       <div className="header-content">
         <div className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#arquivos">Arquivos</a>
-          <a href="#sobre-nos">Sobre Nós</a>
-          <a href="#contato">Contato</a>
-          <a href="#equipe">Equipe</a>
+          <div className="text-box">
+            <a href="#home">Home</a>
+          </div>
+          <div className="text-box">
+            <a href="#arquivos">Arquivos</a>
+          </div>
+          <div className="text-box">
+            <a href="#sobre-nos">Sobre Nós</a>
+          </div>
+          <div className="text-box">
+            <a href="#contato">Contato</a>
+          </div>
+          <div className="text-box">
+            <a href="#equipe">Equipe</a>
+          </div>
         </div>
 
         <div className="social-icons">
           <a href="https://www.instagram.com/universo.acessivel/" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faInstagram} style={{color: "#FFFFFF",}} />
-          </a>
+          </a> 
           <a href="https://www.facebook.com/universo.acessivel" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faFacebook} style={{color: "#FFFFFF"}} />
           </a>

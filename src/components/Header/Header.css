@@ -1,5 +1,4 @@
 .header-container {
-    background-color: red; /* Só para testes */
     color: white;
     padding: 10px 0;
     position: fixed;
@@ -12,26 +11,41 @@
   
   .header-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
   }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
+
   
   .nav-links {
     display: flex;
-    align-items: flex-end;
+    height: 130%;
+    align-items: center;
+    margin-right: 20px;
   }
   
   .nav-links a {
-    margin-right: 15px;
-    color: white;
-    text-decoration: none;
+    padding: 0 15px;
+  }
+  
+  .text-box {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Adiciona uma transição suave */
+  }
+  
+  .text-box:hover {
+    background-color: rgba(0, 0, 255, 0.2); /* Cor de fundo mais escura quando hover */
+  }
+  
+  .text-box a {
+    color: inherit; /* Herda a cor do texto da div pai */
+    text-decoration: none; /* Remove a decoração de texto padrão do link */
+    width: 100%; /* Faz com que o link ocupe toda a largura da div */
+    height: 100%; /* Faz com que o link ocupe toda a altura da div */
+    display: flex;
+    align-items: center;
   }
   
   .social-icons a {
@@ -43,3 +57,6 @@
   
   /* Add styles for social media icons if using font-awesome or similar libraries */
   
+  @media(max-width:586px){
+    /*TODO implementar sandwich bar*/
+  }
