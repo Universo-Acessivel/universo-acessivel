@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Gravity';
+    src: url('./gravity/Gravity-Regular.otf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+body {
+    font-family: 'Gravity', sans-serif; 
+}
+  
