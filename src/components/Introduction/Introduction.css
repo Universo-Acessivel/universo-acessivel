@@ -1,0 +1,13 @@
+/* GradientBackground.css */
+
+.gradient-container {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    background: radial-gradient(ellipse at 0% 0%, #48c7d8, transparent),
+                radial-gradient(ellipse at 30% 100%, #443bb2, transparent),
+                radial-gradient(ellipse at 75% 60%, #9d20ef, transparent);
+    z-index: -1; /* Place it behind other elements */
+  }
+  
