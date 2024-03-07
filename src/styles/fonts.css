@@ -3,8 +3,22 @@
     src: url('./gravity/Gravity-Regular.otf') format('truetype'); 
     font-weight: normal;
     font-style: normal;
-  }
+}
   
+@font-face {
+    font-family: 'Gravity-Light';
+    src: url('./gravity/Gravity-Light.otf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gravity-Bold';
+  src: url('./gravity/Gravity-Bold.otf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
     font-family: 'Gravity', sans-serif; 
 }
