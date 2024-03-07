@@ -35,11 +35,13 @@
     transition: background-color 0.3s ease; /* Adiciona uma transição suave */
   }
   
-  .text-box:hover {
+  .text-box:hover, .text-box a:hover {
+    font-family: 'Gravity';
     background-color: rgba(0, 0, 255, 0.2); /* Cor de fundo mais escura quando hover */
   }
   
   .text-box a {
+    font-family: 'Gravity-Light';
     color: inherit; /* Herda a cor do texto da div pai */
     text-decoration: none; /* Remove a decoração de texto padrão do link */
     width: 100%; /* Faz com que o link ocupe toda a largura da div */

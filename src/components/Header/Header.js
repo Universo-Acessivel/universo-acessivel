@@ -3,6 +3,13 @@ import './Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
+/* 
+* ATENÇÃO: FALTA FAZER 3 COISAS COM O HEADER: 
+* 1 - Botar o header na porção direita da tela (página)
+* 2 - Fazer com que o header permaneça no topo conforme o usuário rola a página pra baixo e pra cima
+* 3 - Fazer com que o texto no header referente à seção que o usuário está fique destacada (isto é, com a font-family: 'Gravity' em vez da fonte 'Gravity-Light)
+* Ex: Se o usuário está na parte de "Arquivos", a palavra "Arquivos" no header deverá estar com a fonte 'Gravity' e as demais estarão em 'Gravity-Light'.
+*/
 
 const Header = () => {
   return (
