@@ -9,6 +9,7 @@ function Home() {
     <div>
       <Header />
       <Introduction />
+      <div style={{ height: "1000px" }}> </div>
     </div>
   );
 }
