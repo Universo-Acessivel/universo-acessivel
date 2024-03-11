@@ -13,5 +13,4 @@ function Home() {
   );
 }
 
-// aaaaa
 export default Home;
