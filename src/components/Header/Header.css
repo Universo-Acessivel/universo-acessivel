@@ -1,64 +1,74 @@
 .header-container {
-    color: white;
-    padding: 10px 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 4em;
-    display: flex;
-    z-index: 0;
-  }
-  
-  .header-content {
-    display: flex;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
+  color: white;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 4em;
+  display: flex;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-  
-  .nav-links {
-    display: flex;
-    height: 130%;
-    align-items: center;
-    margin-right: 20px;
-  }
-  
-  .nav-links a {
-    padding: 0 15px;
-  }
-  
-  .text-box {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    transition: background-color 0.3s ease; /* Adiciona uma transição suave */
-  }
-  
-  .text-box:hover, .text-box a:hover {
-    font-family: 'Gravity';
-    background-color: rgba(0, 0, 255, 0.2); /* Cor de fundo mais escura quando hover */
-  }
-  
-  .text-box a {
-    font-family: 'Gravity-Light';
-    color: inherit; /* Herda a cor do texto da div pai */
-    text-decoration: none; /* Remove a decoração de texto padrão do link */
-    width: 100%; /* Faz com que o link ocupe toda a largura da div */
-    height: 100%; /* Faz com que o link ocupe toda a altura da div */
-    display: flex;
-    align-items: center;
-  }
-  
-  .social-icons a {
-    color: white;
-    text-decoration: none;
-    margin-left: 15px;
-    font-size: 1.5rem;
-  }
-  
-  /* Add styles for social media icons if using font-awesome or similar libraries */
-  
-  @media(max-width:586px){
-    /*TODO implementar sandwich bar*/
-  }
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding-right: 5%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.nav-links {
+  display: flex;
+  height: 130%;
+  align-items: center;
+  margin-right: 20px;
+
+}
+
+.nav-links a {
+  padding: 0 15px;
+}
+
+.text-box {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.5s ease;
+}
+
+.text-box:hover,
+.text-box a:hover {
+  font-family: 'Gravity';
+  background-color: rgba(0, 0, 0, 0.03);
+  /* Cor de fundo mais escura quando hover */
+}
+
+.text-box a {
+  font-family: 'Gravity-Light';
+  color: inherit;
+  /* Herda a cor do texto da div pai */
+  text-decoration: none;
+  /* Remove a decoração de texto padrão do link */
+  width: 100%;
+  /* Faz com que o link ocupe toda a largura da div */
+  height: 100%;
+  /* Faz com que o link ocupe toda a altura da div */
+  display: flex;
+  align-items: center;
+}
+
+.social-icons a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 1.5rem;
+}
+
+/* Add styles for social media icons if using font-awesome or similar libraries */
+
+@media(max-width:586px) {
+  /*TODO implementar sandwich bar*/
+}
