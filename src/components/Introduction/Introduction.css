@@ -1,81 +1,100 @@
 /* Introduction.css */
 
 .gradient-container {
-  position: fixed;
   left: 0;
   width: 100%;
   height: 650px;
   background-image: linear-gradient(to right bottom, #48c7d8, #00b3dc, #009cde, #0084dc, #0068d0, #275bce, #414cca, #573ac3, #6738cf, #7833db, #8a2ce5, #9d20ef);
-  z-index: -1; /* Coloque atrás de outros elementos */
+  z-index: -1;
+  /* Coloque atrás de outros elementos */
   display: flex;
   align-items: center;
 }
 
 .intro-text {
   width: 50%;
-  padding-left: 12%; /* Ajuste o espaçamento conforme necessário */
+  padding-left: 12%;
+  /* Ajuste o espaçamento conforme necessário */
   text-align: left;
   box-sizing: border-box;
 }
 
 .title {
   font-size: 64px;
-  color: #ffffff; /* Branco */
+  color: #ffffff;
+  /* Branco */
   padding-bottom: 40px;
   transition: font-size 0.5s;
 }
 
-.subtitle-1, .subtitle-2 {
+.subtitle-1,
+.subtitle-2 {
   font-size: 26px;
-  margin-top: 8px; /* Ajuste o espaçamento conforme necessário */
+  margin-top: 8px;
+  /* Ajuste o espaçamento conforme necessário */
   transition: font-size 0.5s;
 }
 
 .subtitle-1 {
-  color: #dade51; /* Amarelo */
+  color: #dade51;
+  /* Amarelo */
 }
 
 .subtitle-2 {
-  color: #ffffff; /* Branco */
+  color: #ffffff;
+  /* Branco */
   font-style: italic;
 }
 
 img {
-  width: 60%; /* Inicialmente, 60% do tamanho original */
-  max-width: 100%; /* Não ultrapasse 100% da largura do contêiner */
-  height: auto; /* Mantenha a proporção original da imagem */
-  margin-left: 20%; /* Centralize na porção direita da página */
-  margin-right: 12%; /* Ajuste o espaçamento conforme necessário */
-  min-width: 384px; /* Largura mínima da imagem */
-  min-height: 196px; /* Altura mínima da imagem */
-  transition: width 0.5s; /* Adicione uma transição suave */
+  width: 60%;
+  /* Inicialmente, 60% do tamanho original */
+  max-width: 100%;
+  /* Não ultrapasse 100% da largura do contêiner */
+  height: auto;
+  /* Mantenha a proporção original da imagem */
+  margin-left: 20%;
+  /* Centralize na porção direita da página */
+  margin-right: 12%;
+  /* Ajuste o espaçamento conforme necessário */
+  min-width: 384px;
+  /* Largura mínima da imagem */
+  min-height: 196px;
+  /* Altura mínima da imagem */
+  transition: width 0.5s;
+  /* Adicione uma transição suave */
 }
 
 @media (max-width: 1320px) {
   .title {
     font-size: 48px;
   }
-  
-  .subtitle-1, .subtitle-2 {
+
+  .subtitle-1,
+  .subtitle-2 {
     font-size: 20px;
   }
-  
+
 }
 
 @media (max-width: 1020px) {
   .title {
     font-size: 38px;
   }
-  
-  .subtitle-1, .subtitle-2 {
+
+  .subtitle-1,
+  .subtitle-2 {
     font-size: 18px;
   }
 }
 
 @media (max-width: 400px) {
+
   /* Quando a largura da tela for 400px ou menos */
   img {
-    width: 30%; /* Diminua para 30% do tamanho original */
-    margin-right: 12%; /* Ajuste o espaçamento conforme necessário */
+    width: 30%;
+    /* Diminua para 30% do tamanho original */
+    margin-right: 12%;
+    /* Ajuste o espaçamento conforme necessário */
   }
 }
