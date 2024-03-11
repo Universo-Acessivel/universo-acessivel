@@ -7,8 +7,9 @@ import Introduction from '.././Introduction/Introduction.js';
 function Home() {
   return (
     <div>
-      <Header/>
-      <Introduction/>
+      <Header />
+      <Introduction />
+      <div style={{ height: "1000px" }}> </div>
     </div>
   );
 }
