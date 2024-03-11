@@ -1,8 +1,6 @@
-// Create a new component, let's call it Introduction.js
-
 // Introduction.js
 import React from 'react';
-import './Introduction.css'; // Create this CSS file for styling
+import './Introduction.css';
 import logo from "../.././assets/Horizontal Branca RGB.png";
 import ufrj from "../.././assets/UFRJ-Logo.png";
 import ov from "../.././assets/OV-Logo.png";
