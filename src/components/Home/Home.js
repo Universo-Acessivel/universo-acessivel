@@ -13,5 +13,4 @@ function Home() {
   );
 }
 
-// bbbbbbbbb
 export default Home;
