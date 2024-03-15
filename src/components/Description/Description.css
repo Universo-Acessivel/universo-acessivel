@@ -1,0 +1,25 @@
+/* Description.css */
+
+.description-container {
+    width: 100%;
+    min-height: 480px;
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    padding: 6% 0%;
+}
+
+.project-description {
+    width: 62%;
+    font-size: 32px;
+    color: #696969;
+    padding-bottom: 3%;
+    text-align: center;
+}
+
+.teacher-info {
+    font-size: 20px;
+    margin-top: 20px; /* Optional: Add some space between the text and the description */
+    text-align: center;
+}
