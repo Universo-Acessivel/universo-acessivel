@@ -1,0 +1,41 @@
+.material-container{
+    padding: 0% 3%;
+}
+
+#icons{
+    width: 0%;
+    margin-left: 0%;
+}
+
+.material-title{
+    font-size: 20px;
+    padding: 5% 0%;
+}
+
+.material-text{
+    font-size: 20px;
+    color: #696969;
+    width: 258px;
+    height: 72px;
+    text-align: justify; /* justify ou start? decida */
+}
+
+.touch-icon img {
+    margin: -2% !important;
+}
+
+.book-icon img {
+    margin-bottom: -3%;
+}
+
+a{
+    color:#0000FE;
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 1350px) {
+    .material-container {
+        padding: 4% 3%;
+    }
+}
