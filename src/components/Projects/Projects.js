@@ -4,11 +4,13 @@ import Job from './Job/Job.js';
 import Image from '../.././assets/default-image.png';
 
 function Projects() {
+  // Largura onde há a quebra para slides arrastáveis
   const breakpoint = 976;
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
+    // Ir salvando a largura da página
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
@@ -21,11 +23,39 @@ function Projects() {
   }, []);
 
   const handleNextSlide = () => {
+    // se estiver no último slide, volta para o primeiro, se não vai para o próximo
     setCurrentSlide(currentSlide === numberOfSlides - 1 ? 0 : currentSlide + 1);
   };
 
   const handlePrevSlide = () => {
+    // se estiver no primeiro slide, volta para o último, se não volta 1 normalmente
     setCurrentSlide(currentSlide === 0 ? numberOfSlides - 1 : currentSlide - 1);
+  };
+
+  const handleDragStart = (e) => {
+    // Captura a posição inicial do mouse no início do arrasto
+    e.dataTransfer.setData("startX", e.clientX);
+  };
+
+  const handleDragEnd = (e) => {
+    // Captura a posição final do mouse no final do arrasto
+    const endX = e.clientX;
+    const startX = parseInt(e.dataTransfer.getData("startX"));
+    e.preventDefault();
+
+    // Calcula a diferença entre a posição inicial e final
+    const deltaX = endX - startX;
+
+    // Define o limiar para considerar como arrasto
+    const dragThreshold = 50;
+
+    // Verifica se o arrasto atende ao limiar mínimo
+    if (deltaX > dragThreshold) {
+      handleNextSlide();
+    } else if (deltaX < -dragThreshold) {
+      handlePrevSlide();
+    }
+    
   };
 
   const numberOfSlides = 3; // Update this with the actual number of slides
@@ -59,7 +89,7 @@ function Projects() {
     <div className='projects-container'>
       <div className='projects-title'>Nosso Trabalho</div>
       {isDesktop ? 
-      // se a largura é grande
+      // Se a largura é grande
       (
         <div className='jobs'>
           {jobsData.map((job, index) => (
@@ -73,9 +103,14 @@ function Projects() {
           ))}
         </div>
       ) : 
-      //se a largura é pequena
+      // Se a largura é pequena
       (
-        <div className="carousel">
+        <div 
+          className="carousel" 
+          onDragStart={handleDragStart} 
+          onDragEnd={handleDragEnd}
+          draggable={true}
+        >
           {jobsData.map((job, index) => (
             <div key={index} className={`carousel-item ${currentSlide === index ? "carousel-item-visible" : ""}`}>
               <Job
@@ -87,8 +122,8 @@ function Projects() {
             </div>
           ))}
           <div className="carousel-actions">
-            <button onClick={handlePrevSlide} aria-label="Previous">{'<'}</button>
-            <button onClick={handleNextSlide} aria-label="Next">{'>'}</button>
+            <button id="prev" onClick={handlePrevSlide} aria-label="Anterior">◀</button>
+            <button id="next" onClick={handleNextSlide} aria-label="Próximo">▶</button>
           </div>
         </div>
       )}
