@@ -8,6 +8,7 @@ function Projects() {
   const breakpoint = 976;
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStartX, setTouchStartX] = useState(0);
 
   useEffect(() => {
     // Ir salvando a largura da página
@@ -32,31 +33,25 @@ function Projects() {
     setCurrentSlide(currentSlide === 0 ? numberOfSlides - 1 : currentSlide - 1);
   };
 
-  const handleDragStart = (e) => {
-    // Captura a posição inicial do mouse no início do arrasto
-    e.dataTransfer.setData("startX", e.clientX);
+  const handleTouchStart = (e) => {
+    // Store the initial touch position
+    setTouchStartX(e.touches[0].clientX);
   };
-
-  const handleDragEnd = (e) => {
-    // Captura a posição final do mouse no final do arrasto
-    const endX = e.clientX;
-    const startX = parseInt(e.dataTransfer.getData("startX"));
-    e.preventDefault();
-
-    // Calcula a diferença entre a posição inicial e final
-    const deltaX = endX - startX;
-
-    // Define o limiar para considerar como arrasto
+  
+  const handleTouchEnd = (e) => {
+    // Calculate the distance of touch movement
+    const deltaX = touchStartX - e.changedTouches[0].clientX;
     const dragThreshold = 50;
-
-    // Verifica se o arrasto atende ao limiar mínimo
+  
+    // Determine the direction of the swipe
     if (deltaX > dragThreshold) {
-      handleNextSlide();
-    } else if (deltaX < -dragThreshold) {
       handlePrevSlide();
+    } else if (deltaX < -dragThreshold) {
+      handleNextSlide();
     }
-    
   };
+  
+  
 
   const numberOfSlides = 3; // Update this with the actual number of slides
 
@@ -107,9 +102,8 @@ function Projects() {
       (
         <div 
           className="carousel" 
-          onDragStart={handleDragStart} 
-          onDragEnd={handleDragEnd}
-          draggable={true}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           {jobsData.map((job, index) => (
             <div key={index} className={`carousel-item ${currentSlide === index ? "carousel-item-visible" : ""}`}>
