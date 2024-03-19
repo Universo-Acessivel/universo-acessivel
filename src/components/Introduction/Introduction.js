@@ -14,7 +14,7 @@ const Introduction = () => {
        <div className="subtitle-2">Astronomia para pessoas cegas e de baixa visão</div>       
       </div>
       <div className="intro-img">
-        <img src={logo} alt="logo"></img>
+        <img id="logo" src={logo} alt="Logotipo do projeto."></img>
       </div>
       
     </div>

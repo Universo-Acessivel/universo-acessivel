@@ -46,7 +46,7 @@
   font-style: italic;
 }
 
-img {
+#logo {
   width: 60%;
   /* Inicialmente, 60% do tamanho original */
   max-width: 100%;
