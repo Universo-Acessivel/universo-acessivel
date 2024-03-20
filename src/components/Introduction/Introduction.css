@@ -9,6 +9,7 @@
   /* Coloque atrás de outros elementos */
   display: flex;
   align-items: center;
+  padding-top: 2%;
 }
 
 .intro-text {
@@ -23,7 +24,7 @@
   font-size: 64px;
   color: #ffffff;
   /* Branco */
-  padding-bottom: 40px;
+  padding-bottom: 10px;
   transition: font-size 0.5s;
 }
 
@@ -46,7 +47,22 @@
   font-style: italic;
 }
 
-#logo {
+.logos {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  gap: 10%;
+  padding-top: 10%;
+}
+
+.logos img {
+  width: 100px;
+  height: auto;
+  transition: width 0.5s;
+}
+
+.intro-img img {
   width: 60%;
   /* Inicialmente, 60% do tamanho original */
   max-width: 100%;
@@ -75,6 +91,9 @@
     font-size: 20px;
   }
 
+  .logos img {
+    width: 80px;
+  }
 }
 
 @media (max-width: 1020px) {
@@ -86,12 +105,21 @@
   .subtitle-2 {
     font-size: 18px;
   }
+
+  .logos {
+    padding-top: 12%;
+  }
+
+  .logos img {
+    width: 70px;
+  }
+
 }
 
 @media (max-width: 400px) {
 
   /* Quando a largura da tela for 400px ou menos */
-  img {
+  .intro-img img {
     width: 30%;
     /* Diminua para 30% do tamanho original */
     margin-right: 12%;
