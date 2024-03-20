@@ -1,0 +1,27 @@
+.job-container{
+    padding: 0px 5%;
+}
+
+#job-image {
+    width: 100%; /* Defina a largura da imagem como 100% para se dimensionar automaticamente */
+    max-width: 296px;
+    max-height: 549px;
+    transition: width 0.3s ease; /* Adicione uma transição suave no tamanho da imagem */
+}
+
+.job-title{
+    font-size: 32px;
+    font-family: 'Gravity-Bold';
+    padding-top: 25px;
+}
+
+.job-description{
+    font-size: 20px;
+    color: #696969;
+    max-width: 296px;
+    text-align: justify;
+    padding-top: 25px;
+}
+
+@media screen and (max-width: 976px) {
+}
