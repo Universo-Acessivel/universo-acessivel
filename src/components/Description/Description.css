@@ -28,10 +28,18 @@
 @media screen and (max-width: 1690px) {
     .project-description{
         height: 300px;
+        text-align: justify;
         overflow-y: auto;
+        padding-right: 10px;
     }
 
     .teacher-info{
         margin: 60px 48px 0px 48px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .project-description{
+        font-size: 26px;
     }
 }
