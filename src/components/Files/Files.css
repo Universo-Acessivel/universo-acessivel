@@ -3,7 +3,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0% 20%;
+    padding: 5% 20% 0% 20%;
+}
+
+.files-title{
+    font-size: 48px;
+    font-family: 'Gravity-Bold';
+    text-align: center;
 }
 
 /* Estilos para telas com largura até 1350px */
@@ -11,11 +17,14 @@
     .files-container {
         flex-wrap: wrap; /* Permite que os itens sejam quebrados em várias linhas */
     }
+    .files-title{
+        padding-top: 95px;
+    }
 }
 
 /* Estilos para telas com largura até 820px */
 @media screen and (max-width: 820px) {
     .files-container {
-        padding: 0 5%; /* Reduz o padding para melhorar o layout em telas menores */
+        padding: 3% 5% 0% 5%; /* Reduz o padding para melhorar o layout em telas menores */
     }
 }
