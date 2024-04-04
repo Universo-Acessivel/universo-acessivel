@@ -1,3 +1,4 @@
+import React from 'react';
 import '../.././styles/fonts.css';
 import Header from '.././Header/Header.js';
 import Introduction from '.././Introduction/Introduction.js';
@@ -8,7 +9,7 @@ import Footer from '.././Footer/Footer.js';
 
 function Home() {
   return (
-    <div>
+    <React.Fragment>
       <Header />
       <Introduction />
       <Description />
@@ -16,7 +17,7 @@ function Home() {
       <Projects />
       <div style={{ height: "1000px" }}> </div>
       <Footer />
-    </div>
+    </React.Fragment>
   );
 }
 
