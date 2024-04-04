@@ -23,3 +23,15 @@
     margin-top: 20px; /* Optional: Add some space between the text and the description */
     text-align: center;
 }
+
+
+@media screen and (max-width: 1690px) {
+    .project-description{
+        height: 300px;
+        overflow-y: auto;
+    }
+
+    .teacher-info{
+        margin: 60px 48px 0px 48px;
+    }
+}
