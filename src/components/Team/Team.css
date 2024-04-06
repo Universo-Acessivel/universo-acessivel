@@ -1,0 +1,28 @@
+.team-container{
+    display: flex;
+    justify-content: center;
+    padding-top: 7%;
+}
+
+.team-title{
+    font-family: 'Gravity-Bold';
+    font-size: 48px;
+    width: 500px;
+    text-align: center;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+@media (max-width: 1440px){
+    .box{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin: 0 50%;
+    }
+
+}
