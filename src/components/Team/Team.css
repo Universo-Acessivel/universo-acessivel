@@ -23,6 +23,11 @@
         grid-template-columns: 1fr;
         gap: 40px;
         margin: 0 50%;
+        padding-top: 60px;
+    }
+
+    .team-container{
+        padding-top: 95px;
     }
 
 }
