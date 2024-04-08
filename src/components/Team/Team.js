@@ -15,35 +15,42 @@ function createData(name, institute) {
 // Tabelas com nomes e institutos
 const tableData = [
     { rows: [
-        createData('Victor Santos', 'Instituto de Computação'),
-        createData('Gustavo Villar', 'Instituto de Computação'),
+        createData('Aires Silva', 'Professor do IBC'),
+        createData('Amanda Tavares', '-'),
+        createData('Ana Paula Mendes', '-'),
+        createData('Barbara Barra', '-'),
+        createData('Bianca Mello', '-'),
+        createData('Camilla Gomes', '-'),
+        createData('Carolina Bento', '-'),
+        createData('Clara Farias', '-'),
         createData('Eduarda Marques', 'Instituto de Computação'),
-        createData('Cupcake', 'Instituto de Física'),
-        createData('Gingerbread', 'Instituto de Matemática'),
-        createData('Cupcake', 'Instituto de Física'),
-        createData('Gingerbread', 'Instituto de Matemática'),
-        createData('Cupcake', 'Instituto de Física'),
-        createData('Gingerbread', 'Instituto de Matemática'),
+        createData('Elisa Gomes', '-'),
+        createData('Erica Bhering', '-')
     ]},
     { rows: [
-        createData('Frozen yoghurt', 'Observatório do Valongo'),
-        createData('Ice cream sandwich', 'Instituto de Física'),
-        createData('Eclair', 'Instituto de Matemática'),
-        createData('Cupcake', 'Escola Politécnica'),
-        createData('Gingerbread', 356),
-        createData('Gingerbread', 356),
-        createData('Cupcake', 305),
-        createData('Gingerbread', 356)
+        createData('Flavia Avena', '-'),
+        createData('Francielle Silva', '-'),
+        createData('Gustavo Marinatto', 'Instituto de Computação'),
+        createData('Ingrid Pedreira', '-'),
+        createData('Jackson Farias', '-'),
+        createData('Julia Alves', '-'),
+        createData('Larissa Gomes', '-'),
+        createData('Larissa Barcellos', '-'),
+        createData('Lorraine Ribeiro', '-'),
+        createData('Luana Santos', '-'),
+        createData('Maria Clara Alvarenga', '-')
     ]},
     { rows: [
-        createData('Victor Santos', 'Instituto de Computação'),
-        createData('Gustavo Villar', 'Instituto de Computação'),
-        createData('Eduarda Marques', 'Instituto de Computação'),
-        createData('Cupcake', 305),
-        createData('Gingerbread', 356),
-        createData('Cupcake', 305),
-        createData('Gingerbread', 356),
-        createData('Cupcake', 305)
+        createData('Mariana Gomes', '-'),
+        createData('Mariana Regado', '-'),
+        createData('Micah Navia', '-'),
+        createData('Priscila Marques', 'Professora do IBC'),
+        createData('Rayssa Monteiro', '-'),
+        createData('Rodrigo Barbosa', '-'),
+        createData('Tarek Guimarães', '-'),
+        createData('Thiago Cunha', '-'),
+        createData('Victor Moraes', '-'),
+        createData('Victor Santos', 'Instituto de Computação')
     ]}
 ];
 
