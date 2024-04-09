@@ -19,7 +19,7 @@ function Files(){
               title={"Cardenos Táteis"}
               text={"Procuramos desenvolver textos com figuras táteis associados a material 3D para fixar o aprendizado das principais características físicas da Lua (crateras, planícies), além de também entender os fenômenos, tais como eclipses e as fases."}
               className="touch-icon" // classe personalizada para mexer na margem
-              downloadLink="" // link do drive
+              downloadLink="https://drive.google.com/drive/folders/14eBDu8FBGdR4tjfgtNsKkQNnzRfd1DRM?usp=sharing" // link do drive
           />
           {/*       
           NO MOMENTO, MANTER ESCONDIDO! MUDAR APENAS QUANDO A PROFESSORA PERMITIR
@@ -39,7 +39,7 @@ function Files(){
               title={"Livros"}
               text={"O livro falado é um recurso de tecnologia assistiva para pessoas com deficiência visual proporcionando autonomia e liberdade de pensamento ao leitor, através de uma leitura branca, voz clara e bem pontuada. "}
               className="book-icon" // classe personalizada para mexer na margem
-              downloadLink="" // link do drive
+              downloadLink="https://drive.google.com/drive/folders/1tlMAdZHOj8Ovdag7lfZqhEUlcLejBV0r?usp=sharing" // link do drive
           />
           <Material 
               imgSrc={Article} 
@@ -47,7 +47,7 @@ function Files(){
               size={41}
               title={"Artigos"}
               text={"Artigos desenvolvidos pelo projeto, como capítulos de livros e resenhas que apresentam o trabalho produzido pela equipe e que podem ser utilizados como referências por outros pesquisadores e profissionais interessados no tema."}
-              downloadLink="" // link do drive
+              downloadLink="https://drive.google.com/drive/folders/1ECSC4wG24xgIcph_F8MkoyrnV8L-GAcl?usp=sharing" // link do drive
           />
       </div>
     </React.Fragment>
