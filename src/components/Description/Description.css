@@ -12,19 +12,16 @@
 
 .project-description {
     width: 62%;
-    font-size: 32px;
     color: #696969;
     padding-bottom: 3%;
     text-align: center;
 }
 
 #link-IBC {
-    font-size: 32px;
     color: blue;
 }
 
 .teacher-info {
-    font-size: 20px;
     margin-top: 20px; /* Optional: Add some space between the text and the description */
     text-align: center;
 }
@@ -39,11 +36,5 @@
 
     .teacher-info{
         margin: 60px 48px 0px 48px;
-    }
-}
-
-@media screen and (max-width: 650px) {
-    .project-description, #link-IBC{
-        font-size: 26px;
     }
 }

@@ -62,7 +62,7 @@ function Team() {
     return (
         <React.Fragment>
             <div className='team-container'>
-                <div className='team-title'>Equipe</div>
+                <div className='team-title section-title'>Equipe</div>
             </div>
 
             <div className='box'>

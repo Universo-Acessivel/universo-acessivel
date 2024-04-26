@@ -84,7 +84,7 @@ function Projects() {
 
   return (
     <div className='projects-container'>
-      <div className='projects-title'>Nossos Trabalhos</div>
+      <div className='projects-title section-title'>Nossos Trabalhos</div>
       {isDesktop ? 
       // Se a largura é grande
       (

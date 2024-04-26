@@ -10,7 +10,7 @@ import Article from '../.././assets/Article-Icon.svg'
 function Files(){
   return (
     <React.Fragment>
-      <div className='files-title'>Materiais</div>
+      <div className='files-title section-title'>Materiais</div>
         <div className='files-container'>
           <Material 
               imgSrc={Touch} 

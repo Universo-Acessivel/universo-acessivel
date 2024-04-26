@@ -2,12 +2,10 @@
 .files-container {
     display: flex;
     justify-content: center;
-    align-items: center;
     padding-top: 5%;
 }
 
 .files-title{
-    font-size: 48px;
     font-family: 'Gravity-Bold';
     text-align: center;
     padding-top: 6%;

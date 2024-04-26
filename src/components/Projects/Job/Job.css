@@ -10,13 +10,11 @@
 }
 
 .job-title{
-    font-size: 32px;
     font-family: 'Gravity-Bold';
     padding-top: 25px;
 }
 
 .job-description{
-    font-size: 18px;
     color: #696969;
     max-width: 296px;
     text-align: justify;
