@@ -14,8 +14,8 @@ function Home() {
     <React.Fragment>
       <Header />
       <Introduction />
-      <Description />
       <Files />
+      <Description />
       <Projects />
       <Video />
       <Team />
