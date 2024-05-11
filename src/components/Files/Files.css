@@ -1,15 +1,23 @@
 /* Estilos padrão para o files-container */
+.files-wrapper {
+    background-color: whitesmoke;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 .files-container {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5% 20% 0% 20%;
+    background-color: whitesmoke;
 }
 
 .files-title{
+    padding-top: 0;
     font-size: 48px;
     font-family: 'Gravity-Bold';
     text-align: center;
+    background-color: whitesmoke;
 }
 
 /* Estilos para telas com largura até 1350px */
