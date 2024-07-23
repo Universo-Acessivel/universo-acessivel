@@ -11,6 +11,7 @@ function Files(){
   return (
     /*<div className='files-wrapper'>
       <div className='files-title'>Materiais</div> actual: a linha de baixo*/
+    <>
       <div className='files-title section-title'>Materiais</div> 
         <div className='files-container'>
           <Material 
@@ -52,6 +53,7 @@ function Files(){
           />
       </div>
     </div>
+    </>
   );
 };
 
