@@ -10,7 +10,6 @@
 
 .team-title{
     font-family: 'Gravity-Bold';
-    font-size: 48px;
     width: 500px;
     text-align: center;
 }
@@ -27,6 +26,11 @@
         grid-template-columns: 1fr;
         gap: 40px;
         margin: 0 50%;
+        padding-top: 60px;
+    }
+
+    .team-container{
+        padding-top: 95px;
     }
 
 }

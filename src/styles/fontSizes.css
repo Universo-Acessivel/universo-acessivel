@@ -1,0 +1,100 @@
+/* Tamanho de fontes para o site todo */
+
+/* Título de cada seção */ 
+.section-title{
+    font-size: 48px;
+    transition: font-size 0.5s;
+    transition: font-size 0.5s;
+}
+
+.section-description{
+    font-size: 20px;
+    transition: font-size 0.5s;
+    transition: font-size 0.5s;
+}
+
+.subsection-title{
+    font-size: 30px;
+    transition: font-size 0.5s;
+}
+
+/* Header */
+.social-icons a {
+    font-size: 1.5rem;
+    transition: font-size 0.5s;  
+}
+
+
+/* Introduction */
+.title{
+    font-size: 64px;
+    transition: font-size 0.5s;
+}
+
+.subtitle-1,
+.subtitle-2 {
+  font-size: 26px;
+    transition: font-size 0.5s;
+}
+
+/* Description */
+.project-description{
+    font-size: 32px;
+    transition: font-size 0.5s;
+}
+
+.teacher-info{
+    font-size: 20px;
+    transition: font-size 0.5s;
+}
+
+/* Footer */
+.footer-text{
+    font-size: 20px;
+    transition: font-size 0.5s;
+}
+
+@media screen and (max-width: 1350px) {
+    .title {
+        font-size: 48px;
+        transition: font-size 0.5s;
+    }
+    
+    .subtitle-1,
+    .subtitle-2 {
+        font-size: 20px;
+        transition: font-size 0.5s;
+    }
+
+    .video-title{
+        font-size: 36px;
+        transition: font-size 0.5s;
+    }
+}
+
+@media (max-width: 1020px) {
+    .title {
+      font-size: 38px;
+        transition: font-size 0.5s;
+    }
+  
+    .subtitle-1,
+    .subtitle-2 {
+      font-size: 18px;
+        transition: font-size 0.5s;
+    }
+}
+
+@media screen and (max-width: 976px) {
+    .section-description{
+        font-size: 18px;
+        transition: font-size 0.5s;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .project-description, .link-IBC{
+        font-size: 26px;
+        transition: font-size 0.5s;
+    }
+}

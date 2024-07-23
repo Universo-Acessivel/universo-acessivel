@@ -13,13 +13,11 @@
 
 .video-title{
     font-family: 'Gravity-Bold';
-    font-size: 48px;
     width: 500px;
 }
 
 .video-description {
     color: #696969;
-    font-size: 20px;
     width: 400px;
     padding: 40px 0px;
 }
@@ -36,12 +34,10 @@
     }
 
     .video-title{
-        font-size: 36px;
         width: 322px;
     }
 
     .video-description{
-        font-size: 18px;
         width: 338px;
     }
 }
@@ -61,12 +57,10 @@
     }
 
     .video-title{
-        font-size: 36px;
         width: auto;  
     }
 
     .video-description{
-        font-size: 18px;
         width: 75%; 
         margin: 0 auto;
     }

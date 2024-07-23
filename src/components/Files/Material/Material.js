@@ -10,11 +10,11 @@ function Material({ imgSrc, alt, size, title, text, className, downloadLink }){
   return (
     <div className={`material-container ${className}`}>
         <img id="icons" src={imgSrc} alt={alt} style={imageSize} />
-        <div className='material-title'>{title}</div>
+        <div className='material-title subsection-title'>{title}</div>
         <br></br>
-        <div className='material-text'>{text}</div>
+        <div className='material-text section-description'>{text}</div>
         <br></br>
-        <a href={downloadLink} target="_blank" rel="noopener noreferrer">Acessar</a>
+        <a className="section-description" href={downloadLink} target="_blank" rel="noopener noreferrer">Acessar</a>
     </div>
   );
 };

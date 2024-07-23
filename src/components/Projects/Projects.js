@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './Projects.css';
 import Job from './Job/Job.js';
-import Image from '../.././assets/default-image.png';
+import KitLua from '../.././assets/kitlua.jpg';
+import Jogos from '../.././assets/jogos.jpg';
+import Expo from '../.././assets/expo.jpg';
 
 function Projects() {
   // Largura onde há a quebra para slides arrastáveis
@@ -58,22 +60,22 @@ function Projects() {
   // Dados dos trabalhos (jobs)
   const jobsData = [
     {
-      imgSrc: Image,
-      alt: "texto alternativo",
+      imgSrc: KitLua,
+      alt: "Foto da equipe montando a Lua tátil.",
       title: "Kit-Lua",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      description: "O Kit-Lua foi desenvolvido para que, quem desejar, possa criar uma Lua tátil. Nesse kit além de instruções para a confecção da Lua, seguem também um mapa da Lua, em forma de gomos e um texto descrevendo desde a formação da Lua, suas fases, eclipses e missões observacionais que visitaram nosso satélite."
     },
     {
-      imgSrc: Image,
-      alt: "texto alternativo",
-      title: "Relevo da Lua",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      imgSrc: Jogos,
+      alt: "Foto do tabuleiro do jogo Astrodicas.",
+      title: "Jogos",
+      description: "Os jogos didáticos têm se mostrado uma poderosa ferramenta de apoio para o ensino de ciências há muito tempo. O jogo pedagógico ou didático é aquele produzido com o objetivo de proporcionar determinadas aprendizagens, diferenciando-se do material pedagógico, por conter o aspecto lúdico. É uma alternativa interessante para melhorar o desempenho dos estudantes em alguns conteúdos de difícil aprendizagem. Desenvolvemos quatro jogos em nosso projeto."
     },
     {
-      imgSrc: Image,
-      alt: "texto alternativo",
-      title: "Exposição",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      imgSrc: Expo,
+      alt: "Foto da equipe fazendo uma exposição no Centro de Tecnologia, localizado no campus Fundão.",
+      title: "Exposições",
+      description: "A equipe também realiza palestras e exposições em eventos como o Festival do Conhecimento e a Semana de Integração Acadêmica, com o intuito de divulgar o projeto ao público geral."
     }
   ];
 
@@ -82,7 +84,7 @@ function Projects() {
 
   return (
     <div className='projects-container'>
-      <div className='projects-title'>Nosso Trabalho</div>
+      <div className='projects-title section-title'>Nossos Trabalhos</div>
       {isDesktop ? 
       // Se a largura é grande
       (
