@@ -1,5 +1,5 @@
 .material-container{
-    padding: 0% 3%;
+    padding: 0% 4%;
 }
 
 #icons{
@@ -13,8 +13,14 @@
 
 .material-text{
     color: #696969;
-    width: 258px;
+    width: 300px;
+    min-height: 220px;
     height: auto;
+    hyphens: auto; /* quebra de palavra */
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    word-spacing: 1px; /* Ajuste do espaçamento entre palavras */
     text-align: justify; /* justify ou start? decida */
 }
 
@@ -40,5 +46,6 @@ a{
 @media screen and (max-width: 650px) {
     .material-text {
         height: auto;
+        min-height: 0px;
     }
 }
