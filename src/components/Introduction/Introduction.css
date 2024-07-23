@@ -98,13 +98,17 @@
 
 }
 
-@media (max-width: 400px) {
+@media (max-width: 850px){
 
-  /* Quando a largura da tela for 400px ou menos */
-  .intro-img img {
-    width: 30%;
-    /* Diminua para 30% do tamanho original */
-    margin-right: 12%;
-    /* Ajuste o espaçamento conforme necessário */
+  .gradient-container{
+    justify-content: center;
+  }
+
+  .intro-text{
+    padding: 0;
+  }
+
+  .intro-img{
+    display: none;
   }
 }
