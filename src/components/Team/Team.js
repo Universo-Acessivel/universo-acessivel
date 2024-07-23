@@ -60,14 +60,17 @@ const tableData = [
 
 function Team() {
     return (
-        <React.Fragment>
+        <div className='team-wrapper'>
             <div className='team-container'>
+                /*<div className='team-title'>Nossa Equipe</div> actual: a linha de baixo*/
                 <div className='team-title section-title'>Equipe</div>
             </div>
 
             <div className='box'>
                 {/* Para criar cada tabela */}
                 {tableData.map((data, index) => (
+                    /*<TableContainer key={index} component={Paper} sx={{ width: 400, borderRadius: 1, marginLeft: 5, marginRight: 5, height: 57+52.92*(data.rows.length), '@media (max-width: 430px)': { width: 350 } }}>
+                        <Table sx={{ width: 400, "& .MuiTableRow-root:hover": { backgroundColor: "#f5f5f5" }, '@media (max-width: 430px)': { width: 350, height: 57+52.92*(data.rows.length) } }} aria-label={`tabela${index}`}>  - actual: as 2 linhas de baixo*/
                     <TableContainer key={index} component={Paper} sx={{ width: 400, borderRadius: 1, marginLeft: 5, marginRight: 5, height: 57+boxHeight*(data.rows.length), '@media (max-width: 430px)': { width: 350 } }}>
                         <Table sx={{ width: { boxWidth }, "& .MuiTableRow-root:hover": { backgroundColor: "#d3d3d3" }, '@media (max-width: 430px)': { width: 350, height: 57+52.92*(data.rows.length) } }} aria-label={`tabela${index}`}>
                             <TableHead>
@@ -117,7 +120,7 @@ function Team() {
                     </TableContainer>
                 ))}
             </div>
-        </React.Fragment>
+        </div>
     );
 }
 

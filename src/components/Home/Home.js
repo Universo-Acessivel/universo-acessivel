@@ -16,12 +16,11 @@ function Home() {
       <Header />
       <Sidebar />
       <Introduction />
-      <Description />
       <Files />
+      <Description />
       <Projects />
       <Video />
       <Team />
-      <div style={{ height: "100px" }}> </div>
       <Footer />
     </React.Fragment>
   );

@@ -1,14 +1,31 @@
 /* Estilos padrão para o files-container */
+.files-wrapper {
+    background-color: rgb(255, 255, 255);
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 .files-container {
     display: flex;
     justify-content: center;
-    padding-top: 5%;
+    /*align-items: center;
+    padding: 3% 20% 3% 20%;
+    background-color: rgb(255, 255, 255);
 }
 
 .files-title{
+    padding-top: 0;
+    font-size: 48px;
     font-family: 'Gravity-Bold';
     text-align: center;
-    padding-top: 6%;
+    background-color: rgb(255, 255, 255);*/
+
+    padding-top: 5%; /* actual */
+}
+
+.files-title{
+    font-family: 'Gravity-Bold'; /* actual */
+    text-align: center; /* actual */
+    padding-top: 6%; /* actual */
 }
 
 /* Estilos para telas com largura até 1350px */

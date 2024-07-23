@@ -7,12 +7,16 @@
     flex-direction: column; /* Stack children vertically */
     justify-content: center; /* Center vertically */
     align-items: center; /* Center horizontally */
-    padding-top: 6%;
+    /*padding: 4% 0%;*/
+    /*background-color: rgb(240, 240, 240);*/
+    padding-top: 6%; /* actual */
 }
 
 .project-description {
     width: 62%;
-    color: #696969;
+    /*font-size: 27px;*/
+    /*color: #383838;*/
+    color: #696969; /* actual */
     padding-bottom: 3%;
     text-align: center;
 }
@@ -24,6 +28,8 @@
 .teacher-info {
     margin-top: 20px; /* Optional: Add some space between the text and the description */
     text-align: center;
+    color: rgb(129, 129, 129);
+    font-weight: bolder;
 }
 
 

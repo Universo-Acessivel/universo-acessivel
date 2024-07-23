@@ -9,8 +9,10 @@ import Article from '../.././assets/Article-Icon.svg'
 
 function Files(){
   return (
-    <React.Fragment>
-      <div className='files-title section-title'>Materiais</div>
+    /*<div className='files-wrapper'>
+      <div className='files-title'>Materiais</div>*/
+    <React.Fragment>/* actual - esse e a linha de baixo */
+      <div className='files-title section-title'>Materiais</div> 
         <div className='files-container'>
           <Material 
               imgSrc={Touch} 
@@ -50,7 +52,7 @@ function Files(){
               downloadLink="https://drive.google.com/drive/folders/1ECSC4wG24xgIcph_F8MkoyrnV8L-GAcl?usp=sharing" // link do drive
           />
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 
