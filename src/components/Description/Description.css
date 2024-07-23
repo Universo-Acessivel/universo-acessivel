@@ -7,16 +7,14 @@
     flex-direction: column; /* Stack children vertically */
     justify-content: center; /* Center vertically */
     align-items: center; /* Center horizontally */
-    /*padding: 4% 0%;*/
     /*background-color: rgb(240, 240, 240);*/
-    padding-top: 6%; /* actual */
+    padding: 4% 0%;
 }
 
 .project-description {
     width: 62%;
     /*font-size: 27px;*/
-    /*color: #383838;*/
-    color: #696969; /* actual */
+    color: #383838;
     padding-bottom: 3%;
     text-align: center;
 }
@@ -38,6 +36,10 @@
         height: 300px;
         overflow-y: auto;
         padding-right: 10px;
+    }
+
+    .description-container {
+        padding: 13% 0%;
     }
 
     .teacher-info{
