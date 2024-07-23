@@ -19,40 +19,25 @@ const boxWidth = 400;
 const tableData = [
     { rows: [
         createData('Aires Silva', 'Benjamin Constant'),
-        createData('Amanda Tavares', 'Astronomia'),
-        createData('Ana Paula Mendes', 'Arquitetura e Urbanismo'),
-        createData('Barbara Barra', '-'),
-        createData('Bianca Mello', '-'),
-        createData('Camilla Gomes', 'Terapia Ocupacional'),
-        createData('Carolina Bento', '-'),
-        createData('Clara Farias', '-'),
+        createData('Amanda Farias', 'Astronomia'),
+        createData('Amanda Tavares', 'Arquitetura'),
+        createData('Ana Paula Costa', 'Arquitetura'),
+        createData('Débora Brandão', 'Astronomia'),
         createData('Eduarda Marques', 'Ciência da Computação'),
-        createData('Elisa Gomes', '-'),
-        createData('Erica Bhering', '-')
     ]},
     { rows: [
         createData('Flavia Avena', 'Astronomia'),
-        createData('Francielle Silva', '-'),
         createData('Gustavo Marinatto', 'Ciência da Computação'),
-        createData('Ingrid Pedreira', 'Arquitetura'),
-        createData('Jackson Farias', 'Museu de Astronomia e Ciências Afins'),
-        createData('Julia Alves', '-'),
-        createData('Larissa Gomes', 'Astronomia'),
-        createData('Larissa Barcellos', '-'),
-        createData('Lorraine Ribeiro', 'Terapia Ocupacional'),
-        createData('Luana Santos', '-'),
-        createData('Maria Clara Alvarenga', 'Astronomia')
+        createData('Ingrid Nogueira', 'Arquitetura'),
+        createData('Jackson de Farias', 'Museu de Astronomia e Ciências Afins'),
+        createData('Larissa Gonçalves', 'Astronomia'),
+        createData('Mariana Ferreira', 'Física'),
     ]},
     { rows: [
-        createData('Mariana Gomes', 'Astronomia'),
-        createData('Mariana Regado', '-'),
-        createData('Micah Navia', '-'),
+        createData('Patrycia Atiara', 'Astronomia'),
         createData('Priscila Marques', 'Benjamin Constant'),
-        createData('Rayssa Monteiro', 'Astronomia'),
-        createData('Rodrigo Barbosa', '-'),
+        createData('Rayssa Rayde', 'Astronomia'),
         createData('Silvia Lorenz Martins', 'Observatório do Valongo'),
-        createData('Tarek Guimarães', '-'),
-        createData('Thiago Cunha', '-'),
         createData('Victor Moraes', 'Física'),
         createData('Victor Santos', 'Ciência da Computação')
     ]}
@@ -60,10 +45,9 @@ const tableData = [
 
 function Team() {
     return (
-        <div className='team-wrapper'>
+        <div id="equipe" className='team-wrapper'>
             <div className='team-container'>
-                /*<div className='team-title'>Nossa Equipe</div> actual: a linha de baixo*/
-                <div className='team-title section-title'>Equipe</div>
+                <div className='team-title section-title'>Nossa Equipe</div>
             </div>
 
             <div className='box'>
