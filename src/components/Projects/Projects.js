@@ -63,7 +63,8 @@ function Projects() {
       imgSrc: KitLua,
       alt: "Foto da equipe montando a Lua tátil.",
       title: "Kit-Lua",
-      description: "O Kit-Lua foi desenvolvido para que, quem desejar, possa criar uma Lua tátil. Nesse kit além de instruções para a confecção da Lua, seguem também um mapa da Lua, em forma de gomos e um texto descrevendo desde a formação da Lua, suas fases, eclipses e missões observacionais que visitaram nosso satélite."
+      description: "O Kit-Lua foi desenvolvido para que, quem desejar, possa criar uma Lua tátil. Nesse kit além de instruções para a confecção da Lua, seguem também um mapa da Lua, em forma de gomos e um texto descrevendo desde a formação da Lua, suas fases, eclipses e missões observacionais que visitaram nosso satélite.",
+      link: "https://drive.google.com/drive/folders/1EgeXsQKbcdyx1ZaZ48d279cV7Z1OKcer?usp=sharing"
     },
     {
       imgSrc: Jogos,
@@ -75,7 +76,8 @@ function Projects() {
       imgSrc: Expo,
       alt: "Foto da equipe fazendo uma exposição no Centro de Tecnologia, localizado no campus Fundão.",
       title: "Exposições",
-      description: "A equipe também realiza palestras e exposições em eventos como o Festival do Conhecimento e a Semana de Integração Acadêmica, com o intuito de divulgar o projeto ao público geral."
+      description: "A equipe também realiza palestras e exposições em eventos como o Festival do Conhecimento e a Semana de Integração Acadêmica, com o intuito de divulgar o projeto ao público geral.",
+      link: "https://drive.google.com/drive/folders/180KtgmNxMRVIL7WyN1DReHxp-nwWlbh3?usp=sharing"
     }
   ];
 
@@ -83,8 +85,8 @@ function Projects() {
   const isDesktop = windowWidth > breakpoint;
 
   return (
-    <div className='projects-container'>
-      <div className='projects-title section-title'>Nossos Trabalhos</div>
+    <div id="nossosTrabalhos" className='projects-container'>
+      <div className='projects-title section-title'>Mais alguns trabalhos desenvolvidos</div>
       {isDesktop ? 
       // Se a largura é grande
       (
@@ -96,6 +98,7 @@ function Projects() {
               alt={job.alt}
               title={job.title}
               description={job.description}
+              link={job.link}
             />
           ))}
         </div>
@@ -114,6 +117,7 @@ function Projects() {
                 alt={job.alt}
                 title={job.title}
                 description={job.description}
+                link={job.link}
               />
             </div>
           ))}
