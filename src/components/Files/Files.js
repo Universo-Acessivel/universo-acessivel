@@ -12,7 +12,7 @@ function Files(){
     /*<div className='files-wrapper'>
       <div className='files-title'>Materiais</div> actual: a linha de baixo*/
     <>
-      <div className='files-title section-title'>Materiais</div> 
+      <div id="materiais" className='files-title section-title'>Materiais</div> 
         <div className='files-container'>
           <Material 
               imgSrc={Touch} 
@@ -51,9 +51,8 @@ function Files(){
               text={"Artigos desenvolvidos pelo projeto, como capítulos de livros e resenhas que apresentam o trabalho produzido pela equipe e que podem ser utilizados como referências por outros pesquisadores e profissionais interessados no tema."}
               downloadLink="https://drive.google.com/drive/folders/1ECSC4wG24xgIcph_F8MkoyrnV8L-GAcl?usp=sharing" // link do drive
           />
-      </div>
-    </div>
-    </>
+        </div>
+      </>
   );
 };
 
