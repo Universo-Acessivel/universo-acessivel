@@ -7,7 +7,7 @@ import UFRJ_logo from "../.././assets/UFRJ-Logo.svg";
 
 const Introduction = () => {
   return (
-    <div className="gradient-container">
+    <div id="home" className="gradient-container">
       <div className="intro-text">
         <div className="title"><b>Universo Acessível</b></div>
         <div className="subtitle-1">Extensão de Acessibilidade UFRJ</div>
