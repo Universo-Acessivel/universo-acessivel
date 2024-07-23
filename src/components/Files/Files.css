@@ -10,14 +10,14 @@
     display: flex;
     justify-content: center;
     background-color: rgb(255, 255, 255);
-    padding: 5% 0;
+    padding: 3% 0;
 }
 
 .files-title{
     background-color: rgb(255, 255, 255);
     font-family: 'Gravity-Bold';
     text-align: center;
-    padding-top: 5%;
+    padding-top: 3%;
 }
 
 /* Estilos para telas com largura até 1350px */
@@ -26,7 +26,7 @@
         flex-wrap: wrap; /* Permite que os itens sejam quebrados em várias linhas */
     }
     .files-title{
-        padding-top: 95px;
+        padding-top: 60px;
     }
 }
 
