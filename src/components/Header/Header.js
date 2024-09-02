@@ -3,11 +3,12 @@ import './Header.css';
 import logo from "../.././assets/Horizontal Branca RGB.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons';
-import { faBars } from '@fortawesome/free-solid-svg-icons'; // Importa o ícone da sandwich bar
+import { faBars, faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
+  const [linkDropdownActive, setLinkDropdownActive] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +34,12 @@ const Header = () => {
     e.preventDefault();
     document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
     setMenuOpen(false); // Close the menu after clicking a link
+    setLinkDropdownActive(false);
+  };
+
+  const handleDropdown = (e) => {
+    e.preventDefault();
+    setLinkDropdownActive(!linkDropdownActive); // Toggle dropdown visibility
   };
 
   return (
@@ -85,18 +92,34 @@ const Header = () => {
               Equipe
             </a>
           </div>
+          <div className="text-box">
+            <a
+              href="#links"
+              className={activeSection === 'links' ? 'active' : ''}
+              onClick={handleDropdown}
+            >
+              Links
+              <FontAwesomeIcon icon={linkDropdownActive ? faChevronUp : faChevronDown} style={{ paddingLeft: '5px' }} />
+            </a>
+            {linkDropdownActive && (
+              <div className="dropdown-menu">
+                <a href="https://www.gov.br/ibc/pt-br"  target="_blank" rel="noopener noreferrer">Instituto Benjamin Constant</a>
+                <a href="https://www.instagram.com/cienciaaoalcancedasmaos"  target="_blank" rel="noopener noreferrer">Ciência ao alcance das mãos</a>
+              </div>
+            )}
+          </div>
         </div>
         
         <div style={{ display: 'flex', gap: '40px' }}>
           <div className="social-icons">
             <a href="https://www.instagram.com/universo.acessivel/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faInstagram} style={{color: "#FFFFFF",}} />
+              <FontAwesomeIcon icon={faInstagram} style={{color: "#FFFFFF"}} />
             </a> 
             <a href="https://www.facebook.com/universo.acessivel" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faFacebook} style={{color: "#FFFFFF"}} />
             </a>
             <a href="https://www.youtube.com/@universoacessivel8272" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faYoutube} style={{color: "#FFFFFF",}} />
+              <FontAwesomeIcon icon={faYoutube} style={{color: "#FFFFFF"}} />
             </a>
           </div>
 
@@ -153,6 +176,19 @@ const Header = () => {
               Equipe
             </a>
           </div>
+          <div className="text-box">
+            <a href="#links" onClick={handleDropdown}>
+              Links
+              <FontAwesomeIcon icon={linkDropdownActive ? faChevronUp : faChevronDown} style={{ paddingLeft: '5px' }} />
+            </a>
+            </div>
+              {linkDropdownActive && (
+                <div className="mobile-dropdown-menu">
+                  <a href="https://www.gov.br/ibc/pt-br" target="_blank" rel="noopener noreferrer">
+                    Instituto Benjamin Constant
+                  </a>
+                  <a href="https://www.instagram.com/cienciaaoalcancedasmaos"  target="_blank" rel="noopener noreferrer">Ciência ao alcance das mãos</a>
+                </div>)}
         </div>
       )}
     </div>

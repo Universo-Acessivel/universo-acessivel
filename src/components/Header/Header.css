@@ -110,7 +110,55 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-@media(max-width:850px) {
+.dropdown-menu {
+  background-color: #333; /* Cor de fundo */
+  position: absolute; /* Posicionamento */
+  top: 100%; /* Posicionar logo abaixo do item de menu */
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu a {
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  width: 100%; /* Ou defina uma largura específica, se necessário */
+  box-sizing: border-box;
+  border-top: 0.5px solid rgb(70, 70, 70);
+}
+
+.dropdown-menu a:hover {
+  background-color: #444; /* Efeito ao passar o mouse */
+}
+
+.mobile-dropdown-menu {
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  border-top: 1px solid #696969;
+}
+
+.mobile-dropdown-menu a {
+  padding: 10px;
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s;
+  box-sizing: border-box;
+  border-top: 0.5px solid rgb(70, 70, 70);
+}
+
+.mobile-dropdown-menu a:hover {
+  background-color: #444;
+}
+
+@media(max-width:950px) {
   #logoHeader {
     display: flex;
     width: 100px;
@@ -131,3 +179,4 @@
     margin-right: 15px;
   }
 }
+
