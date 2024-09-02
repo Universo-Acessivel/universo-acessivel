@@ -18,8 +18,8 @@ function Files(){
               imgSrc={Touch} 
               alt={"Ícone representando um toque."}
               size={54}
-              title={"Cardenos Táteis"}
-              text={"Procuramos desenvolver textos com figuras táteis associados a material 3D para fixar o aprendizado das principais características físicas da Lua (crateras, planícies), além de também entender os fenômenos, tais como eclipses e as fases."}
+              title={"Cadernos Táteis"}
+              text={"Desenvolvemos textos com figuras táteis associados a material 3D para fixar o aprendizado. O material produzido tem como diretriz a BNCC. Os cadernos táteis devem ser solicitados ao IBC. Aqui temos as versões em pdf que podem ser usadas por todos. Nosso material é inclusivo, mas não exclusivo."}
               className="touch-icon" // classe personalizada para mexer na margem
               downloadLink="https://drive.google.com/drive/folders/14eBDu8FBGdR4tjfgtNsKkQNnzRfd1DRM?usp=sharing" // link do drive
           />
