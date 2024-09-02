@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useImperativeHandle, forwardRef } from 'react';
 import './AudioWarning.css';
 
-function AudioWarning() {
+const AudioWarning = forwardRef((props, ref) => {
     const [isVisible, setIsVisible] = useState(true);
+
+    useImperativeHandle(ref, () => ({
+        showWarning() {
+            setIsVisible(true);
+        }
+    }));
 
     const handleClose = () => {
         setIsVisible(false);
     };
 
-    if (!isVisible) return null; // Não renderiza nada se o aviso não estiver visível
+    if (!isVisible) return null;
 
     return (
         <div className='overlay'>
@@ -23,6 +29,6 @@ function AudioWarning() {
             </div>
         </div>
     );
-}
+});
 
 export default AudioWarning;

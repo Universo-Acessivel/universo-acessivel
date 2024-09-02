@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import '../.././styles/fonts.css';
 import Header from '.././Header/Header.js';
 import Sidebar from '.././Sidebar/Sidebar.js';
@@ -13,12 +13,19 @@ import { TextReaderProvider } from '../../context/TextReaderContext.js';
 import AudioWarning from '../AudioWarning/AudioWarning.js';
 
 function Home() {
+  const audioWarningRef = useRef(null);
+
+  const showWarning = () => {
+      if (audioWarningRef.current) {
+          audioWarningRef.current.showWarning();
+      }
+  };
 
   return (
     <TextReaderProvider>
-      <AudioWarning />
+      <AudioWarning ref={audioWarningRef} />
       <Header />
-      <Sidebar />
+      <Sidebar showWarning={showWarning} />
       <Introduction />
       <Files />
       <Description />
