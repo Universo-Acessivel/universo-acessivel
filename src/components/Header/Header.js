@@ -1,11 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './Header.css';
 import logo from "../.././assets/Horizontal Branca RGB.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faBars, faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { TextReaderContext } from '../../context/TextReaderContext';
 
 const Header = () => {
+  const { isTextReaderEnabled } = useContext(TextReaderContext);
+
+  const handleTextRead = (text) => {
+      if (isTextReaderEnabled) {
+          window.speechSynthesis.cancel();
+          const utterance = new SpeechSynthesisUtterance(text);
+          window.speechSynthesis.speak(utterance);
+      }
+  };
+
   const [activeSection, setActiveSection] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
   const [linkDropdownActive, setLinkDropdownActive] = useState(false);
@@ -52,6 +63,7 @@ const Header = () => {
               href="#home"
               className={activeSection === 'home' ? 'active' : ''}
               onClick={(e) => handleLinkClick(e, '#home')}
+              onMouseEnter={() => handleTextRead('Home')}
             >
               Home
             </a>
@@ -61,6 +73,7 @@ const Header = () => {
               href="#materiais"
               className={activeSection === 'materiais' ? 'active' : ''}
               onClick={(e) => handleLinkClick(e, '#materiais')}
+              onMouseEnter={() => handleTextRead('Materiais')}
             >
               Materiais
             </a>
@@ -70,6 +83,7 @@ const Header = () => {
               href="#sobreNos"
               className={activeSection === 'sobreNos' ? 'active' : ''}
               onClick={(e) => handleLinkClick(e, '#sobreNos')}
+              onMouseEnter={() => handleTextRead('Sobre nós')}
             >
               Sobre Nós
             </a>
@@ -79,6 +93,7 @@ const Header = () => {
               href="#nossosTrabalhos"
               className={activeSection === 'nossosTrabalhos' ? 'active' : ''}
               onClick={(e) => handleLinkClick(e, '#nossosTrabalhos')}
+              onMouseEnter={() => handleTextRead('Nossos Trabalhos')}
             >
               Nossos Trabalhos
             </a>
@@ -88,6 +103,7 @@ const Header = () => {
               href="#equipe"
               className={activeSection === 'equipe' ? 'active' : ''}
               onClick={(e) => handleLinkClick(e, '#equipe')}
+              onMouseEnter={() => handleTextRead('Equipe')}
             >
               Equipe
             </a>
@@ -97,14 +113,15 @@ const Header = () => {
               href="#links"
               className={activeSection === 'links' ? 'active' : ''}
               onClick={handleDropdown}
+              onMouseEnter={() => handleTextRead('Links')}
             >
               Links
               <FontAwesomeIcon icon={linkDropdownActive ? faChevronUp : faChevronDown} style={{ paddingLeft: '5px' }} />
             </a>
             {linkDropdownActive && (
               <div className="dropdown-menu">
-                <a href="https://www.gov.br/ibc/pt-br"  target="_blank" rel="noopener noreferrer">Instituto Benjamin Constant</a>
-                <a href="https://www.instagram.com/cienciaaoalcancedasmaos"  target="_blank" rel="noopener noreferrer">Ciência ao alcance das mãos</a>
+                <a href="https://www.gov.br/ibc/pt-br"  target="_blank" rel="noopener noreferrer" onMouseEnter={() => handleTextRead('Instituto Benjamin Constant')}>Instituto Benjamin Constant</a>
+                <a href="https://www.instagram.com/cienciaaoalcancedasmaos"  target="_blank" rel="noopener noreferrer" onMouseEnter={() => handleTextRead('Ciência ao alcance das mãos')}>Ciência ao alcance das mãos</a>
               </div>
             )}
           </div>
@@ -112,13 +129,13 @@ const Header = () => {
         
         <div style={{ display: 'flex', gap: '40px' }}>
           <div className="social-icons">
-            <a href="https://www.instagram.com/universo.acessivel/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/universo.acessivel/" target="_blank" rel="noopener noreferrer" onMouseEnter={() => handleTextRead('Nosso Instagram')}>
               <FontAwesomeIcon icon={faInstagram} style={{color: "#FFFFFF"}} />
             </a> 
-            <a href="https://www.facebook.com/universo.acessivel" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/universo.acessivel" target="_blank" rel="noopener noreferrer" onMouseEnter={() => handleTextRead('Nosso Facebook')}>
               <FontAwesomeIcon icon={faFacebook} style={{color: "#FFFFFF"}} />
             </a>
-            <a href="https://www.youtube.com/@universoacessivel8272" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.youtube.com/@universoacessivel8272" target="_blank" rel="noopener noreferrer" onMouseEnter={() => handleTextRead('Nosso YouTube')}>
               <FontAwesomeIcon icon={faYoutube} style={{color: "#FFFFFF"}} />
             </a>
           </div>
