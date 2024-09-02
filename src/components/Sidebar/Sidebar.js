@@ -6,7 +6,7 @@ import lupaMais from "../../assets/lupaMais.svg";
 import lupaMenos from "../../assets/lupaMenos.svg";
 import audioIcon from "../../assets/audioIcon.svg";
 import notAudioIcon from "../../assets/notAudioIcon.svg";
-import infoIcon from "../../assets/infoIcon.webp";
+import infoIcon from "../../assets/infoIcon.svg";
 
 import { TextReaderContext } from '../../context/TextReaderContext';
 
@@ -43,10 +43,10 @@ const Sidebar = ({ showWarning }) => {
         <div className="sidebar">
             <div className={`sidebar-container ${sidebarVisible ? 'visible' : 'hidden'}`}>
                 <div className='sidebar-buttons'>
-                    <img className="lupaMaisIcon" src={lupaMais} alt="Ícone de lupa para aumentar" title='Aumentar a fonte' onClick={increaseFontSize}></img>
-                    <img className="lupaMenosIcon" src={lupaMenos} alt="Ícone de lupa para diminuir" title='Diminuir a fonte' onClick={decreaseFontSize}></img>
-                    <img className="audioIcon" src={isTextReaderEnabled ? audioIcon : notAudioIcon} alt="Ícone de áudio" title={isTextReaderEnabled ? 'Pausar áudio' : 'Reproduzir áudio'} onClick={toggleTextReader}></img>
-                    <img className="infoIcon" src={infoIcon} alt="Ícone de informação" title='Ler informações' onClick={handleInfoClick}></img>
+                    <img className="sidebar-icon" id="lupaMaisIcon" src={lupaMais} alt="Ícone de lupa para aumentar" title='Aumentar a fonte' onClick={increaseFontSize}></img>
+                    <img className="sidebar-icon" id="lupaMenosIcon" src={lupaMenos} alt="Ícone de lupa para diminuir" title='Diminuir a fonte' onClick={decreaseFontSize}></img>
+                    <img className="sidebar-icon" id="audioIcon" src={isTextReaderEnabled ? audioIcon : notAudioIcon} alt="Ícone de áudio" title={isTextReaderEnabled ? 'Pausar áudio' : 'Reproduzir áudio'} onClick={toggleTextReader}></img>
+                    <img className="sidebar-icon" id="infoIcon" src={infoIcon} alt="Ícone de informação" title='Ler informações' onClick={handleInfoClick}></img>
                 </div>
             </div>
             <div className={`back-button ${sidebarVisible ? 'visible' : 'hidden'}`} onClick={toggleSidebar} title={`${sidebarVisible ? 'Fechar menu de acessibilidade' : 'Abrir menu de acessibilidade'}`}>
