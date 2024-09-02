@@ -3,9 +3,12 @@
     background-color: rgba(31, 10, 255, 0.6);
     backdrop-filter: blur(20px);
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-text{
+    display: inline-block;
     text-align: center;
-    padding-top: 40px;
 }
