@@ -7,6 +7,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import './Team.css';
+import { useContext } from 'react';
+import { TextReaderContext } from '../../context/TextReaderContext';
 
 function createData(name, institute) {
     return { name, institute };
@@ -44,23 +46,39 @@ const tableData = [
 ];
 
 function Team() {
+    const { isTextReaderEnabled } = useContext(TextReaderContext);
+
+    const handleTextRead = (text) => {
+        if (isTextReaderEnabled) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(utterance);
+        }
+    };
+
     return (
         <div id="equipe" className='team-wrapper'>
             <div className='team-container'>
-                <div className='team-title section-title'>Nossa Equipe</div>
+                <div 
+                    className='team-title section-title'
+                    onClick={() => handleTextRead('Nossa Equipe')}
+                    onMouseEnter={() => handleTextRead('Nossa Equipe')}
+                >
+                    Nossa Equipe
+                </div>
             </div>
 
             <div className='box'>
                 {/* Para criar cada tabela */}
                 {tableData.map((data, index) => (
-                    /*<TableContainer key={index} component={Paper} sx={{ width: 400, borderRadius: 1, marginLeft: 5, marginRight: 5, height: 57+52.92*(data.rows.length), '@media (max-width: 430px)': { width: 350 } }}>
-                        <Table sx={{ width: 400, "& .MuiTableRow-root:hover": { backgroundColor: "#f5f5f5" }, '@media (max-width: 430px)': { width: 350, height: 57+52.92*(data.rows.length) } }} aria-label={`tabela${index}`}>  - actual: as 2 linhas de baixo*/
                     <TableContainer key={index} component={Paper} sx={{ width: 400, borderRadius: 1, marginLeft: 5, marginRight: 5, height: 57+boxHeight*(data.rows.length), '@media (max-width: 430px)': { width: 350 } }}>
                         <Table sx={{ width: { boxWidth }, "& .MuiTableRow-root:hover": { backgroundColor: "#d3d3d3" }, '@media (max-width: 430px)': { width: 350, height: 57+52.92*(data.rows.length) } }} aria-label={`tabela${index}`}>
                             <TableHead>
                                 <TableRow>
                                     <TableCell 
                                         align="center" 
+                                        onClick={() => handleTextRead('Nome')}
+                                        onMouseEnter={() => handleTextRead('Nome')}
                                         sx={{   fontFamily: 'Gravity-Bold', 
                                                 fontSize: 20, 
                                                 '@media (max-width: 430px)': { fontSize: 18 }  }}>
@@ -68,17 +86,24 @@ function Team() {
                                     </TableCell>
                                     <TableCell 
                                         align="center" 
+                                        onClick={() => handleTextRead('Curso/Instituto')}
+                                        onMouseEnter={() => handleTextRead('Curso/Instituto')}
                                         sx={{   fontFamily: 'Gravity-Bold', 
                                                 fontSize: 20, 
                                                 '@media (max-width: 430px)': { fontSize: 18 }  }}>
-                                        Curso/Instituto
+                                        <div
+                                            onClick={() => handleTextRead('Curso/Instituto')}
+                                            onMouseEnter={() => handleTextRead('Curso/Instituto')}
+                                        >
+                                            Curso/Instituto
+                                        </div>
                                     </TableCell>
                                 </TableRow>
                             </TableHead>
                             {/* Para criar cada fileira */}
                             <TableBody>
                                 {data.rows.map((row, rowIndex) => (
-                                    <TableRow key={rowIndex} sx={{ '&:last-child td, &:last-child th': { border: 0 },  height: boxHeight }}>
+                                    <TableRow key={rowIndex} sx={{ '&:last-child td, &:last-child th': { border: 0 },  height: boxHeight }} onClick={() => handleTextRead(row.name + row.institute)} onMouseEnter={() => handleTextRead(row.name + row.institute)}>
                                         <TableCell 
                                             align="center" 
                                             component="th" 

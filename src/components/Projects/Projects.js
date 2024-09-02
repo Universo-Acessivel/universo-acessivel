@@ -1,11 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './Projects.css';
 import Job from './Job/Job.js';
 import KitLua from '../.././assets/kitlua.jpg';
 import Jogos from '../.././assets/jogos.jpg';
 import Expo from '../.././assets/expo.jpg';
+import { TextReaderContext } from '../../context/TextReaderContext.js';
 
 function Projects() {
+  const { isTextReaderEnabled } = useContext(TextReaderContext);
+
+  const handleTextRead = (text) => {
+      if (isTextReaderEnabled) {
+          window.speechSynthesis.cancel();
+          const utterance = new SpeechSynthesisUtterance(text);
+          window.speechSynthesis.speak(utterance);
+      }
+  };
+
   // Largura onde há a quebra para slides arrastáveis
   const breakpoint = 976;
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -86,7 +97,13 @@ function Projects() {
 
   return (
     <div id="nossosTrabalhos" className='projects-container'>
-      <div className='projects-title section-title'>Mais alguns trabalhos desenvolvidos</div>
+      <div 
+        className='projects-title section-title'
+        onClick={() => handleTextRead('Mais alguns trabalhos desenvolvidos')}
+        onMouseEnter={() => handleTextRead('Mais alguns trabalhos desenvolvidos')}
+      >
+        Mais alguns trabalhos desenvolvidos
+      </div>
       {isDesktop ? 
       // Se a largura é grande
       (

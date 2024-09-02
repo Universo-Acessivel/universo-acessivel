@@ -9,10 +9,14 @@ import Projects from '.././Projects/Projects.js';
 import Video from '.././Video/Video.js';
 import Team from '.././Team/Team.js';
 import Footer from '.././Footer/Footer.js';
+import { TextReaderProvider } from '../../context/TextReaderContext.js';
+import AudioWarning from '../AudioWarning/AudioWarning.js';
 
 function Home() {
+
   return (
-    <React.Fragment>
+    <TextReaderProvider>
+      <AudioWarning />
       <Header />
       <Sidebar />
       <Introduction />
@@ -22,7 +26,7 @@ function Home() {
       <Video />
       <Team />
       <Footer />
-    </React.Fragment>
+    </TextReaderProvider>
   );
 }
 

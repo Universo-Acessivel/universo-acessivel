@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Files.css';
 import './Material/Material.js';
 import Material from './Material/Material.js';
@@ -6,13 +6,29 @@ import Touch from '../.././assets/Touch-Icon.svg'
 //import Puzzle from '../.././assets/Puzzle-Icon.svg'
 import Book from '../.././assets/Book-Icon.svg'
 import Article from '../.././assets/Article-Icon.svg'
+import { TextReaderContext } from '../../context/TextReaderContext.js';
 
 function Files(){
+  const { isTextReaderEnabled } = useContext(TextReaderContext);
+
+  const handleTextRead = (text) => {
+      if (isTextReaderEnabled) {
+          window.speechSynthesis.cancel();
+          const utterance = new SpeechSynthesisUtterance(text);
+          window.speechSynthesis.speak(utterance);
+      }
+  };
+
   return (
-    /*<div className='files-wrapper'>
-      <div className='files-title'>Materiais</div> actual: a linha de baixo*/
     <>
-      <div id="materiais" className='files-title section-title'>Materiais</div> 
+      <div 
+        id="materiais" 
+        className='files-title section-title'
+        onClick={() => handleTextRead('Materiais')}
+        onMouseEnter={() => handleTextRead('Materiais')}
+      >
+        Materiais
+      </div> 
         <div className='files-container'>
           <Material 
               imgSrc={Touch} 

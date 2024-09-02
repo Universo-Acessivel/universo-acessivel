@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Description.css';
+import { TextReaderContext } from '../../context/TextReaderContext';
 
 function Description() {
+  const { isTextReaderEnabled } = useContext(TextReaderContext);
+
+  const handleTextRead = (text) => {
+      if (isTextReaderEnabled) {
+          window.speechSynthesis.cancel();
+          const utterance = new SpeechSynthesisUtterance(text);
+          window.speechSynthesis.speak(utterance);
+      }
+  };
+
+  const descriptionText = "O Universo Acessível tem enfoque na produção de recursos didáticos adaptados em diferentes formatos servindo de apoio para alunos do Ensino Fundamental com deficiência visual, buscando estimular o conhecimento nessa área. Desenvolvemos objetos 3D, feitos com material de baixo custo que podem ser replicados mediante instruções disponibilizadas pelo projeto, cadernos táteis, jogos e livros falados. O público-alvo de nossa ação são pessoas cegas e com baixa visão, em especial os alunos do Instituto Benjamin Constant (IBC). No entanto, atingimos estudantes de todo o Brasil, uma vez que o IBC distribui o material criado pelo nosso grupo. Testes iniciais, realizados em sala de aula mostram a eficiência na utilização desse material como apoio para o ensino de astronomia e motivador para estudantes seguirem a carreira em ciências."
+
   return (
     <div id="sobreNos" className='description-container'>
-        <div className='project-description'>
+        <div 
+          className='project-description'
+          onClick={() => handleTextRead(descriptionText)}
+          onMouseEnter={() => handleTextRead(descriptionText)}
+        >
             “O Universo Acessível tem enfoque na produção de recursos didáticos adaptados em diferentes 
             formatos servindo de apoio para alunos do Ensino Fundamental com deficiência visual, buscando 
             estimular o conhecimento nessa área. Desenvolvemos objetos 3D, feitos com material de baixo 
@@ -15,7 +32,11 @@ function Description() {
             de aula mostram a eficiência na utilização desse material como apoio para o ensino de astronomia e 
             motivador para estudantes seguirem a carreira em ciências.”
         </div>
-        <div className='teacher-info'>
+        <div 
+          className='teacher-info'
+          onClick={() => handleTextRead('Silvia Lorenz-Martins. Professora e Coordenadora Acadêmica - s lorenz@o v ponto u f r j ponto b r')}
+          onMouseEnter={() => handleTextRead('Silvia Lorenz-Martins. Professora e Coordenadora Acadêmica - s lorenz@o v ponto u f r j ponto b r')}
+        >
             Silvia Lorenz-Martins
             <br></br>
             <br></br>
