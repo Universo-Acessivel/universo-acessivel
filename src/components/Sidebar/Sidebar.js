@@ -52,6 +52,85 @@ const Sidebar = ({ showWarning }) => {
             <div className={`back-button ${sidebarVisible ? 'visible' : 'hidden'}`} onClick={toggleSidebar} title={`${sidebarVisible ? 'Fechar menu de acessibilidade' : 'Abrir menu de acessibilidade'}`}>
                 <img className="arrow" src={leftArrow} alt="Seta para a esquerda"></img>
             </div>
+            <style>{`
+        .section-title{
+            font-size: ${ fontSize + 48 }px;
+        }
+        
+        .section-description{
+            font-size: ${ fontSize + 20 }px;
+        }
+        
+        .subsection-title{
+            font-size: ${ fontSize + 30 }px;
+        }
+        
+        .social-icons a {
+            font-size: ${ fontSize + 24 }px;
+          }
+        
+        
+        .title{
+            font-size: ${ fontSize + 64 }px;
+        }
+        
+        .subtitle-1,
+        .subtitle-2 {
+          font-size: ${ fontSize + 26 }px;
+        }
+        
+        .project-description{
+            font-size: ${ fontSize + 32 }px;
+        }
+        
+        .teacher-info{
+            font-size: ${ fontSize + 20 }px;
+        }
+        
+        /* Footer */
+        .footer-text{
+            font-size: ${ fontSize + 20 }px;
+        }
+        
+        @media screen and (max-width: 1350px) {
+            .title {
+                font-size: ${ fontSize + 48 }px;
+            }
+            
+            .subtitle-1,
+            .subtitle-2 {
+                font-size: ${ fontSize + 20 }px;
+            }
+        
+            .video-title{
+                font-size: ${ fontSize + 36 }px;
+            }
+        }
+        
+        @media (max-width: 1020px) {
+            .title {
+              font-size: ${ fontSize + 38 }px;
+            }
+          
+            .subtitle-1,
+            .subtitle-2 {
+              font-size: ${ fontSize + 18 }px;
+            }
+        }
+        
+        @media screen and (max-width: 976px) {
+            .section-description{
+                font-size: ${ fontSize + 18 }px;
+            }
+        }
+        
+        @media screen and (max-width: 650px) {
+            .project-description, .link-IBC{
+                font-size: ${ fontSize + 26 }px;
+            }
+        }
+
+      `}</style>
         </div>
     );
 };
