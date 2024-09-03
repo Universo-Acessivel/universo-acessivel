@@ -39,7 +39,7 @@ const Introduction = () => {
           onClick={() => handleTextRead('Astronomia para pessoas com deficiência visual')}
           onMouseEnter={() => handleTextRead('Astronomia para pessoas com deficiência visual')}
         >
-          Astronomia para pessoas cegas e de baixa visão
+          Astronomia para pessoas com deficiência visual
         </div>
         <div className="logos">
           <img src={ov_logo} alt="Logo do Observatório do Valongo."></img>
