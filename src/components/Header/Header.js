@@ -43,11 +43,23 @@ const Header = () => {
 
   const handleLinkClick = (e, sectionId) => {
     e.preventDefault();
-    document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
-    setMenuOpen(false); // Close the menu after clicking a link
+    const element = document.querySelector(sectionId);
+  
+    if (element) {
+      const headerOffset = parseFloat(getComputedStyle(document.documentElement).fontSize) * 5; // 5em: header height + 1em margin
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
+  
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  
+    setMenuOpen(false);
     setLinkDropdownActive(false);
   };
-
+  
   const handleDropdown = (e) => {
     e.preventDefault();
     setLinkDropdownActive(!linkDropdownActive); // Toggle dropdown visibility
