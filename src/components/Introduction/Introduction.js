@@ -36,8 +36,8 @@ const Introduction = () => {
         </div>
         <div 
           className="subtitle-2"
-          onClick={() => handleTextRead('Astronomia para pessoas cegas e de baixa visão')}
-          onMouseEnter={() => handleTextRead('Astronomia para pessoas cegas e de baixa visão')}
+          onClick={() => handleTextRead('Astronomia para pessoas com deficiência visual')}
+          onMouseEnter={() => handleTextRead('Astronomia para pessoas com deficiência visual')}
         >
           Astronomia para pessoas cegas e de baixa visão
         </div>
