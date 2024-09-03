@@ -57,7 +57,7 @@ function Files(){
               title={"Livros"}
               text={"O livro falado é um recurso de tecnologia assistiva para pessoas com deficiência visual proporcionando autonomia e liberdade de pensamento ao leitor, através de uma leitura branca, voz clara e bem pontuada. "}
               className="book-icon" // classe personalizada para mexer na margem
-              downloadLink="https://drive.google.com/drive/folders/1tlMAdZHOj8Ovdag7lfZqhEUlcLejBV0r?usp=sharing" // link do drive
+              downloadLink="" // link do drive
           />
           <Material 
               imgSrc={Article} 
