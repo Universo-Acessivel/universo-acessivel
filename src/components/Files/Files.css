@@ -21,7 +21,7 @@
 }
 
 /* Estilos para telas com largura até 1350px */
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 1700px) {
     .files-container {
         flex-wrap: wrap; /* Permite que os itens sejam quebrados em várias linhas */
     }

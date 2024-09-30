@@ -38,7 +38,7 @@ a{
     text-decoration: underline;
 }
 
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 1700px) {
     .material-container {
         padding: 8% 3%;
     }
