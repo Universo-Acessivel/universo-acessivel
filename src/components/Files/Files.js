@@ -44,7 +44,7 @@ function Files(){
               imgSrc={Book} 
               alt={"Ícone de um livro."}
               size={48}
-              title={"Livros"}
+              title={"Livros Falados"}
               text={"O livro falado é um recurso de tecnologia assistiva para pessoas com deficiência visual proporcionando autonomia e liberdade de pensamento ao leitor, através de uma leitura branca, voz clara e bem pontuada. "}
               linkText={"Acessar"}
               className="book-icon" // classe personalizada para mexer na margem
