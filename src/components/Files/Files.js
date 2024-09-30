@@ -61,12 +61,12 @@ function Files(){
               />
           <Material 
               imgSrc={Pdf}
-              alt={"Ícone de um quebra-cabeça."}
+              alt={"Ícone de arquivo pdf."}
               size={40}
               title={"Material em pdf"}
               text={"Aqui você encontra os textos revistos e atualizados em pdf, do material criado, para ser usado por crianças videntes."}
               linkText={"Acessar"}
-              downloadLink="https://drive.google.com/drive/folders/1jEp-yMUHXjypj3ktXETSzf3AoYs1O1N7?usp=sharing" // link do drive
+              downloadLink="https://drive.google.com/drive/folders/1n3PZnwTPaeBsgtFBq4p9Oiok3M_W_hbI?usp=sharing" // link do drive
           />
         </div>
       </>
