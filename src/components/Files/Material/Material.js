@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import './Material.css';
 import { TextReaderContext } from '../../../context/TextReaderContext';
 
-function Material({ imgSrc, alt, size, title, text, className, downloadLink }){
+function Material({ imgSrc, alt, size, title, text, linkText, className, downloadLink }){
   const imageSize = {
     'min-width': size,
     'min-height': size
@@ -42,9 +42,9 @@ function Material({ imgSrc, alt, size, title, text, className, downloadLink }){
           href={downloadLink} 
           target="_blank" 
           rel="noopener noreferrer"
-          onMouseEnter={() => handleTextRead('Acessar')} // decidi tirar o onClick porque não quero que o texto seja reproduzido quando o usuário quer acessar de fato o material
+          onMouseEnter={() => handleTextRead(linkText)} // decidi tirar o onClick porque não quero que o texto seja reproduzido quando o usuário quer acessar de fato o material
         >
-          Acessar
+          {linkText}
         </a>
     </div>
   );
