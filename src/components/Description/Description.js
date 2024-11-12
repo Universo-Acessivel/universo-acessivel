@@ -9,6 +9,7 @@ function Description() {
       if (isTextReaderEnabled) {
           window.speechSynthesis.cancel();
           const utterance = new SpeechSynthesisUtterance(text);
+          utterance.lang = "pt-BR";
           window.speechSynthesis.speak(utterance);
       }
   };
@@ -17,7 +18,7 @@ function Description() {
 
   return (
     <div id="sobreNos" className='description-container'>
-        <div 
+        <p 
           className='project-description'
           onClick={() => handleTextRead(descriptionText)}
           onMouseEnter={() => handleTextRead(descriptionText)}
@@ -31,8 +32,8 @@ function Description() {
             uma vez que o IBC distribui o material criado pelo nosso grupo. Testes iniciais, realizados em sala 
             de aula mostram a eficiência na utilização desse material como apoio para o ensino de astronomia e 
             motivador para estudantes seguirem a carreira em ciências.”
-        </div>
-        <div 
+        </p>
+        <p 
           className='teacher-info'
           onClick={() => handleTextRead('Silvia Lorenz-Martins. Professora e Coordenadora Acadêmica - s lorenz@o v ponto u f r j ponto b r')}
           onMouseEnter={() => handleTextRead('Silvia Lorenz-Martins. Professora e Coordenadora Acadêmica - s lorenz@o v ponto u f r j ponto b r')}
@@ -41,7 +42,7 @@ function Description() {
             <br></br>
             <br></br>
             Professora e Coordenadora Acadêmica - slorenz@ov.ufrj.br
-        </div>
+        </p>
     </div>
   );
 }
