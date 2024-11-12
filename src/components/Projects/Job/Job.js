@@ -9,6 +9,7 @@ function Job({ imgSrc, alt, title, description, link }) {
         if (isTextReaderEnabled) {
             window.speechSynthesis.cancel();
             const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = "pt-BR";
             window.speechSynthesis.speak(utterance);
         }
     };
@@ -37,13 +38,13 @@ function Job({ imgSrc, alt, title, description, link }) {
                     </span>
                 )}
             </div>
-            <div 
+            <p 
                 className='job-description section-description'
                 onClick={() => handleTextRead(description)}
                 onMouseEnter={() => handleTextRead(description)}
             >
                 {description}
-            </div>
+            </p>
       </div>
     );
   }

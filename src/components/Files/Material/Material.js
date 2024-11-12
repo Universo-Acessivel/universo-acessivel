@@ -14,6 +14,7 @@ function Material({ imgSrc, alt, size, title, text, linkText, className, downloa
       if (isTextReaderEnabled) {
           window.speechSynthesis.cancel();
           const utterance = new SpeechSynthesisUtterance(text);
+          utterance.lang = "pt-BR";
           window.speechSynthesis.speak(utterance);
       }
   };
