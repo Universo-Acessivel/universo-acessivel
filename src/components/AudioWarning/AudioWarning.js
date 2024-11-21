@@ -1,4 +1,4 @@
-import React, { useState, useImperativeHandle, forwardRef } from 'react';
+import React, { useState, useImperativeHandle, forwardRef, useEffect } from 'react';
 import './AudioWarning.css';
 
 const AudioWarning = forwardRef((props, ref) => {
@@ -14,11 +14,26 @@ const AudioWarning = forwardRef((props, ref) => {
         setIsVisible(false);
     };
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (isVisible) {
+                console.log("closing");
+                handleClose();
+            }
+        };
+
+        document.addEventListener('click', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, [isVisible]);
+
     if (!isVisible) return null;
 
     return (
         <div className='overlay'>
-            <div className='warning-container'>
+            <div className='warning-container' onClick={(e) => e.stopPropagation()}>
                 <button className='close-button' onClick={handleClose}>×</button>
                 <h1 className='warning-title'>
                     O nosso site é acessível!

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import './Sidebar.css';
 
 import leftArrow from "../../assets/leftarrow.svg";
@@ -46,11 +46,10 @@ const Sidebar = ({ showWarning }) => {
                     <img className="sidebar-icon" id="lupaMaisIcon" src={lupaMais} alt="Ícone de lupa para aumentar" title='Aumentar a fonte' onClick={increaseFontSize}></img>
                     <img className="sidebar-icon" id="lupaMenosIcon" src={lupaMenos} alt="Ícone de lupa para diminuir" title='Diminuir a fonte' onClick={decreaseFontSize}></img>
                     <img className="sidebar-icon" id="audioIcon" src={isTextReaderEnabled ? audioIcon : notAudioIcon} alt="Ícone de áudio" title={isTextReaderEnabled ? 'Pausar áudio' : 'Reproduzir áudio'} onClick={toggleTextReader}></img>
-                    <img className="sidebar-icon" id="infoIcon" src={infoIcon} alt="Ícone de informação" title='Ler informações' onClick={handleInfoClick}></img>
                 </div>
             </div>
             <div className={`back-button ${sidebarVisible ? 'visible' : 'hidden'}`} onClick={toggleSidebar} title={`${sidebarVisible ? 'Fechar menu de acessibilidade' : 'Abrir menu de acessibilidade'}`}>
-                <img className="arrow" src={leftArrow} alt="Seta para a esquerda"></img>
+                <img className="arrow" src={leftArrow} alt="Abre/fecha menu de acessibilidade"></img>
             </div>
             <style>{`
         .section-title{
