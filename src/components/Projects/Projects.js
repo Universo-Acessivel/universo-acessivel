@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import './Projects.css';
 import Job from './Job/Job.js';
+import KitMarte from '../.././assets/kitmarte.jpg';
 import KitLua from '../.././assets/kitlua.jpg';
 import Jogos from '../.././assets/jogos.jpg';
 import Expo from '../.././assets/expo.jpg';
@@ -71,6 +72,13 @@ function Projects() {
 
   // Dados dos trabalhos (jobs)
   const jobsData = [
+    {
+      imgSrc: KitMarte,
+      alt: "Foto da equipe montando o Kit Marte.",
+      title: "Kit-Marte",
+      description: "O Kit-Marte é um manual para produzir um mapa topográfico tátil de Marte. Nele você encontra moldes para a produção do mapa, bem como a localização das principais missões espaciais que visitaram o planeta. O Kit-Marte também descreve missões espaciais que estudaram Marte e seus resultados.",
+      link: "https://drive.google.com/drive/folders/1DXd7M6s_u2V_GhfzIg5IQTXPyZJB4iFV?usp=sharing"
+    },
     {
       imgSrc: KitLua,
       alt: "Foto da equipe montando a Lua tátil.",

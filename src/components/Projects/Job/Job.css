@@ -3,9 +3,9 @@
 }
 
 #job-image {
-    width: 100%; /* Defina a largura da imagem como 100% para se dimensionar automaticamente */
-    max-width: 296px;
-    max-height: 549px;
+    width: 296px; /* Defina a largura fixa da imagem */
+    height: 549px; /* Defina a altura fixa da imagem */
+    object-fit: cover; /* Faz a imagem preencher a área, cortando se necessário */
     transition: width 0.3s ease; /* Adicione uma transição suave no tamanho da imagem */
 }
 
