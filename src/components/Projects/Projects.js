@@ -20,7 +20,7 @@ function Projects() {
   };
 
   // Largura onde há a quebra para slides arrastáveis
-  const breakpoint = 976;
+  const breakpoint = 1700;
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [touchStartX, setTouchStartX] = useState(0);
