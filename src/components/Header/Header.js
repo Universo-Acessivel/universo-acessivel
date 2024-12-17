@@ -83,12 +83,12 @@ const Header = () => {
           </div>
           <div className="text-box">
             <a
-              href="#materiais"
-              className={activeSection === 'materiais' ? 'active' : ''}
-              onClick={(e) => handleLinkClick(e, '#materiais')}
-              onMouseEnter={() => handleTextRead('Materiais')}
+              href="#trabalhos"
+              className={activeSection === 'trabalhos' ? 'active' : ''}
+              onClick={(e) => handleLinkClick(e, '#trabalhos')}
+              onMouseEnter={() => handleTextRead('Trabalhos')}
             >
-              Materiais
+              Trabalhos
             </a>
           </div>
           <div className="text-box">
@@ -103,12 +103,12 @@ const Header = () => {
           </div>
           <div className="text-box">
             <a
-              href="#nossosTrabalhos"
-              className={activeSection === 'nossosTrabalhos' ? 'active' : ''}
-              onClick={(e) => handleLinkClick(e, '#nossosTrabalhos')}
-              onMouseEnter={() => handleTextRead('Nossos Trabalhos')}
+              href="#materiais"
+              className={activeSection === 'materiais' ? 'active' : ''}
+              onClick={(e) => handleLinkClick(e, '#materiais')}
+              onMouseEnter={() => handleTextRead('Materiais')}
             >
-              Nossos Trabalhos
+              Materiais
             </a>
           </div>
           <div className="text-box">
