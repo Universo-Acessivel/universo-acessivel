@@ -4,12 +4,10 @@
 .section-title{
     font-size: 48px;
     transition: font-size 0.5s;
-    transition: font-size 0.5s;
 }
 
 .section-description{
     font-size: 20px;
-    transition: font-size 0.5s;
     transition: font-size 0.5s;
 }
 
@@ -45,6 +43,12 @@
 
 .teacher-info{
     font-size: 20px;
+    transition: font-size 0.5s;
+}
+
+/* Material produzido */
+.job-description{
+    font-size: 18px;
     transition: font-size 0.5s;
 }
 

@@ -81,6 +81,10 @@ const Sidebar = ({ showWarning }) => {
         .project-description{
             font-size: ${ fontSize + 32 }px;
         }
+
+        .job-description{
+            font-size: ${ fontSize + 18 }px;
+        }
         
         .teacher-info{
             font-size: ${ fontSize + 20 }px;
