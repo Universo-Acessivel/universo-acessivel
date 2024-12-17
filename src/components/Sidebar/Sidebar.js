@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import './Sidebar.css';
 
 import leftArrow from "../../assets/leftarrow.svg";
@@ -6,7 +6,6 @@ import lupaMais from "../../assets/lupaMais.svg";
 import lupaMenos from "../../assets/lupaMenos.svg";
 import audioIcon from "../../assets/audioIcon.svg";
 import notAudioIcon from "../../assets/notAudioIcon.svg";
-import infoIcon from "../../assets/infoIcon.svg";
 
 import { TextReaderContext } from '../../context/TextReaderContext';
 
@@ -33,10 +32,6 @@ const Sidebar = ({ showWarning }) => {
             setFontSize(prevSize => prevSize - 2);
             setFontChangeCount(prevCount => prevCount - 1);
         }
-    };
-
-    const handleInfoClick = () => {
-        showWarning();
     };
 
     return (
