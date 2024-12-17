@@ -1,13 +1,9 @@
 /* Estilos padrão para o files-container */
 
-/*.files-wrapper {
-    background-color: rgb(255, 255, 255);
-    padding-top: 50px;
-    padding-bottom: 50px;
-} Não está sendo utilizada no momento*/
-
 .files-container {
     display: flex;
+    flex-wrap: wrap;
+    row-gap: 100px;
     justify-content: center;
     background-color: rgb(255, 255, 255);
     padding: 5% 0;
@@ -20,11 +16,8 @@
     padding-top: 3%;
 }
 
-/* Estilos para telas com largura até 1350px */
+/* Estilos para telas com largura até 1700px */
 @media screen and (max-width: 1700px) {
-    .files-container {
-        flex-wrap: wrap; /* Permite que os itens sejam quebrados em várias linhas */
-    }
     .files-title{
         padding-top: 60px;
     }
@@ -34,5 +27,6 @@
 @media screen and (max-width: 820px) {
     .files-container {
         padding: 8% 5% 0% 5%; /* Reduz o padding para melhorar o layout em telas menores */
+        row-gap: 50px;
     }
 }

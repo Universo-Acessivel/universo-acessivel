@@ -15,7 +15,6 @@
 .material-text{
     color: #696969;
     width: 300px;
-    min-height: 220px;
     height: auto;
     hyphens: auto; /* quebra de palavra */
     -webkit-hyphens: auto;
@@ -38,13 +37,7 @@ a{
     text-decoration: underline;
 }
 
-@media screen and (max-width: 1700px) {
-    .material-container {
-        padding: 8% 3%;
-    }
-}
-
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1184px) {
     .material-text {
         height: auto;
         min-height: 0px;
