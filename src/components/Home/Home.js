@@ -11,6 +11,7 @@ import Team from '.././Team/Team.js';
 import Footer from '.././Footer/Footer.js';
 import { TextReaderProvider } from '../../context/TextReaderContext.js';
 import AudioWarning from '../AudioWarning/AudioWarning.js';
+import Expo from '../Expo/Expo.js';
 
 function Home() {
   const audioWarningRef = useRef(null);
@@ -30,6 +31,7 @@ function Home() {
       <Files />
       <Description />
       <Projects />
+      <Expo />
       <Video />
       <Team />
       <Footer />
