@@ -21,6 +21,7 @@ function Job({ imgSrc, alt, title, description, link }) {
                 {link ? (
                     <a 
                         href={link} 
+                        className='job-title'
                         target='_blank' 
                         rel='noreferrer noopener' 
                         title={`Ver ${title}`}
@@ -39,7 +40,7 @@ function Job({ imgSrc, alt, title, description, link }) {
                 )}
             </div>
             <p 
-                className='job-description section-description'
+                className='job-description'
                 onClick={() => handleTextRead(description)}
                 onMouseEnter={() => handleTextRead(description)}
             >
