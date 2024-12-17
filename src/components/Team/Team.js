@@ -26,20 +26,23 @@ const tableData = [
         createData('Ana Paula Costa', 'Arquitetura'),
         createData('Débora Brandão', 'Astronomia'),
         createData('Eduarda Marques', 'Ciência da Computação'),
+        createData('Flavia Avena', 'Astronomia'),
     ]},
     { rows: [
-        createData('Flavia Avena', 'Astronomia'),
         createData('Gustavo Marinatto', 'Ciência da Computação'),
         createData('Ingrid Nogueira', 'Arquitetura'),
         createData('Jackson de Farias', 'Museu de Astronomia e Ciências Afins'),
+        createData('Jeanine Geammal', 'Escola de Belas Artes'),
         createData('Larissa Gonçalves', 'Astronomia'),
         createData('Mariana Ferreira', 'Física'),
+        createData('Melissa Façanha', 'Design'),
     ]},
     { rows: [
         createData('Patrycia Atiara', 'Astronomia'),
         createData('Priscila Marques', 'Benjamin Constant'),
         createData('Rayssa Rayde', 'Astronomia'),
-        createData('Silvia Lorenz Martins', 'Observatório do Valongo'),
+        createData('Samara Bastos', 'Astronomia'),
+        createData('Silvia Lorenz-Martins', 'Observatório do Valongo'),
         createData('Victor Moraes', 'Física'),
         createData('Victor Santos', 'Ciência da Computação')
     ]}
