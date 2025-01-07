@@ -18,11 +18,6 @@
     gap: 20px; /* Adiciona espaçamento entre os itens */
 }
 
-
-
-
-
-
 /* Transição suave entre os slides */
 @keyframes fadeVisibility {
     0% {

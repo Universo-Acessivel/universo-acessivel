@@ -4,8 +4,8 @@ import Job from './Job/Job.js';
 import KitMarte from '../.././assets/kitmarte.jpg';
 import KitLua from '../.././assets/kitlua.jpg';
 import Jogos from '../.././assets/jogos.jpg';
-import CadernosTateis from '../.././assets/cadTateis1.jpg'
-import LivrosFalados from '../.././assets/livrosFalados1.jpg'
+import CadernosTateis from '../.././assets/cadernosTateis.jpg'
+import LivrosFalados from '../.././assets/livros.jpg'
 
 import { TextReaderContext } from '../../context/TextReaderContext.js';
 
@@ -25,14 +25,14 @@ function Projects() {
   const jobsData = [
     {
       imgSrc: CadernosTateis,
-      alt: "Capa do caderno Astronomia 1: Terra à Lua e seus movimentos.",
+      alt: "Foto da página sobre Eclipses Lunares.",
       title: "Cadernos Táteis",
       description: "Desenvolvemos textos com figuras táteis associados a material 3D para fixar o aprendizado. O material produzido tem como diretriz a BNCC. Os cadernos táteis devem ser solicitados ao IBC.",
       link: "https://drive.google.com/drive/folders/14eBDu8FBGdR4tjfgtNsKkQNnzRfd1DRM?usp=sharing"
     },
     {
       imgSrc: LivrosFalados,
-      alt: "",
+      alt: "Foto do estúdio utilizado para gravação de livros falados no Instituto Benjamin Constant",
       title: "Livros Falados",
       description: "O livro falado é um recurso de tecnologia assistiva para pessoas com deficiência visual proporcionando autonomia e liberdade de pensamento ao leitor, através de uma leitura branca, voz clara e bem pontuada.",
       link: "https://drive.google.com/drive/folders/1tlMAdZHOj8Ovdag7lfZqhEUlcLejBV0r?usp=sharing"
@@ -63,8 +63,8 @@ function Projects() {
     <div id="materiais" className='projects-container'>
       <div 
         className='projects-title section-title'
-        onClick={() => handleTextRead('Mais alguns trabalhos desenvolvidos')}
-        onMouseEnter={() => handleTextRead('Mais alguns trabalhos desenvolvidos')}
+        onClick={(e) => handleTextRead(e.currentTarget.textContent)}
+        onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
       >
         Material produzido
       </div>
