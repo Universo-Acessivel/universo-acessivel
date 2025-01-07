@@ -76,7 +76,7 @@ const Header = () => {
               href="#home"
               className={activeSection === 'home' ? 'active' : ''}
               onClick={(e) => handleLinkClick(e, '#home')}
-              onMouseEnter={() => handleTextRead('Home')}
+              onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
             >
               Home
             </a>
@@ -86,7 +86,7 @@ const Header = () => {
               href="#trabalhos"
               className={activeSection === 'trabalhos' ? 'active' : ''}
               onClick={(e) => handleLinkClick(e, '#trabalhos')}
-              onMouseEnter={() => handleTextRead('Trabalhos')}
+              onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
             >
               Trabalhos
             </a>
@@ -96,7 +96,7 @@ const Header = () => {
               href="#sobreNos"
               className={activeSection === 'sobreNos' ? 'active' : ''}
               onClick={(e) => handleLinkClick(e, '#sobreNos')}
-              onMouseEnter={() => handleTextRead('Sobre nós')}
+              onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
             >
               Sobre Nós
             </a>
@@ -106,7 +106,7 @@ const Header = () => {
               href="#materiais"
               className={activeSection === 'materiais' ? 'active' : ''}
               onClick={(e) => handleLinkClick(e, '#materiais')}
-              onMouseEnter={() => handleTextRead('Materiais')}
+              onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
             >
               Materiais
             </a>
@@ -116,7 +116,7 @@ const Header = () => {
               href="#equipe"
               className={activeSection === 'equipe' ? 'active' : ''}
               onClick={(e) => handleLinkClick(e, '#equipe')}
-              onMouseEnter={() => handleTextRead('Equipe')}
+              onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
             >
               Equipe
             </a>
@@ -126,15 +126,29 @@ const Header = () => {
               href="#links"
               className={activeSection === 'links' ? 'active' : ''}
               onClick={handleDropdown}
-              onMouseEnter={() => handleTextRead('Links')}
+              onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
             >
               Links
               <FontAwesomeIcon icon={linkDropdownActive ? faChevronUp : faChevronDown} style={{ paddingLeft: '5px' }} />
             </a>
             {linkDropdownActive && (
               <div className="dropdown-menu">
-                <a href="https://www.gov.br/ibc/pt-br"  target="_blank" rel="noopener noreferrer" onMouseEnter={() => handleTextRead('Instituto Benjamin Constant')}>Instituto Benjamin Constant</a>
-                <a href="https://www.instagram.com/cienciaaoalcancedasmaos"  target="_blank" rel="noopener noreferrer" onMouseEnter={() => handleTextRead('Ciência ao alcance das mãos')}>Ciência ao alcance das mãos</a>
+                <a 
+                  href="https://www.gov.br/ibc/pt-br"
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
+                >
+                Instituto Benjamin Constant
+                </a>
+                <a 
+                  href="https://www.instagram.com/cienciaaoalcancedasmaos" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
+                >
+                Ciência ao alcance das mãos
+                </a>
               </div>
             )}
           </div>

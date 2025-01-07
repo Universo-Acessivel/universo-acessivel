@@ -65,8 +65,8 @@ function Team() {
             <div className='team-container'>
                 <div 
                     className='team-title section-title'
-                    onClick={() => handleTextRead('Nossa Equipe')}
-                    onMouseEnter={() => handleTextRead('Nossa Equipe')}
+                    onClick={(e) => handleTextRead(e.currentTarget.textContent)}
+                    onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
                 >
                     Nossa Equipe
                 </div>
@@ -90,14 +90,14 @@ function Team() {
                                     </TableCell>
                                     <TableCell 
                                         align="center" 
-                                        onClick={() => handleTextRead('Curso/Instituto')}
-                                        onMouseEnter={() => handleTextRead('Curso/Instituto')}
+                                        onClick={(e) => handleTextRead(e.currentTarget.textContent)}
+                                        onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
                                         sx={{   fontFamily: 'Gravity-Bold', 
                                                 fontSize: 20, 
                                                 '@media (max-width: 430px)': { fontSize: 18 }  }}>
                                         <div
-                                            onClick={() => handleTextRead('Curso/Instituto')}
-                                            onMouseEnter={() => handleTextRead('Curso/Instituto')}
+                                            onClick={(e) => handleTextRead(e.currentTarget.textContent)}
+                                            onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
                                         >
                                             Curso/Instituto
                                         </div>

@@ -68,8 +68,8 @@ function Files(){
       <div 
         id="trabalhos" 
         className='files-title section-title'
-        onClick={() => handleTextRead('Materiais')}
-        onMouseEnter={() => handleTextRead('Materiais')}
+        onClick={(e) => handleTextRead(e.currentTarget.textContent)}
+        onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
       >
         Trabalhos
       </div> 

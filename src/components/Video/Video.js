@@ -20,22 +20,22 @@ function Video() {
                 <div className='video-text'>
                     <div 
                         className='video-title section-title'
-                        onClick={() => handleTextRead('Confira nossos vídeos no YouTube')}
-                        onMouseEnter={() => handleTextRead('Confira nossos vídeos no YouTube')}
+                        onClick={(e) => handleTextRead(e.currentTarget.textContent)}
+                        onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
                     >
                         Confira nossos vídeos no YouTube
                     </div>
                     <div 
                         className='video-description section-description'
-                        onClick={() => handleTextRead('Alguns dos nossos conteúdos estão disponíveis no YouTube. Inscreva-se e explore nosso acervo de vídeos!')}
-                        onMouseEnter={() => handleTextRead('Alguns dos nossos conteúdos estão disponíveis no YouTube. Inscreva-se e explore nosso acervo de vídeos!')}
+                        onClick={(e) => handleTextRead(e.currentTarget.textContent)}
+                        onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
                     >
                         Alguns dos nossos conteúdos estão disponíveis no YouTube. Inscreva-se e explore nosso acervo de vídeos!
                     </div>
                     <div 
                         className='video-description section-description'
-                        onClick={() => handleTextRead('Você pode encontrar e baixar todos os nossos conteúdos aqui!')}
-                        onMouseEnter={() => handleTextRead('Você pode encontrar e baixar todos os nossos conteúdos aqui!')}
+                        onClick={(e) => handleTextRead(e.currentTarget.textContent)}
+                        onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
                     >
                         Você pode encontrar e baixar todos os nossos conteúdos <a href="https://drive.google.com/drive/folders/1DB2tin4sbTMt5KBpCSzZEDf0YkzyhAZo?usp=sharing">aqui!</a>
                     </div>

@@ -17,10 +17,10 @@ function Footer() {
       <div className='footer-container'> 
         <div 
           className='footer-text'
-          onClick={() => handleTextRead('Copyright 2024 Universo Acessível')}
-          onMouseEnter={() => handleTextRead('Copyright 2024 Universo Acessível')}
+          onClick={() => handleTextRead('Copyright 2025 Universo Acessível')}
+          onMouseEnter={() => handleTextRead('Copyright 2025 Universo Acessível')}
         >
-          Copyright © 2024 Universo Acessível
+          Copyright © 2025 Universo Acessível
         </div>
       </div>
     );

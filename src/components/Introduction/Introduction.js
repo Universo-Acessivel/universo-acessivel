@@ -23,22 +23,22 @@ const Introduction = () => {
       <div className="intro-text">
         <div 
           className="title"
-          onClick={() => handleTextRead('Universo Acessível')}
-          onMouseEnter={() => handleTextRead('Universo Acessível')}
+          onClick={(e) => handleTextRead(e.currentTarget.textContent)}
+          onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
         >
           <b>Universo Acessível</b>
         </div>
         <div 
           className="subtitle-1" 
-          onClick={() => handleTextRead('Extensão de Acessibilidade UFRJ')}
-          onMouseEnter={() => handleTextRead('Extensão de Acessibilidade UFRJ')}
+          onClick={(e) => handleTextRead(e.currentTarget.textContent)}
+          onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
         >
           Extensão de Acessibilidade UFRJ
         </div>
         <div 
           className="subtitle-2"
-          onClick={() => handleTextRead('Astronomia para pessoas com deficiência visual')}
-          onMouseEnter={() => handleTextRead('Astronomia para pessoas com deficiência visual')}
+          onClick={(e) => handleTextRead(e.currentTarget.textContent)}
+          onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
         >
           Astronomia para pessoas com deficiência visual
         </div>

@@ -16,7 +16,12 @@ function Job({ imgSrc, alt, title, description, link }) {
 
     return (
       <div className='job-container'> 
-            <img id="job-image" src={imgSrc} alt={alt} />
+            <img 
+                id="job-image" 
+                src={imgSrc} 
+                alt={alt} 
+                onClick={() => handleTextRead(`${alt}`)}
+                onMouseEnter={() => handleTextRead(`${alt}`)}/>
             <div className='job-title subsection-title'>
                 {link ? (
                     <a 
