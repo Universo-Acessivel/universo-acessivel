@@ -33,7 +33,6 @@ function Expo() {
                     onClick={(e) => handleTextRead(e.currentTarget.alt)}
                     onMouseEnter={(e) => handleTextRead(e.currentTarget.alt)}>
                 </img>
-
             </div>
             <div 
                 className='expo-description-container section-description'
@@ -51,9 +50,8 @@ function Expo() {
                 Confira nossas fotos!
                 </a>
             </div>
-            
         </div>
     );
-  }
+}
   
   export default Expo;
