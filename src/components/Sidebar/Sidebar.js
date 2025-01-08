@@ -84,6 +84,12 @@ const Sidebar = ({ showWarning }) => {
         .teacher-info{
             font-size: ${ fontSize + 20 }px;
         }
+
+        /* Menções Honrosas */
+
+        .mh-text {
+            font-size: ${ fontSize + 16 }px;
+        }
         
         /* Footer */
         .footer-text{
@@ -125,6 +131,10 @@ const Sidebar = ({ showWarning }) => {
         @media screen and (max-width: 650px) {
             .project-description, .link-IBC{
                 font-size: ${ fontSize + 26 }px;
+            }
+
+            .mh-text {
+                font-size: ${ fontSize + 14 }px;
             }
         }
 
