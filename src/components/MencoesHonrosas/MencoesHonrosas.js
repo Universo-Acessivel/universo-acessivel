@@ -8,6 +8,7 @@ import Lua_MH from "../../assets/Lua_MH.jpg";
 import Material_MH from "../../assets/Material_MH.jpg";
 import Pequenos_Corpos_MH from "../../assets/Pequenos_Corpos_MH.jpg";
 import Tateando_Marte_MH from "../../assets/Tateando_Marte_MH.jpg";
+import Site_Acessivel_MH from "../../assets/Site_Acessivel_MH.png";
 
 function MencoesHonrosas() {
     const { isTextReaderEnabled } = useContext(TextReaderContext);
@@ -29,6 +30,7 @@ function MencoesHonrosas() {
         { src: LivroFalado_MH, alt: "Certificado do trabalho: Livro Falado", text: "LIVRO FALADO COMO FERRAMENTA EDUCACIONAL INCLUSIVA NA ASTRONOMIA - SIAc 2022" },
         { src: Pequenos_Corpos_MH, alt: "Certificado do trabalho: Pequenos Corpos", text: "CONHECENDO OS PEQUENOS CORPOS DO SISTEMA SOLAR - SIAc 2023" },
         { src: Tateando_Marte_MH, alt: "Certificado do trabalho: Tateando Marte", text: "TATEANDO MARTE - SIAc 2023" },
+        { src: Site_Acessivel_MH, alt: "Certificado do trabalho: Site Acessível", text: "UM SITE ACESSÍVEL PARA O UNIVERSO ACESSÍVEL - SIAc 2024" },
     ];
 
     return (
