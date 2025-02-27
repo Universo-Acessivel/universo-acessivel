@@ -3,7 +3,6 @@ import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import './Team.css';
@@ -75,35 +74,8 @@ function Team() {
             <div className='box'>
                 {/* Para criar cada tabela */}
                 {tableData.map((data, index) => (
-                    <TableContainer key={index} component={Paper} sx={{ width: 400, borderRadius: 1, marginLeft: 5, marginRight: 5, height: 57+boxHeight*(data.rows.length), '@media (max-width: 430px)': { width: 350 } }}>
+                    <TableContainer key={index} component={Paper} sx={{ width: 400, borderRadius: 1, marginLeft: 5, marginRight: 5, height: boxHeight*(data.rows.length), '@media (max-width: 430px)': { width: 350 } }}>
                         <Table sx={{ width: { boxWidth }, "& .MuiTableRow-root:hover": { backgroundColor: "#f5f5f5" }, '@media (max-width: 430px)': { width: 350, height: 57+52.92*(data.rows.length) } }} aria-label={`tabela${index}`}>
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell 
-                                        align="center" 
-                                        onClick={() => handleTextRead('Nome')}
-                                        onMouseEnter={() => handleTextRead('Nome')}
-                                        sx={{   fontFamily: 'Gravity-Bold', 
-                                                fontSize: 20, 
-                                                '@media (max-width: 430px)': { fontSize: 18 }  }}>
-                                        Nome
-                                    </TableCell>
-                                    <TableCell 
-                                        align="center" 
-                                        onClick={(e) => handleTextRead(e.currentTarget.textContent)}
-                                        onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
-                                        sx={{   fontFamily: 'Gravity-Bold', 
-                                                fontSize: 20, 
-                                                '@media (max-width: 430px)': { fontSize: 18 }  }}>
-                                        <div
-                                            onClick={(e) => handleTextRead(e.currentTarget.textContent)}
-                                            onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
-                                        >
-                                            Curso/Instituto
-                                        </div>
-                                    </TableCell>
-                                </TableRow>
-                            </TableHead>
                             {/* Para criar cada fileira */}
                             <TableBody>
                                 {data.rows.map((row, rowIndex) => (
