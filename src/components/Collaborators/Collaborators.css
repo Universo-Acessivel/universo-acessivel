@@ -1,0 +1,29 @@
+.collaborators-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+}
+
+.collaborators-container{
+    display: flex;
+    justify-content: center;
+}
+
+.collaborators-title{
+    font-family: 'Gravity-Bold';
+    width: 900px;
+    text-align: center;
+}
+
+.institutions-wrapper{
+    display: flex;
+    justify-content: center;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    align-items: center;
+    gap: 30px;
+}

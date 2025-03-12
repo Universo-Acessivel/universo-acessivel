@@ -147,7 +147,7 @@ const Header = () => {
                   rel="noopener noreferrer" 
                   onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
                 >
-                Ciência ao alcance das mãos
+                Ciência ao Alcance das Mãos
                 </a>
               </div>
             )}
@@ -231,7 +231,7 @@ const Header = () => {
                   <a href="https://www.gov.br/ibc/pt-br" target="_blank" rel="noopener noreferrer">
                     Instituto Benjamin Constant
                   </a>
-                  <a href="https://www.instagram.com/cienciaaoalcancedasmaos"  target="_blank" rel="noopener noreferrer">Ciência ao alcance das mãos</a>
+                  <a href="https://www.instagram.com/cienciaaoalcancedasmaos"  target="_blank" rel="noopener noreferrer">Ciência ao Alcance das Mãos</a>
                 </div>)}
         </div>
       )}

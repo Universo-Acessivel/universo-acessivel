@@ -13,6 +13,7 @@ import { TextReaderProvider } from '../../context/TextReaderContext.js';
 import AudioWarning from '../AudioWarning/AudioWarning.js';
 import Expo from '../Expo/Expo.js';
 import MencoesHonrosas from '../MencoesHonrosas/MencoesHonrosas.js';
+import Collaborators from '../Collaborators/Collaborators.js';
 
 function Home() {
   const audioWarningRef = useRef(null);
@@ -36,6 +37,7 @@ function Home() {
       <MencoesHonrosas />
       <Video />
       <Team />
+      <Collaborators />
       <Footer />
     </TextReaderProvider>
   );

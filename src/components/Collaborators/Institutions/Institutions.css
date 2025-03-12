@@ -1,0 +1,29 @@
+#icons{
+    width: 300px;
+    height: auto;
+}
+
+.institutions-container{
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: 350px;
+}
+
+.institutions-name{
+    font-family: 'Gravity-Bold';
+    text-align: center;
+    margin-top: 20px;
+    transition: all 0.5s ease;
+}
+
+.institutions-images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    min-height: 300px;
+    margin-top: 20px;
+}

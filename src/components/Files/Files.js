@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import './Files.css';
-import './Material/Material.js';
 import Material from './Material/Material.js';
 import Article from '../.././assets/Article-Icon.svg';
 import Book from '../.././assets/Book-Icon.svg';

@@ -90,7 +90,11 @@ const Sidebar = ({ showWarning }) => {
         .mh-text {
             font-size: ${ fontSize + 16 }px;
         }
-        
+
+        .institutions-name{
+            font-size: ${ fontSize + 20 }px;
+        }
+            
         /* Footer */
         .footer-text{
             font-size: ${ fontSize + 20 }px;
