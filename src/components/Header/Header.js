@@ -123,6 +123,16 @@ const Header = () => {
           </div>
           <div className="text-box">
             <a
+              href="#colaboradores"
+              className={activeSection === 'colaboradores' ? 'active' : ''}
+              onClick={(e) => handleLinkClick(e, '#colaboradores')}
+              onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
+            >
+              Colaboradores
+            </a>
+          </div>
+          <div className="text-box">
+            <a
               href="#links"
               className={activeSection === 'links' ? 'active' : ''}
               onClick={handleDropdown}
@@ -147,7 +157,7 @@ const Header = () => {
                   rel="noopener noreferrer" 
                   onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
                 >
-                Ciência ao alcance das mãos
+                Ciência ao Alcance das Mãos
                 </a>
               </div>
             )}
@@ -221,6 +231,15 @@ const Header = () => {
             </a>
           </div>
           <div className="text-box">
+            <a
+              href="#colaboradores"
+              className={activeSection === 'colaboradores' ? 'active' : ''}
+              onClick={(e) => handleLinkClick(e, '#colaboradores')}
+            >
+              Colaboradores
+            </a>
+          </div>
+          <div className="text-box">
             <a href="#links" onClick={handleDropdown}>
               Links
               <FontAwesomeIcon icon={linkDropdownActive ? faChevronUp : faChevronDown} style={{ paddingLeft: '5px' }} />
@@ -231,7 +250,7 @@ const Header = () => {
                   <a href="https://www.gov.br/ibc/pt-br" target="_blank" rel="noopener noreferrer">
                     Instituto Benjamin Constant
                   </a>
-                  <a href="https://www.instagram.com/cienciaaoalcancedasmaos"  target="_blank" rel="noopener noreferrer">Ciência ao alcance das mãos</a>
+                  <a href="https://www.instagram.com/cienciaaoalcancedasmaos"  target="_blank" rel="noopener noreferrer">Ciência ao Alcance das Mãos</a>
                 </div>)}
         </div>
       )}
