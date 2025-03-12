@@ -32,7 +32,7 @@ const tableData = [
         createData('Ingrid Nogueira', 'Arquitetura-UFRJ'),
         createData('Jackson de Farias', 'Espaço Nave – Casa da Ciência/Planetário'),
         createData('Jeanine Geammal', 'Escola de Belas Artes-UFRJ'),
-        createData('Júlia Alves', 'Astronomia-UFRJ'),
+        createData('Júlia Alves', 'Astronomia (Mestrado) - UFRJ'),
         createData('Larissa Gonçalves', 'Astronomia-UFRJ'),
         createData('Mariana Ferreira', 'Física-UFRJ'),
         createData('Matheus Duque', 'Ciência da Computação-UFRJ'),
