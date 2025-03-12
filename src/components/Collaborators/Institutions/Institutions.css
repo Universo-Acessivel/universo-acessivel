@@ -27,3 +27,13 @@
     min-height: 300px;
     margin-top: 20px;
 }
+
+@media (max-width: 1010px){
+    .institutions-container{
+        justify-content: space-evenly;
+    }
+
+    .institutions-images{
+        min-height: auto;
+    }
+}

@@ -27,3 +27,20 @@
     align-items: center;
     gap: 30px;
 }
+
+@media (max-width: 580px) {
+    .collaborators-title {
+        width: auto;
+        font-size: 36px !important; 
+    }
+}
+
+@media (max-width: 1010px){
+    .institutions-wrapper{
+        flex-direction: column;
+    }
+
+    .collaborators-container{
+        padding-top: 65px;
+    }
+}

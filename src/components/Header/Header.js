@@ -123,6 +123,16 @@ const Header = () => {
           </div>
           <div className="text-box">
             <a
+              href="#colaboradores"
+              className={activeSection === 'colaboradores' ? 'active' : ''}
+              onClick={(e) => handleLinkClick(e, '#colaboradores')}
+              onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
+            >
+              Colaboradores
+            </a>
+          </div>
+          <div className="text-box">
+            <a
               href="#links"
               className={activeSection === 'links' ? 'active' : ''}
               onClick={handleDropdown}
@@ -218,6 +228,15 @@ const Header = () => {
               onClick={(e) => handleLinkClick(e, '#equipe')}
             >
               Equipe
+            </a>
+          </div>
+          <div className="text-box">
+            <a
+              href="#colaboradores"
+              className={activeSection === 'colaboradores' ? 'active' : ''}
+              onClick={(e) => handleLinkClick(e, '#colaboradores')}
+            >
+              Colaboradores
             </a>
           </div>
           <div className="text-box">
