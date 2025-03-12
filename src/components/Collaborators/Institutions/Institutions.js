@@ -17,7 +17,7 @@ function Institutions({image, name}){
     return (
         <div className='institutions-container'>
             <div className='institutions-images'>
-                <img id="icons" src={image} alt={name}/>
+                <img id="institutions-icons" src={image} alt={name}/>
             </div>
             <div 
                 className='institutions-name'
