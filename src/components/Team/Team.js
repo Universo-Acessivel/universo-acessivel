@@ -19,31 +19,34 @@ const boxWidth = 400;
 // Tabelas com nomes e institutos
 const tableData = [
     { rows: [
-        createData('Aires Silva', 'Benjamin Constant'),
-        createData('Amanda Farias', 'Astronomia'),
-        createData('Amanda Tavares', 'Arquitetura'),
-        createData('Ana Paula Costa', 'Arquitetura'),
-        createData('Débora Brandão', 'Astronomia'),
-        createData('Eduarda Marques', 'Ciência da Computação'),
-        createData('Flavia Avena', 'Astronomia'),
+        createData('Aires Silva', 'Instituto Benjamin Constant'),
+        createData('Amanda Farias', 'Astronomia-UFRJ'),
+        createData('Amanda Tavares', 'Arquitetura-UFRJ'),
+        createData('Ana Paula Costa', 'Arquitetura-UFRJ'),
+        createData('Débora Brandão', 'Astronomia-UFRJ'),
+        createData('Eduarda Marques', 'Ciência da Computação-UFRJ'),
+        createData('Flavia Avena', 'Astronomia-UFRJ'),
+        createData('Gustavo Marinatto', 'Ciência da Computação-UFRJ'),
     ]},
     { rows: [
-        createData('Gustavo Marinatto', 'Ciência da Computação'),
-        createData('Ingrid Nogueira', 'Arquitetura'),
-        createData('Jackson de Farias', 'Museu de Astronomia e Ciências Afins'),
-        createData('Jeanine Geammal', 'Escola de Belas Artes'),
-        createData('Larissa Gonçalves', 'Astronomia'),
-        createData('Mariana Ferreira', 'Física'),
-        createData('Melissa Façanha', 'Design'),
+        createData('Ingrid Nogueira', 'Arquitetura-UFRJ'),
+        createData('Jackson de Farias', 'Espaço Nave – Casa da Ciência/Planetário'),
+        createData('Jeanine Geammal', 'Escola de Belas Artes-UFRJ'),
+        createData('Júlia Alves', 'Astronomia-UFRJ'),
+        createData('Larissa Gonçalves', 'Astronomia-UFRJ'),
+        createData('Mariana Ferreira', 'Física-UFRJ'),
+        createData('Matheus Duque', 'Ciência da Computação-UFRJ'),
+        createData('Matheus Hack', 'Ciência da Computação-UFRJ'),
     ]},
     { rows: [
-        createData('Patrycia Atiara', 'Astronomia'),
-        createData('Priscila Marques', 'Benjamin Constant'),
-        createData('Rayssa Rayde', 'Astronomia'),
-        createData('Samara Bastos', 'Astronomia'),
+        createData('Melissa Façanha', 'Design-UFRJ'),
+        createData('Patrycia Atiara', 'Astronomia-UFRJ'),
+        createData('Priscila Marques', 'Instituto Benjamin Constant'),
+        createData('Rayssa Rayde', 'Astronomia-UFRJ'),
+        createData('Samara Bastos', 'Astronomia-UFRJ'),
         createData('Silvia Lorenz-Martins', 'Observatório do Valongo'),
-        createData('Victor Moraes', 'Física'),
-        createData('Victor Santos', 'Ciência da Computação')
+        createData('Victor Moraes', 'Física-UFRJ'),
+        createData('Victor Santos', 'Ciência da Computação-UFRJ')
     ]}
 ];
 
