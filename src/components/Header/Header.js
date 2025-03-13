@@ -128,7 +128,7 @@ const Header = () => {
               onClick={(e) => handleLinkClick(e, '#colaboradores')}
               onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
             >
-              Colaboradores
+              Parcerias
             </a>
           </div>
           <div className="text-box">
