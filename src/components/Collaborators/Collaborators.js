@@ -27,7 +27,7 @@ function Collaborators(){
                     onClick={(e) => handleTextRead(e.currentTarget.textContent)}
                     onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
                 >
-                    Nossos Colaboradores
+                   Parcerias
                 </div>
             </div>
             <div className='institutions-wrapper'>
