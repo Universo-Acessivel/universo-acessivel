@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import './Institutions.css';
 import { TextReaderContext } from '../../../context/TextReaderContext';
 
-function Institutions({image, name}){
+function Institutions({image, name, link}){
     const { isTextReaderEnabled } = useContext(TextReaderContext);
 
     const handleTextRead = (text) => {
@@ -24,7 +24,7 @@ function Institutions({image, name}){
                 onClick={() => handleTextRead(name)}
                 onMouseEnter={() => handleTextRead(name)}
             >
-                {name}
+                <a href={link} target="_blank" rel='noopener noreferrer'>{name}</a>
             </div>
         </div>
     )

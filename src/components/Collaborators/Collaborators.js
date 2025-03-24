@@ -33,15 +33,19 @@ function Collaborators(){
             <div className='institutions-wrapper'>
                 <Institutions
                     image={IBC_Logo}
-                    name='Instituto Benjamin Constant'/>
-  
+                    name='Instituto Benjamin Constant'
+                    link="https://www.gov.br/ibc/pt-br"
+                />
                 <Institutions
                     image={ciencia_Logo}
-                    name='Ciência ao Alcance das Mãos'/>
-
+                    name='Ciência ao Alcance das Mãos'
+                    link="https://www.instagram.com/cienciaaoalcancedasmaos/"
+                />
                 <Institutions
                     image={Planetario_Logo}
-                    name='Espaço Nave - Planetário de Maricá'/>
+                    name='Espaço Nave - Planetário de Maricá'
+                    link="https://www.instagram.com/casadaciencia.planetario/"
+                />
             </div>    
         </div>
     )
