@@ -25,7 +25,7 @@ function MencoesHonrosas() {
     const mencoes = [
         { src: Material_MH, alt: "Certificado do trabalho: Material", text: "Visitação à coleção de instrumentos científicos do Observatório do Valongo/UFRJ: inclusão de material tátil para visitantes portadores de deficiência visual - SIAc 2014" },
         { src: Caderno_Tatil_MH, alt: "Certificado do trabalho: Caderno Tátil", text: "CADERNO TÁTIL DE ASTRONOMIA, VOLUME II: SISTEMA SOLAR E SISTEMAS EXTRASSOLARES - SIAc 2019" },
-        { src: Lua_MH, alt: "Certificado do trabalho: Lua Tátil", text: "DESENVOLVIMENTO DE MATERIAL TÁTIL PARA ENSINO DE ASTRONOMIA PARA PESSOAS CEGAS E COM BAIXA VISÃO: A LUA - SIAc 2019" },
+        { src: Lua_MH, alt: "Certificado do trabalho: Lua Tátil", text: "DESENVOLVIMENTO DE MATERIAL TÁTIL PARA ENSINO DE ASTRONOMIA PARA PESSOAS CEGAS E COM BAIXA VISÃO: A LUA - SIAc 2018" },
         { src: Astrodicas_MH, alt: "Certificado do trabalho: Astrodicas", text: "ASTRODICAS E UNIDADE ATRONÔMICA: ENSINO DE ASTRONOMIA INCLUSIVO - SIAc 2022" },
         { src: LivroFalado_MH, alt: "Certificado do trabalho: Livro Falado", text: "LIVRO FALADO COMO FERRAMENTA EDUCACIONAL INCLUSIVA NA ASTRONOMIA - SIAc 2022" },
         { src: Pequenos_Corpos_MH, alt: "Certificado do trabalho: Pequenos Corpos", text: "CONHECENDO OS PEQUENOS CORPOS DO SISTEMA SOLAR - SIAc 2023" },
