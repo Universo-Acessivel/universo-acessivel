@@ -1,15 +1,17 @@
 .sidebar {
     display: flex;
     position: fixed;
-    margin-top: 200px;
-    z-index: 1;
+    top: 120px;
+    left: 0;
+    z-index: 1000;
 }
 
 .sidebar-container {
-    width: 100px;
-    height: 205px;
-    background-color: #eee9e9;
+    width: 120px;
+    height: 220px;
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
     display: flex;
+    border-radius: 0 12px 12px 0;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     transition: transform 0.3s ease;
@@ -18,42 +20,66 @@
 .sidebar-buttons{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     width: 100%;
+    padding: 15px 10px;
+    gap: 15px;
 }
 
 .sidebar-icon{
     width: 40px;
     height: 40px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 1);
 }
 
 .sidebar-icon:hover{
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+    border: 1px solid rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.back-button {
+.accessibility-toggle {
+    position: fixed;
+    top: 120px;
+    left: 10px;
     display: flex;
-    width: 25px;
-    height: 25px;
-    border: 1px solid #fff;
-    background-color: rgba(31, 10, 255, 0.6);
-    color: white;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    transition: transform 0.3s ease;
-    .arrow {
-        width: 60%;
-        height: 60%;
-    }
-}
-
-.back-button:hover {
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border: none;
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
     cursor: pointer;
+    z-index: 1001;
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
+.accessibility-toggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.toggle-icon {
+    width: 18px;
+    height: 18px;
+    stroke: #ffffff;
+}
 
 .sidebar-container.hidden {
     transform: translateX(-100%);
@@ -63,16 +89,88 @@
     transform: translateX(0);
 }
 
-.back-button.hidden {
-    transform: translateX(-370%);
+.accessibility-toggle.hidden {
+    left: 20px;
+}
 
-    /* inverte a seta */
-    .arrow {
-        transform: scaleX(-1);
+.accessibility-toggle.visible {
+    left: 140px;
+}
+
+/* Focus states for accessibility */
+.accessibility-toggle:focus {
+    outline: 3px solid #ffd700;
+    outline-offset: 2px;
+}
+
+.sidebar-icon:focus {
+    outline: 2px solid #ffd700;
+    outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {    
+    .sidebar-container {
+        width: 100px;
+        height: 200px;
+    }
+        
+    .accessibility-toggle.hidden {
+        left: 15px;
+    }
+
+    .accessibility-toggle.visible {
+        left: 115px;
+    }
+    
+    .toggle-icon {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .accessibility-label {
+        font-size: 5px;
+    }
+    
+    .sidebar-icon {
+        width: 35px;
+        height: 35px;
+        padding: 6px;
+    }
+    
+    .sidebar-icon:hover {
+        width: 37px;
+        height: 37px;
     }
 }
 
-.back-button.visible {
-    transform: translateX(0);
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .sidebar-container {
+        background: #000;
+        border: 2px solid #fff;
+    }
+    
+    .accessibility-toggle {
+        background: #000;
+        border: 3px solid #fff;
+    }
+    
+    .toggle-icon {
+        stroke: #ffffff !important;
+    }
+    
+    .sidebar-icon {
+        background: rgba(255, 255, 255, 0.95);
+        border: 2px solid rgba(255, 255, 255, 1);
+    }
 }
-  
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .sidebar-container,
+    .accessibility-toggle,
+    .sidebar-icon {
+        transition: none;
+    }
+}
