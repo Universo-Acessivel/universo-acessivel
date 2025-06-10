@@ -21,8 +21,7 @@
 .job-description{
     color: #696969;
     max-width: 296px;
-    text-align: justify;
-    padding-top: 25px;
+    padding-top: 12px;
 }
 
 @media screen and (max-width: 766px) {
