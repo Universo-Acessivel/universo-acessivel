@@ -6,6 +6,7 @@ import KitLua from '../.././assets/kitlua.jpg';
 import Jogos from '../.././assets/jogos.jpg';
 import CadernosTateis from '../.././assets/cadernosTateis.jpg'
 import LivrosFalados from '../.././assets/livros.jpg'
+import Maquetes from "../.././assets/maquetes.jpg";
 
 import { TextReaderContext } from '../../context/TextReaderContext.js';
 
@@ -57,6 +58,13 @@ function Projects() {
       title: "Jogos",
       description: "Os jogos didáticos têm se mostrado uma poderosa ferramenta de apoio para o ensino de ciências há muito tempo. O jogo pedagógico ou didático é aquele produzido com o objetivo de proporcionar determinadas aprendizagens, diferenciando-se do material pedagógico, por conter o aspecto lúdico. É uma alternativa interessante para melhorar o desempenho dos estudantes em alguns conteúdos de difícil aprendizagem. Desenvolvemos quatro jogos em nosso projeto.",
       link: "https://drive.google.com/drive/u/0/folders/1WG_RuCatV0rdC3TITFb66pSXjcF1UYQs"
+    },
+    {
+      imgSrc: Maquetes,
+      alt: "Foto de maquete tátil de uma das três cúpulas presentes no Observatório do Valongo.",
+      title: "Maquetes",
+      description: "As maquetes táteis são uma importante ferramenta para a melhoria da acessibilidade quando o contexto é a percepção do espaço e da edificação por pessoas com deficiência visual. São uma representação tátil de conceitos que não podem ser percebidos visualmente e ajudam na compreensão de estruturas, espaços e objetos em diferentes lugares e tamanhos. Assim, desenvolvemos maquetes das três cúpulas presentes no observatório.",
+      link: "https://drive.google.com/drive/u/0/folders/1QmC586eX1Zpx6OrRsKwlF6FD13fRysl?"
     }
   ];
 
