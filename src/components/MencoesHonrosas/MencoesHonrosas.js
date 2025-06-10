@@ -22,15 +22,75 @@ function MencoesHonrosas() {
         }
     };
 
+    const handleMencaoClick = (link) => {
+        window.open(link, '_blank');
+    };
+
     const mencoes = [
-        { src: Material_MH, alt: "Certificado do trabalho: Material", text: "Visitação à coleção de instrumentos científicos do Observatório do Valongo/UFRJ: inclusão de material tátil para visitantes portadores de deficiência visual - SIAc 2014" },
-        { src: Caderno_Tatil_MH, alt: "Certificado do trabalho: Caderno Tátil", text: "CADERNO TÁTIL DE ASTRONOMIA, VOLUME II: SISTEMA SOLAR E SISTEMAS EXTRASSOLARES - SIAc 2019" },
-        { src: Lua_MH, alt: "Certificado do trabalho: Lua Tátil", text: "DESENVOLVIMENTO DE MATERIAL TÁTIL PARA ENSINO DE ASTRONOMIA PARA PESSOAS CEGAS E COM BAIXA VISÃO: A LUA - SIAc 2018" },
-        { src: Astrodicas_MH, alt: "Certificado do trabalho: Astrodicas", text: "ASTRODICAS E UNIDADE ATRONÔMICA: ENSINO DE ASTRONOMIA INCLUSIVO - SIAc 2022" },
-        { src: LivroFalado_MH, alt: "Certificado do trabalho: Livro Falado", text: "LIVRO FALADO COMO FERRAMENTA EDUCACIONAL INCLUSIVA NA ASTRONOMIA - SIAc 2022" },
-        { src: Pequenos_Corpos_MH, alt: "Certificado do trabalho: Pequenos Corpos", text: "CONHECENDO OS PEQUENOS CORPOS DO SISTEMA SOLAR - SIAc 2023" },
-        { src: Tateando_Marte_MH, alt: "Certificado do trabalho: Tateando Marte", text: "TATEANDO MARTE - SIAc 2023" },
-        { src: Site_Acessivel_MH, alt: "Certificado do trabalho: Site Acessível", text: "UM SITE ACESSÍVEL PARA O UNIVERSO ACESSÍVEL - SIAc 2024" },
+        { 
+            src: Site_Acessivel_MH, 
+            alt: "Certificado do trabalho: Site Acessível", 
+            title: "Um Site Acessível Para O Universo Acessível", 
+            event: "SIAc 2024",
+            year: 2024,
+            link: "https://drive.google.com/file/d/1HkAUEvuTDwa7-e2RcDXKKJkiw5cqAYPc/view?usp=sharing" 
+        },
+        { 
+            src: Pequenos_Corpos_MH, 
+            alt: "Certificado do trabalho: Pequenos Corpos", 
+            title: "Conhecendo Os Pequenos Corpos Do Sistema Solar", 
+            event: "SIAc 2023",
+            year: 2023,
+            link: "https://drive.google.com/file/d/1Mx2dB7gawLTWuRqDUnWLivIESKb362hv/view?usp=sharing" 
+        },
+        { 
+            src: Tateando_Marte_MH, 
+            alt: "Certificado do trabalho: Tateando Marte", 
+            title: "Tateando Marte", 
+            event: "SIAc 2023",
+            year: 2023,
+            link: "https://drive.google.com/file/d/1XlFWCiadQbY1xNW5RS5-dgr4zUeAQ-Ud/view?usp=sharing" 
+        },
+        { 
+            src: Astrodicas_MH, 
+            alt: "Certificado do trabalho: Astrodicas", 
+            title: "Astrodicas E Unidade Astronômica: Ensino De Astronomia Inclusivo", 
+            event: "SIAc 2022",
+            year: 2022,
+            link: "https://drive.google.com/file/d/1ijetuYL_ZugS2OW7OpbwFXMaFji8Du4r/view?usp=sharing" 
+        },
+        { 
+            src: LivroFalado_MH, 
+            alt: "Certificado do trabalho: Livro Falado", 
+            title: "Livro Falado Como Ferramenta Educacional Inclusiva Na Astronomia", 
+            event: "SIAc 2022",
+            year: 2022,
+            link: "https://drive.google.com/file/d/14umAK-tSn2WyB57-E2DzCCz9rOo2CB0q/view?usp=sharing" 
+        },
+        { 
+            src: Caderno_Tatil_MH, 
+            alt: "Certificado do trabalho: Caderno Tátil", 
+            title: "Caderno Tátil De Astronomia, Volume II: Sistema Solar E Sistemas Extrassolares", 
+            event: "SIAc 2019",
+            year: 2019,
+            link: "https://drive.google.com/file/d/10UpzuXUuY1f_BiCtMppMeuNKVqLOoc2b/view?usp=sharing"
+        },
+        { 
+            src: Lua_MH, 
+            alt: "Certificado do trabalho: Lua Tátil", 
+            title: "Desenvolvimento De Material Tátil Para Ensino De Astronomia Para Pessoas Cegas E Com Baixa Visão: A Lua", 
+            event: "SIAc 2018",
+            year: 2018,
+            link: "https://drive.google.com/file/d/1BAz1pPI4BUoySWW_PtZJ7YX1Fv0p19jC/view?usp=sharing"
+        },
+        { 
+            src: Material_MH, 
+            alt: "Certificado do trabalho: Material", 
+            title: "Visitação À Coleção De Instrumentos Científicos Do Observatório Do Valongo/UFRJ: Inclusão De Material Tátil Para Visitantes Portadores De Deficiência Visual", 
+            event: "SIAc 2014",
+            year: 2014,
+            link: "https://drive.google.com/file/d/1amAJiSE_pbbRyDBXrV0VaGEa23mzcFhB/view?usp=sharing" 
+        },
     ];
 
     return (
@@ -52,21 +112,31 @@ function MencoesHonrosas() {
             </div>
             <div className='mh-images-container'>
                 {mencoes.map((mencao, index) => (
-                    <div className='mh-image-and-text' key={index}>
+                    <div 
+                        className='mh-image-and-text' 
+                        key={index}
+                        onClick={() => handleMencaoClick(mencao.link)}
+                    >
                         <img 
                             src={mencao.src} 
                             className='mh-image' 
                             alt={mencao.alt}
-                            onClick={(e) => handleTextRead(e.currentTarget.alt)}
                             onMouseEnter={(e) => handleTextRead(e.currentTarget.alt)}
                         />
-                        <p
-                            className='mh-text'
-                            onClick={(e) => handleTextRead(e.currentTarget.textContent)}
-                            onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
-                        >
-                            {mencao.text}
-                        </p>
+                        <div className='mh-text-container'>
+                            <h3 
+                                className='mh-title-text'
+                                onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
+                            >
+                                {mencao.title}
+                            </h3>
+                            <p 
+                                className='mh-event-text'
+                                onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
+                            >
+                                {mencao.event}
+                            </p>
+                        </div>
                     </div>
                 ))}
             </div>
