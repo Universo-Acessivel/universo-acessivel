@@ -5,6 +5,7 @@ import './Introduction.css';
 import logo from "../.././assets/Horizontal Branca RGB.png";
 import ov_logo from "../.././assets/OV-Logo.svg";
 import UFRJ_logo from "../.././assets/UFRJ-Logo.svg";
+import ods_logo from "../.././assets/ods_logo.png";
 
 const Introduction = () => {
   const { isTextReaderEnabled } = useContext(TextReaderContext);
@@ -84,6 +85,17 @@ const Introduction = () => {
             <img 
               src={UFRJ_logo} 
               alt="Logo da UFRJ"
+            />
+          </a>
+          <a 
+            href="https://www.seloods.org/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            tabIndex="0"
+          >
+            <img 
+              src={ods_logo} 
+              alt="Logo da Selo ODS"
             />
           </a>
         </div>
