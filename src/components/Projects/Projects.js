@@ -55,7 +55,8 @@ function Projects() {
       imgSrc: Jogos,
       alt: "Foto do tabuleiro do jogo Astrodicas.",
       title: "Jogos",
-      description: "Os jogos didáticos têm se mostrado uma poderosa ferramenta de apoio para o ensino de ciências há muito tempo. O jogo pedagógico ou didático é aquele produzido com o objetivo de proporcionar determinadas aprendizagens, diferenciando-se do material pedagógico, por conter o aspecto lúdico. É uma alternativa interessante para melhorar o desempenho dos estudantes em alguns conteúdos de difícil aprendizagem. Desenvolvemos quatro jogos em nosso projeto."
+      description: "Os jogos didáticos têm se mostrado uma poderosa ferramenta de apoio para o ensino de ciências há muito tempo. O jogo pedagógico ou didático é aquele produzido com o objetivo de proporcionar determinadas aprendizagens, diferenciando-se do material pedagógico, por conter o aspecto lúdico. É uma alternativa interessante para melhorar o desempenho dos estudantes em alguns conteúdos de difícil aprendizagem. Desenvolvemos quatro jogos em nosso projeto.",
+      link: "https://drive.google.com/drive/u/0/folders/1WG_RuCatV0rdC3TITFb66pSXjcF1UYQs"
     }
   ];
 
