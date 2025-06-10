@@ -25,7 +25,6 @@ const tableData = [
         createData('Ana Paula Costa', 'Arquitetura-UFRJ'),
         createData('Débora Brandão', 'Astronomia-UFRJ'),
         createData('Eduarda Marques', 'Ciência da Computação-UFRJ'),
-        createData('Flavia Avena', 'Astronomia-UFRJ'),
         createData('Gustavo Marinatto', 'Ciência da Computação-UFRJ'),
     ]},
     { rows: [
@@ -36,14 +35,12 @@ const tableData = [
         createData('Larissa Gonçalves', 'Astronomia-UFRJ'),
         createData('Mariana Ferreira', 'Física-UFRJ'),
         createData('Matheus Duque', 'Ciência da Computação-UFRJ'),
-        createData('Matheus Hack', 'Ciência da Computação-UFRJ'),
     ]},
     { rows: [
+        createData('Matheus Hack', 'Ciência da Computação-UFRJ'),
         createData('Melissa Façanha', 'Design-UFRJ'),
-        createData('Patrycia Atiara', 'Astronomia-UFRJ'),
         createData('Priscila Marques', 'Instituto Benjamin Constant'),
         createData('Rayssa Rayde', 'Astronomia-UFRJ'),
-        createData('Samara Bastos', 'Astronomia-UFRJ'),
         createData('Silvia Lorenz-Martins', 'Observatório do Valongo'),
         createData('Victor Moraes', 'Física-UFRJ'),
         createData('Victor Santos', 'Ciência da Computação-UFRJ')
