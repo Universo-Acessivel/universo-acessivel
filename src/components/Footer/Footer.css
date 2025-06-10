@@ -1,5 +1,5 @@
 .footer-container{
-    height: 100px;
+    height: 120px;
     background-color: rgba(31, 10, 255, 0.6);
     backdrop-filter: blur(20px);
     color: white;
@@ -8,7 +8,21 @@
     align-items: center;
 }
 
+.footer-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
 .footer-text{
     display: inline-block;
     text-align: center;
+}
+
+.footer-text.developers{
+    font-size: 0.9em;
+    opacity: 0.9;
+    padding-left: 12px;
+    padding-right: 12px;
 }
