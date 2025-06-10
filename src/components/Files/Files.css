@@ -1,28 +1,119 @@
+.files-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.files-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #007bff, #6610f2, #e83e8c, #fd7e14);
+    background-size: 300% 100%;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
 .files-container {
     display: flex;
     flex-wrap: wrap;
-    row-gap: 100px;
     justify-content: center;
-    background-color: rgb(255, 255, 255);
-    padding: 5% 0;
+    gap: 2rem;
+    padding: 2rem 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
-.files-title{
-    background-color: rgb(255, 255, 255);
+.files-title {
+    background: transparent;
     font-family: 'Gravity-Bold';
     text-align: center;
-    padding-top: 3%;
+    padding: 4rem 0 2rem 0;
+    position: relative;
+    color: #333;
 }
 
-@media screen and (max-width: 1700px) {
-    .files-title{
-        padding-top: 60px;
+/* Responsive Design */
+@media screen and (min-width: 1920px) {
+    .files-container {
+        gap: 3rem;
+        padding: 2rem 2rem 4rem 2rem;
     }
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (min-width: 1400px) and (max-width: 1919px) {
     .files-container {
-        padding: 8% 5%;
-        row-gap: 50px;
+        gap: 2.5rem;
+        padding: 2rem 2rem 3rem 2rem;
+    }
+}
+
+@media screen and (min-width: 1080px) and (max-width: 1399px) {
+    .files-container {
+        gap: 1.5rem;
+        padding: 2rem 1.5rem 3rem 1.5rem;
+        max-width: 1300px;
+    }
+    
+    .material-container {
+        flex: 1 1 220px;
+        max-width: 280px;
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    .files-title {
+        padding: 3rem 0 1.5rem 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .files-container {
+        gap: 1.5rem;
+        padding: 3rem 1.5rem;
+    }
+    
+    .files-title {
+        padding: 2.5rem 0 1rem 0;
+    }
+    
+    .material-container {
+        flex: 1 1 280px;
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .files-container {
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+        justify-content: center;
+    }
+    
+    .files-title {
+        padding: 2rem 0 1rem 0;
+    }
+    
+    .material-container {
+        flex: 1 1 100%;
+        max-width: 500px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .files-container {
+        padding: 1.5rem 0.75rem;
+        gap: 1rem;
+    }
+    
+    .material-container {
+        max-width: 100%;
     }
 }

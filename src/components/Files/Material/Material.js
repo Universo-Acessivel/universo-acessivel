@@ -3,11 +3,6 @@ import './Material.css';
 import { TextReaderContext } from '../../../context/TextReaderContext';
 
 function Material({ imgSrc, alt, size, title, text, linkText, className, downloadLink }){
-  const imageSize = {
-    'min-width': size,
-    'min-height': size
-  };
-
   const { isTextReaderEnabled } = useContext(TextReaderContext);
 
   const handleTextRead = (text) => {
@@ -21,7 +16,10 @@ function Material({ imgSrc, alt, size, title, text, linkText, className, downloa
 
   return (
     <div className={`material-container ${className}`}>
-        <img id="icons" src={imgSrc} alt={alt} style={imageSize} />
+        <div className="material-icon-wrapper">
+          <img id="icons" src={imgSrc} alt={alt} />
+        </div>
+        
         <div 
           className='material-title subsection-title'
           onClick={() => handleTextRead(title)}
@@ -29,7 +27,7 @@ function Material({ imgSrc, alt, size, title, text, linkText, className, downloa
         >
           {title}
         </div>
-        <br></br>
+        
         <div 
           className='material-text section-description'
           onClick={() => handleTextRead(text)}
@@ -37,13 +35,13 @@ function Material({ imgSrc, alt, size, title, text, linkText, className, downloa
         >
           {text}
         </div>
-        <br></br>
+        
         <a 
-          className="section-description" 
+          className="material-link" 
           href={downloadLink} 
           target="_blank" 
           rel="noopener noreferrer"
-          onMouseEnter={() => handleTextRead(linkText)} // decidi tirar o onClick porque não quero que o texto seja reproduzido quando o usuário quer acessar de fato o material
+          onMouseEnter={() => handleTextRead(linkText)}
         >
           {linkText}
         </a>
