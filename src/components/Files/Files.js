@@ -63,7 +63,7 @@ function Files(){
   ]
 
   return (
-    <>
+    <div className="files-section">
       <div 
         id="trabalhos" 
         className='files-title section-title'
@@ -73,8 +73,9 @@ function Files(){
         Trabalhos
       </div> 
         <div className='files-container'>
-          {materials.map((material) => (
+          {materials.map((material, index) => (
             <Material 
+              key={index}
               imgSrc={material.imgSrc}
               alt={material.alt}
               size={material.size}
@@ -86,7 +87,7 @@ function Files(){
             />
           ))}
         </div>
-      </>
+    </div>
   );
 };
 
