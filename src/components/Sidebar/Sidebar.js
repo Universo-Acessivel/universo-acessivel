@@ -70,7 +70,7 @@ const Sidebar = ({ showWarning }) => {
         
         .subtitle-1,
         .subtitle-2 {
-          font-size: ${ fontSize + 26 }px;
+          font-size: ${ fontSize + 36 }px;
         }
         
         .project-description{
@@ -107,7 +107,7 @@ const Sidebar = ({ showWarning }) => {
             
             .subtitle-1,
             .subtitle-2 {
-                font-size: ${ fontSize + 20 }px;
+                font-size: ${ fontSize + 32 }px;
             }
         
             .video-title{
@@ -122,7 +122,7 @@ const Sidebar = ({ showWarning }) => {
           
             .subtitle-1,
             .subtitle-2 {
-              font-size: ${ fontSize + 18 }px;
+              font-size: ${ fontSize + 26 }px;
             }
         }
         
@@ -130,6 +130,11 @@ const Sidebar = ({ showWarning }) => {
             .section-description{
                 font-size: ${ fontSize + 18 }px;
             }
+            .subtitle-1,
+            .subtitle-2 {
+              font-size: ${ fontSize + 20 }px;
+            }
+
         }
         
         @media screen and (max-width: 650px) {

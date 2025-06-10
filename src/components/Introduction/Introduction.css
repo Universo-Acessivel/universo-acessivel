@@ -1,114 +1,317 @@
 /* Introduction.css */
 
 .gradient-container {
+  position: relative;
   left: 0;
-  width: 100%;
-  height: 650px;
-  background-image: linear-gradient(to right bottom, #48c7d8, #00b3dc, #009cde, #0084dc, #0068d0, #275bce, #414cca, #573ac3, #6738cf, #7833db, #8a2ce5, #9d20ef);
-  z-index: -1;
-  /* Coloque atrás de outros elementos */
+  height: auto;
+  background: linear-gradient(135deg, 
+    #1a1a2e 0%, 
+    #16213e 25%, 
+    #0f3460 50%, 
+    #533483 75%, 
+    #9d20ef 100%);
+  overflow: hidden;
   display: flex;
   align-items: center;
-  padding-top: 2%;
+  justify-content: center;
+  padding: 7rem 2rem 2rem 2rem;
+}
+
+.gradient-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 70%, rgba(157, 32, 239, 0.3) 0%, transparent 30%);
+  pointer-events: none;
+}
+
+.gradient-container::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="5" cy="8" r="0.2" fill="white" opacity="0.4"/><circle cx="25" cy="15" r="0.15" fill="white" opacity="0.6"/><circle cx="40" cy="5" r="0.18" fill="white" opacity="0.3"/><circle cx="12" cy="30" r="0.12" fill="white" opacity="0.5"/><circle cx="35" cy="35" r="0.16" fill="white" opacity="0.4"/><circle cx="8" cy="45" r="0.14" fill="white" opacity="0.3"/><circle cx="48" cy="25" r="0.13" fill="white" opacity="0.5"/><circle cx="20" cy="42" r="0.17" fill="white" opacity="0.4"/><circle cx="45" cy="48" r="0.11" fill="white" opacity="0.6"/><circle cx="30" cy="8" r="0.15" fill="white" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+  animation: starRotate 60s linear infinite;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+@keyframes starRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .intro-text {
-  width: 50%;
-  padding-left: 12%;
-  /* Ajuste o espaçamento conforme necessário */
-  text-align: left;
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
   box-sizing: border-box;
+  animation: slideInLeft 1s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.main-logo {
+  width: 500px;
+  height: auto;
+  margin-bottom: 35px;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
+  transition: all 0.3s ease;
+  cursor: pointer;
+  animation: fadeIn 1s ease-out;
+}
+
+.main-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 12px 30px rgba(157, 32, 239, 0.5));
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .title {
-  color: #ffffff;
-  /* Branco */
-  padding-bottom: 10px;
-  transition: font-size 0.5s;
+  display: none; /* Hide the text title since we're using the logo */
 }
 
 .subtitle-1,
 .subtitle-2 {
-  margin-top: 8px;
-  /* Ajuste o espaçamento conforme necessário */
-  transition: font-size 0.5s;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
 }
 
 .subtitle-1 {
-  color: #dade51;
-  /* Amarelo */
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation-delay: 0.3s;
+  position: relative;
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+}
+
+.subtitle-1:hover::before {
+  opacity: 1;
 }
 
 .subtitle-2 {
+  color: #e8eef5;
+  font-style: normal;
+  font-weight: 400;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  animation-delay: 0.6s;
+  line-height: 1.4;
+  max-width: 600px;
+  margin: 0 auto 25px auto;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.subtitle-1:hover,
+.subtitle-2:hover {
+  transform: translateY(-3px);
   color: #ffffff;
-  /* Branco */
-  font-style: italic;
 }
 
 .logos {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: left;
-  gap: 10%;
-  padding-top: 10%;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 16px;
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.9s;
+}
+
+.logos a {
+  display: block;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 18px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.logos a:hover {
+  transform: scale(1.03) translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.98);
 }
 
 .logos img {
-  width: 140px;
-  height: auto;
-  transition: width 0.5s;
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  filter: brightness(0.95);
+  transition: all 0.3s ease;
+}
+
+.logos a:hover img {
+  filter: brightness(1.1);
+}
+
+.intro-img {
+  display: none;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .intro-img img {
-  width: 60%;
-  /* Inicialmente, 60% do tamanho original */
-  max-width: 100%;
-  /* Não ultrapasse 100% da largura do contêiner */
+  width: 80%;
+  max-width: 500px;
   height: auto;
-  /* Mantenha a proporção original da imagem */
-  margin-left: 20%;
-  /* Centralize na porção direita da página */
-  margin-right: 12%;
-  /* Ajuste o espaçamento conforme necessário */
-  min-width: 384px;
-  /* Largura mínima da imagem */
-  min-height: 196px;
-  /* Altura mínima da imagem */
-  transition: width 0.5s;
-  /* Adicione uma transição suave */
+  min-width: 300px;
+  min-height: 150px;
+  transition: all 0.5s ease;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+  animation: float 6s ease-in-out infinite;
 }
 
-@media (max-width: 1350px) {
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
 
+.intro-img img:hover {
+  transform: scale(1.05) translateY(-10px);
+  filter: drop-shadow(0 15px 40px rgba(157, 32, 239, 0.4));
+}
+
+/* Responsive Design */
+@media (max-width: 1350px) {
   .logos img {
-    width: 100px;
+    width: 110px;
+    height: 110px;
+  }
+  
+  .main-logo {
+    width: 450px;
   }
 }
 
 @media (max-width: 1020px) {
-
   .logos {
-    padding-top: 12%;
+    gap: 30px;
+  }
+
+  .logos a {
+    padding: 15px;
   }
 
   .logos img {
-    width: 90px;
+    width: 100px;
+    height: 100px;
   }
-
+  
+  .main-logo {
+    width: 400px;
+    margin-bottom: 30px;
+  }
 }
 
-@media (max-width: 850px){
+@media (max-width: 850px) {
+  .gradient-container {
+    padding: 7rem 2rem 2rem 2rem;
+  }
 
-  .gradient-container{
+  .intro-text {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .logos {
+    justify-content: center;
+    gap: 25px;
+  }
+  
+  .main-logo {
+    width: 320px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .gradient-container {
+    min-height: 40vh;
+    padding: 7rem 1rem 2rem 1rem;
+  }
+  
+  .logos {
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
     justify-content: center;
   }
-
-  .intro-text{
-    padding: 0;
+  
+  .logos a {
+    padding: 12px;
   }
-
-  .intro-img{
-    display: none;
+  
+  .logos img {
+    width: 85px;
+    height: 85px;
+  }
+  
+  .main-logo {
+    width: 280px;
+    margin-bottom: 20px;
   }
 }
