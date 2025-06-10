@@ -2,7 +2,11 @@ import React, { useState, useImperativeHandle, forwardRef, useEffect } from 'rea
 import './AudioWarning.css';
 
 const AudioWarning = forwardRef((props, ref) => {
-    const [isVisible, setIsVisible] = useState(true);
+    // Verifica se o usuário já viu o aviso antes
+    const [isVisible, setIsVisible] = useState(() => {
+        const hasSeenWarning = localStorage.getItem('audioWarningShown');
+        return !hasSeenWarning;
+    });
 
     useImperativeHandle(ref, () => ({
         showWarning() {
@@ -12,6 +16,8 @@ const AudioWarning = forwardRef((props, ref) => {
 
     const handleClose = () => {
         setIsVisible(false);
+        // Marca que o usuário já viu o aviso
+        localStorage.setItem('audioWarningShown', 'true');
     };
 
     useEffect(() => {
@@ -22,7 +28,10 @@ const AudioWarning = forwardRef((props, ref) => {
             }
         };
 
-        document.addEventListener('click', handleClickOutside);
+        // Só adiciona o event listener se o warning estiver visível
+        if (isVisible) {
+            document.addEventListener('click', handleClickOutside);
+        }
 
         return () => {
             document.removeEventListener('click', handleClickOutside);
