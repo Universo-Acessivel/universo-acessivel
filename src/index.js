@@ -4,6 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Redirect from Vercel to Cloudflare Pages
+if (window.location.hostname === 'universo-acessivel.vercel.app') {
+  window.location.replace('https://universo-acessivel.pages.dev' + window.location.pathname + window.location.search + window.location.hash);
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
