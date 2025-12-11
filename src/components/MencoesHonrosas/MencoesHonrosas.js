@@ -9,6 +9,8 @@ import Material_MH from "../../assets/Material_MH.jpg";
 import Pequenos_Corpos_MH from "../../assets/Pequenos_Corpos_MH.jpg";
 import Tateando_Marte_MH from "../../assets/Tateando_Marte_MH.jpg";
 import Site_Acessivel_MH from "../../assets/Site_Acessivel_MH.png";
+import Maquetes_MH from "../../assets/Maquetes_MH.png";
+import Pequenos_Corpos_MH_1 from "../../assets/Pequenos_corpos_MH_1.png";
 
 function MencoesHonrosas() {
     const { isTextReaderEnabled } = useContext(TextReaderContext);
@@ -27,6 +29,22 @@ function MencoesHonrosas() {
     };
 
     const mencoes = [
+        {
+            src: Maquetes_MH,
+            alt: "Certificado do trabalho: Maquetes",
+            title: "Caminhando No Observatório Do Valongo Através de Maquetes Táteis",
+            event: "SIAc 2025",
+            year: 2025,
+            link: "https://drive.google.com/file/d/1H8SoEhh8yC5UVZMo4TMAv_f6oFD1KnLo/view?usp=sharing"
+        },
+        {
+            src: Pequenos_Corpos_MH_1,
+            alt: "Certificado do trabalho: Pequenos Corpos",
+            title: "Conhecendo Os Pequenos Corpos Do Sistema Solar",
+            event: "SIAc 2025",
+            year: 2025,
+            link: "https://drive.google.com/file/d/15ZBYUluxpJMW5XJfFRuo7XEJFvUJ4UYG/view?usp=sharing"
+        },
         { 
             src: Site_Acessivel_MH, 
             alt: "Certificado do trabalho: Site Acessível", 
