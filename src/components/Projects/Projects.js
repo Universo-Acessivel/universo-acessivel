@@ -62,7 +62,7 @@ function Projects() {
     {
       imgSrc: Maquetes,
       alt: "Foto de maquete tátil de uma das três cúpulas presentes no Observatório do Valongo.",
-      title: "Maquetes",
+      title: "Kit-Cúpulas Astronômicas",
       description: "As maquetes táteis são uma importante ferramenta para a melhoria da acessibilidade quando o contexto é a percepção do espaço e da edificação por pessoas com deficiência visual. São uma representação tátil de conceitos que não podem ser percebidos visualmente e ajudam na compreensão de estruturas, espaços e objetos em diferentes lugares e tamanhos. Assim, desenvolvemos maquetes das três cúpulas presentes no observatório.",
       link: "https://drive.google.com/drive/folders/1QmC586eX1Zpx6OrRsKwlF6FD13fRys6l"
     }
