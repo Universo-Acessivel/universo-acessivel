@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import '../.././styles/fonts.css';
 import Header from '.././Header/Header.js';
 import Sidebar from '.././Sidebar/Sidebar.js';
@@ -16,28 +16,23 @@ import MencoesHonrosas from '../MencoesHonrosas/MencoesHonrosas.js';
 import Collaborators from '../Collaborators/Collaborators.js';
 
 function Home() {
-  const audioWarningRef = useRef(null);
-
-  const showWarning = () => {
-      if (audioWarningRef.current) {
-          audioWarningRef.current.showWarning();
-      }
-  };
-
   return (
     <TextReaderProvider>
-      <AudioWarning ref={audioWarningRef} />
+      <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
+      <AudioWarning />
       <Header />
-      <Sidebar showWarning={showWarning} />
-      <Introduction />
-      <Files />
-      <Description />
-      <Projects />
-      <Expo />
-      <MencoesHonrosas />
-      <Video />
-      <Team />
-      <Collaborators />
+      <Sidebar />
+      <main id="conteudo">
+        <Introduction />
+        <Files />
+        <Description />
+        <Projects />
+        <Expo />
+        <MencoesHonrosas />
+        <Video />
+        <Team />
+        <Collaborators />
+      </main>
       <Footer />
     </TextReaderProvider>
   );

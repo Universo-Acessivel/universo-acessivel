@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-*">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <link id="website-icon" rel="icon" href="./Universo-Acessivel-Preto-Logo.ico" />
@@ -27,8 +27,26 @@
     <title>Universo Acessível</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>Você precisa habilitar o JavaScript para usar este site.</noscript>
     <div id="root"></div>
+
+    <!-- VLibras: tradutor de português para Libras mantido pelo governo federal.
+         Fica fora do #root porque o widget manipula o próprio DOM e o React
+         removeria os nós dele a cada render. -->
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      window.addEventListener('load', function () {
+        if (window.VLibras) {
+          new window.VLibras.Widget('https://vlibras.gov.br/app');
+        }
+      });
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

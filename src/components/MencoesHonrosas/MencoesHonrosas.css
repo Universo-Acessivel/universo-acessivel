@@ -33,7 +33,7 @@
 .mh-image-and-text {
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     flex-basis: calc(25% - 20px);
     cursor: pointer;

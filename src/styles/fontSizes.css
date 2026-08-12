@@ -1,110 +1,136 @@
-/* Tamanho de fontes para o site todo */
+/* Tamanho de fontes para o site todo.
 
-/* Título de cada seção */ 
+   Os botões de lupa da barra de acessibilidade ajustam --font-delta em
+   document.documentElement (Sidebar.js) e o valor soma em cima de cada tamanho
+   base. Antes cada regra existia duas vezes, aqui e numa tag <style> dentro do
+   Sidebar, e a cópia do Sidebar ganhava por vir depois no documento. Os valores
+   abaixo são os que a cópia do Sidebar aplicava, então nada muda na tela. */
+
+:root {
+    --font-delta: 0px;
+}
+
+/* Os títulos de seção viraram h2 para o site ter estrutura de cabeçalho.
+   Isto remove só o que o user agent acrescenta a um h2: a margem vertical e o
+   negrito, que duplicaria o peso da Gravity-Bold. margin-block preserva a
+   margem lateral que .expo-title e .mh-title definem. */
+h2.section-title {
+    margin-block: 0;
+    font-weight: normal;
+}
+
+/* Título de cada seção */
 .section-title{
-    font-size: 48px;
+    font-size: calc(48px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
 .section-description{
-    font-size: 20px;
+    font-size: calc(20px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
 .subsection-title{
-    font-size: 30px;
+    font-size: calc(30px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
 /* Header */
 .social-icons a {
-    font-size: 1.5rem;
-    transition: font-size 0.5s;  
+    font-size: calc(24px + var(--font-delta));
+    transition: font-size 0.5s;
 }
-
 
 /* Introduction */
 .title{
-    font-size: 64px;
+    font-size: calc(64px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
 .subtitle-1,
 .subtitle-2 {
-  font-size: 46px;
+    font-size: calc(36px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
 /* Description */
 .project-description{
-    font-size: 32px;
+    font-size: calc(32px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
 .teacher-info{
-    font-size: 20px;
+    font-size: calc(20px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
 /* Material produzido */
 .job-description{
-    font-size: 18px;
+    font-size: calc(18px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
 /* Menções Honrosas */
 .mh-text {
-    font-size: 16px;
+    font-size: calc(16px + var(--font-delta));
+    transition: font-size 0.5s;
+}
+
+/* Parcerias */
+.institutions-name{
+    font-size: calc(20px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
 /* Footer */
 .footer-text{
-    font-size: 20px;
+    font-size: calc(20px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
 @media screen and (max-width: 1350px) {
     .title {
-        font-size: 48px;
-        transition: font-size 0.5s;
+        font-size: calc(48px + var(--font-delta));
     }
-    
+
     .subtitle-1,
     .subtitle-2 {
-        font-size: 40px;
-        transition: font-size 0.5s;
+        font-size: calc(32px + var(--font-delta));
     }
 
     .video-title{
-        font-size: 36px;
-        transition: font-size 0.5s;
+        font-size: calc(36px + var(--font-delta));
     }
 }
 
 @media (max-width: 1020px) {
     .title {
-      font-size: 38px;
-        transition: font-size 0.5s;
+        font-size: calc(38px + var(--font-delta));
     }
-  
+
     .subtitle-1,
     .subtitle-2 {
-      font-size: 38px;
-        transition: font-size 0.5s;
+        font-size: calc(26px + var(--font-delta));
     }
 }
 
 @media screen and (max-width: 976px) {
     .section-description{
-        font-size: 18px;
-        transition: font-size 0.5s;
+        font-size: calc(18px + var(--font-delta));
+    }
+
+    .subtitle-1,
+    .subtitle-2 {
+        font-size: calc(20px + var(--font-delta));
     }
 }
 
 @media screen and (max-width: 650px) {
     .project-description, .link-IBC{
-        font-size: 26px;
-        transition: font-size 0.5s;
+        font-size: calc(26px + var(--font-delta));
+    }
+
+    .mh-text {
+        font-size: calc(14px + var(--font-delta));
     }
 }

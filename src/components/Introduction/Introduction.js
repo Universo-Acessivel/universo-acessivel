@@ -20,7 +20,10 @@ const Introduction = () => {
   };
 
   return (
-    <div id="home" className="gradient-container">
+    <section id="home" aria-label="Início" className="gradient-container">
+      {/* O nome do site só existia como alt do logo, então a página não tinha
+          h1 e o leitor de tela não achava um ponto de partida. */}
+      <h1 className="visually-hidden">Universo Acessível</h1>
       <div className="intro-text">
         <img 
           src={logo} 
@@ -100,7 +103,7 @@ const Introduction = () => {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

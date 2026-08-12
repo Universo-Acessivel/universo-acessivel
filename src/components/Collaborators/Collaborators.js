@@ -20,15 +20,15 @@ function Collaborators(){
     };
 
     return (
-        <div id="colaboradores" className='collaborators-wrapper'>
+        <section id="colaboradores" aria-label="Parcerias" className='collaborators-wrapper'>
             <div className="collaborators-container">
-                <div 
+                <h2
                     className='collaborators-title section-title'
                     onClick={(e) => handleTextRead(e.currentTarget.textContent)}
                     onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
                 >
                    Parcerias
-                </div>
+                </h2>
             </div>
             <div className='institutions-wrapper'>
                 <Institutions
@@ -47,7 +47,7 @@ function Collaborators(){
                     link="https://www.instagram.com/casadaciencia.planetario/"
                 />
             </div>    
-        </div>
+        </section>
     )
 }
 
