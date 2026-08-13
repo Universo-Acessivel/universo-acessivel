@@ -93,21 +93,31 @@
     height: 100%;
 }
 
-/* O rótulo cresce para fora do botão, da direita para a esquerda.
+/* O rótulo é uma pílula inteira que desliza, igual à do VLibras.
 
-   A primeira tentativa deslocava a pílula para a direita em repouso e a trazia
-   com translateX. Como ela tem 250px e o botão fica a 10px da borda, boa parte
-   dela ficava fora da tela e o que se via era esse pedaço entrando pela parede
-   direita. Aqui a pílula fica parada na posição final e quem anima é o recorte,
-   que abre a partir da borda encostada no botão. Nada atravessa a borda da
-   tela. */
-.a11y-tooltip {
+   Lá o truque é o pai ter overflow hidden e o botão crescer de 40px para 200px
+   no hover, então a pílula desliza dentro de uma janela que abre junto e nunca
+   aparece nada fora da tela. Aqui a janela é esta wrapper, que não anima e por
+   isso pode usar width max-content, sem precisar cravar a largura do texto.
+
+   Duas tentativas antes desta erraram: deslocar a pílula para a direita a
+   deixava fora da viewport, e era esse pedaço que entrava pela parede; animar
+   clip-path movia o recorte junto com ela, o que lê como fade e não como
+   deslize. */
+.a11y-tooltip-clip {
     position: absolute;
     right: calc(100% + var(--space-2));
     top: 0;
     height: var(--a11y-size);
+    width: max-content;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.a11y-tooltip {
     display: flex;
     align-items: center;
+    height: var(--a11y-size);
     padding: 0 var(--space-4);
     border-radius: var(--radius-sm);
     background: linear-gradient(180deg, var(--color-libras-from) 0%, var(--color-libras-to) 100%);
@@ -116,17 +126,14 @@
     font-size: 15px;
     line-height: 1;
     white-space: nowrap;
-    pointer-events: none;
-    /* Recolhida contra o lado do botão. */
-    clip-path: inset(0 0 0 100%);
-    opacity: 0;
-    transition: clip-path var(--transition-slow), opacity var(--transition-fast);
+    /* Encostada fora da janela, do lado do botão. */
+    transform: translateX(100%);
+    transition: transform var(--transition-slow);
 }
 
 .a11y-toggle:hover .a11y-tooltip,
 .a11y-toggle:focus-visible .a11y-tooltip {
-    clip-path: inset(0 0 0 0);
-    opacity: 1;
+    transform: translateX(0);
 }
 
 @media screen and (max-width: 768px) {
