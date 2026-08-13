@@ -93,16 +93,18 @@
     height: 100%;
 }
 
-/* O rótulo do VLibras não faz fade, ele desliza para fora de trás do botão.
-   Em repouso este fica deslocado para a direita o suficiente para sumir atrás
-   do botão (largura própria + o botão + a folga) e com z-index negativo, que o
-   joga atrás do fundo do pai. O pai não abre contexto de empilhamento, então o
-   negativo funciona. Sai da direita para a esquerda no hover e no foco. */
+/* O rótulo cresce para fora do botão, da direita para a esquerda.
+
+   A primeira tentativa deslocava a pílula para a direita em repouso e a trazia
+   com translateX. Como ela tem 250px e o botão fica a 10px da borda, boa parte
+   dela ficava fora da tela e o que se via era esse pedaço entrando pela parede
+   direita. Aqui a pílula fica parada na posição final e quem anima é o recorte,
+   que abre a partir da borda encostada no botão. Nada atravessa a borda da
+   tela. */
 .a11y-tooltip {
     position: absolute;
     right: calc(100% + var(--space-2));
     top: 0;
-    z-index: -1;
     height: var(--a11y-size);
     display: flex;
     align-items: center;
@@ -115,15 +117,16 @@
     line-height: 1;
     white-space: nowrap;
     pointer-events: none;
+    /* Recolhida contra o lado do botão. */
+    clip-path: inset(0 0 0 100%);
     opacity: 0;
-    transform: translateX(calc(100% + var(--space-2)));
-    transition: transform var(--transition-slow), opacity var(--transition-slow);
+    transition: clip-path var(--transition-slow), opacity var(--transition-fast);
 }
 
 .a11y-toggle:hover .a11y-tooltip,
 .a11y-toggle:focus-visible .a11y-tooltip {
+    clip-path: inset(0 0 0 0);
     opacity: 1;
-    transform: translateX(0);
 }
 
 @media screen and (max-width: 768px) {
