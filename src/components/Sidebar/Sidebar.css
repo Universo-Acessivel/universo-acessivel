@@ -148,8 +148,10 @@
     font-size: 15px;
     line-height: 1;
     white-space: nowrap;
-    /* Encostada fora da janela, do lado do botão. */
-    transform: translateX(100%);
+    /* Escondida atrás do botão. São 100% da própria largura mais a folga: só
+       com os 100% a pílula parava 8px à esquerda da face azul e sobrava uma
+       tira do corpo dela aparecendo, de canto reto, ao lado do botão. */
+    transform: translateX(calc(100% + var(--space-2)));
     transition: transform var(--transition-slow);
 }
 
