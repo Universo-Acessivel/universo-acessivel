@@ -22,6 +22,39 @@
     gap: var(--space-2);
 }
 
+/* Cada ferramenta sai de cima do próprio botão de acessibilidade e sobe até o
+   lugar dela. O deslocamento inicial é a distância de cada uma até o botão,
+   48px por degrau, então as três partem do mesmo ponto. A de baixo abre
+   primeiro. A regra global de prefers-reduced-motion em index.css zera isto. */
+.a11y-tools .a11y-button {
+    animation: a11y-tool-in 0.25s ease backwards;
+}
+
+.a11y-tools .a11y-button:nth-child(1) {
+    --a11y-travel: 144px;
+    animation-delay: 80ms;
+}
+
+.a11y-tools .a11y-button:nth-child(2) {
+    --a11y-travel: 96px;
+    animation-delay: 40ms;
+}
+
+.a11y-tools .a11y-button:nth-child(3) {
+    --a11y-travel: 48px;
+}
+
+@keyframes a11y-tool-in {
+    from {
+        opacity: 0;
+        transform: translateY(var(--a11y-travel)) scale(0.6);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 .a11y-button {
     width: var(--a11y-size);
     height: var(--a11y-size);
@@ -83,7 +116,7 @@
     white-space: nowrap;
     pointer-events: none;
     opacity: 0;
-    transform: translateX(calc(100% + var(--a11y-size) + var(--space-2)));
+    transform: translateX(calc(100% + var(--space-2)));
     transition: transform var(--transition-slow), opacity var(--transition-slow);
 }
 
