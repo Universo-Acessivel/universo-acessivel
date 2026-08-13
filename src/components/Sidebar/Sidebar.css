@@ -93,6 +93,7 @@
     box-sizing: content-box;
     padding-right: calc(var(--a11y-size) + var(--space-2));
     overflow: hidden;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     pointer-events: none;
 }
 
