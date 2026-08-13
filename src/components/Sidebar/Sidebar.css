@@ -114,7 +114,8 @@
 }
 
 .a11y-toggle:hover .a11y-tooltip,
-.a11y-toggle:focus-visible .a11y-tooltip {
+.a11y-toggle:focus-visible .a11y-tooltip,
+.a11y-toggle.is-intro .a11y-tooltip {
     transform: translateX(0);
 }
 

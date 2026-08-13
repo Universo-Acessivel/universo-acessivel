@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import App from './App';
 
 beforeEach(() => {
@@ -41,4 +41,25 @@ test('a lupa ajusta --font-delta e para no limite', () => {
   fireEvent.click(screen.getByRole('button', { name: 'Diminuir fonte' }));
   expect(delta()).toBe('2px');
   expect(aumentar).toBeEnabled();
+});
+
+test('o rótulo se abre sozinho 2s após carregar e recolhe 3s depois', () => {
+  jest.useFakeTimers();
+  try {
+    render(<App />);
+    const toggle = screen.getByRole('button', { name: /Abrir ferramentas de acessibilidade/ });
+
+    expect(toggle).not.toHaveClass('is-intro');
+
+    act(() => { jest.advanceTimersByTime(2000); });
+    expect(toggle).toHaveClass('is-intro');
+
+    act(() => { jest.advanceTimersByTime(2999); });
+    expect(toggle).toHaveClass('is-intro');
+
+    act(() => { jest.advanceTimersByTime(1); });
+    expect(toggle).not.toHaveClass('is-intro');
+  } finally {
+    jest.useRealTimers();
+  }
 });

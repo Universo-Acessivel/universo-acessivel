@@ -11,15 +11,28 @@ import { TextReaderContext } from '../../context/TextReaderContext';
 const FONT_STEP = 2;
 const FONT_LIMIT = 4;
 
+const INTRO_DELAY = 2000;
+const INTRO_DURATION = 3000;
+
 const Sidebar = () => {
     const [sidebarVisible, setSidebarVisible] = useState(false);
     const [fontDelta, setFontDelta] = useState(0);
+    const [introVisible, setIntroVisible] = useState(false);
 
     const { isTextReaderEnabled, toggleTextReader } = useContext(TextReaderContext);
 
     useEffect(() => {
         document.documentElement.style.setProperty('--font-delta', `${fontDelta}px`);
     }, [fontDelta]);
+
+    useEffect(() => {
+        const abrir = setTimeout(() => setIntroVisible(true), INTRO_DELAY);
+        const fechar = setTimeout(() => setIntroVisible(false), INTRO_DELAY + INTRO_DURATION);
+        return () => {
+            clearTimeout(abrir);
+            clearTimeout(fechar);
+        };
+    }, []);
 
     const toggleSidebar = () => setSidebarVisible(!sidebarVisible);
     const increaseFontSize = () => setFontDelta(d => Math.min(d + FONT_STEP, FONT_LIMIT));
@@ -65,7 +78,7 @@ const Sidebar = () => {
 
             <button
                 type="button"
-                className="a11y-button a11y-toggle"
+                className={`a11y-button a11y-toggle ${introVisible ? 'is-intro' : ''}`}
                 onClick={toggleSidebar}
                 aria-expanded={sidebarVisible}
                 aria-controls="ferramentas-acessibilidade"
