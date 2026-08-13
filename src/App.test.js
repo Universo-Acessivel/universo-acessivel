@@ -2,13 +2,11 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
 
 beforeEach(() => {
-  // O aviso inicial cobre a página, e aqui ele não é o objeto do teste.
-  localStorage.setItem('audioWarningShown', 'true');
   document.documentElement.style.removeProperty('--font-delta');
 });
 
 const abrirBarraDeAcessibilidade = () =>
-  fireEvent.click(screen.getByRole('button', { name: /Abrir menu de acessibilidade/ }));
+  fireEvent.click(screen.getByRole('button', { name: /Abrir ferramentas de acessibilidade/ }));
 
 test('a página expõe um h1 e um main para navegação por leitor de tela', () => {
   render(<App />);

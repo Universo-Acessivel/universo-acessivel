@@ -36,6 +36,15 @@
     --color-sidebar-from: #2d3748;
     --color-sidebar-to: #1a202c;
 
+    /* Tirados do access_icon.svg do próprio VLibras, para os dois botões
+       ficarem do mesmo azul encostados um no outro. */
+    --color-libras-from: #3690fa;
+    --color-libras-to: #2266d2;
+
+    /* Geometria do botão do VLibras, que a barra de acessibilidade copia. */
+    --a11y-size: 40px;
+    --a11y-edge: 10px;
+
     /* Raio */
     --radius-sm: 8px;
     --radius-md: 16px;
