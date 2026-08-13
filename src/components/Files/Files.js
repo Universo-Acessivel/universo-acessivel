@@ -63,15 +63,14 @@ function Files(){
   ]
 
   return (
-    <div className="files-section">
-      <div 
-        id="trabalhos" 
+    <section id="trabalhos" className="files-section" aria-label="Trabalhos">
+      <h2
         className='files-title section-title'
         onClick={(e) => handleTextRead(e.currentTarget.textContent)}
         onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
       >
         Trabalhos
-      </div> 
+      </h2>
         <div className='files-container'>
           {materials.map((material, index) => (
             <Material 
@@ -87,7 +86,7 @@ function Files(){
             />
           ))}
         </div>
-    </div>
+    </section>
   );
 };
 

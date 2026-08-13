@@ -59,15 +59,15 @@ function Team() {
     };
 
     return (
-        <div id="equipe" className='team-wrapper'>
+        <section id="equipe" aria-label="Equipe" className='team-wrapper'>
             <div className='team-container'>
-                <div 
+                <h2
                     className='team-title section-title'
                     onClick={(e) => handleTextRead(e.currentTarget.textContent)}
                     onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
                 >
                     Nossa Equipe
-                </div>
+                </h2>
             </div>
 
             <div className='box'>
@@ -104,7 +104,7 @@ function Team() {
                     </TableContainer>
                 ))}
             </div>
-        </div>
+        </section>
     );
 }
 

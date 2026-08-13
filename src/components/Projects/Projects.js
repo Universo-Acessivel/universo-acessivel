@@ -69,14 +69,14 @@ function Projects() {
   ];
 
   return (
-    <div id="materiais" className='projects-container'>
-      <div 
+    <section id="materiais" aria-label="Materiais" className='projects-container'>
+      <h2
         className='projects-title section-title'
         onClick={(e) => handleTextRead(e.currentTarget.textContent)}
         onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
       >
         Material produzido
-      </div>
+      </h2>
         <div className='jobs'>
           {jobsData.map((job, index) => (
             <Job
@@ -89,7 +89,7 @@ function Projects() {
             />
           ))}
         </div>
-    </div>
+    </section>
   );
 }
 

@@ -1,110 +1,116 @@
-/* Tamanho de fontes para o site todo */
+:root {
+    --font-delta: 0px;
+}
 
-/* Título de cada seção */ 
+h2.section-title {
+    margin-block: 0;
+    font-weight: normal;
+}
+
 .section-title{
-    font-size: 48px;
+    font-size: calc(48px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
 .section-description{
-    font-size: 20px;
+    font-size: calc(20px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
 .subsection-title{
-    font-size: 30px;
+    font-size: calc(30px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
-/* Header */
 .social-icons a {
-    font-size: 1.5rem;
-    transition: font-size 0.5s;  
+    font-size: calc(24px + var(--font-delta));
+    transition: font-size 0.5s;
 }
 
-
-/* Introduction */
 .title{
-    font-size: 64px;
+    font-size: calc(64px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
 .subtitle-1,
 .subtitle-2 {
-  font-size: 46px;
+    font-size: calc(36px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
-/* Description */
 .project-description{
-    font-size: 32px;
+    font-size: calc(32px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
 .teacher-info{
-    font-size: 20px;
+    font-size: calc(20px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
-/* Material produzido */
 .job-description{
-    font-size: 18px;
+    font-size: calc(18px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
-/* Menções Honrosas */
 .mh-text {
-    font-size: 16px;
+    font-size: calc(16px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
-/* Footer */
+.institutions-name{
+    font-size: calc(20px + var(--font-delta));
+    transition: font-size 0.5s;
+}
+
 .footer-text{
-    font-size: 20px;
+    font-size: calc(20px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
 @media screen and (max-width: 1350px) {
     .title {
-        font-size: 48px;
-        transition: font-size 0.5s;
+        font-size: calc(48px + var(--font-delta));
     }
-    
+
     .subtitle-1,
     .subtitle-2 {
-        font-size: 40px;
-        transition: font-size 0.5s;
+        font-size: calc(32px + var(--font-delta));
     }
 
     .video-title{
-        font-size: 36px;
-        transition: font-size 0.5s;
+        font-size: calc(36px + var(--font-delta));
     }
 }
 
 @media (max-width: 1020px) {
     .title {
-      font-size: 38px;
-        transition: font-size 0.5s;
+        font-size: calc(38px + var(--font-delta));
     }
-  
+
     .subtitle-1,
     .subtitle-2 {
-      font-size: 38px;
-        transition: font-size 0.5s;
+        font-size: calc(26px + var(--font-delta));
     }
 }
 
 @media screen and (max-width: 976px) {
     .section-description{
-        font-size: 18px;
-        transition: font-size 0.5s;
+        font-size: calc(18px + var(--font-delta));
+    }
+
+    .subtitle-1,
+    .subtitle-2 {
+        font-size: calc(20px + var(--font-delta));
     }
 }
 
 @media screen and (max-width: 650px) {
     .project-description, .link-IBC{
-        font-size: 26px;
-        transition: font-size 0.5s;
+        font-size: calc(26px + var(--font-delta));
+    }
+
+    .mh-text {
+        font-size: calc(14px + var(--font-delta));
     }
 }

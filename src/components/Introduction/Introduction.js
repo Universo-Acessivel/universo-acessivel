@@ -1,4 +1,3 @@
-// Introduction.js
 import React, { useContext } from 'react';
 import { TextReaderContext } from '../../context/TextReaderContext';
 import './Introduction.css';
@@ -20,7 +19,8 @@ const Introduction = () => {
   };
 
   return (
-    <div id="home" className="gradient-container">
+    <section id="home" aria-label="Início" className="gradient-container">
+      <h1 className="visually-hidden">Universo Acessível</h1>
       <div className="intro-text">
         <img 
           src={logo} 
@@ -100,7 +100,7 @@ const Introduction = () => {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

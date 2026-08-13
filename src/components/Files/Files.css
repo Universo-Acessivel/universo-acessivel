@@ -1,5 +1,5 @@
 .files-section {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: linear-gradient(135deg, var(--color-surface-raised) 0%, #e9ecef 100%);
     position: relative;
     overflow: hidden;
 }
@@ -11,7 +11,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #007bff, #6610f2, #e83e8c, #fd7e14);
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-alt), #e83e8c, #fd7e14);
     background-size: 300% 100%;
     animation: gradientShift 3s ease-in-out infinite;
 }
@@ -37,7 +37,7 @@
     text-align: center;
     padding: 4rem 0 2rem 0;
     position: relative;
-    color: #333;
+    color: var(--color-ink);
 }
 
 /* Responsive Design */

@@ -66,9 +66,9 @@
 .main-logo {
   width: 500px;
   height: auto;
-  margin-bottom: 35px;
+  margin-bottom: var(--space-9);
   filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
-  transition: all 0.3s ease;
+  transition: all var(--transition-fast);
   cursor: pointer;
   animation: fadeIn 1s ease-out;
 }
@@ -106,8 +106,8 @@
 
 .subtitle-1,
 .subtitle-2 {
-  margin-top: 15px;
-  transition: all 0.3s ease;
+  margin-top: var(--space-4);
+  transition: all var(--transition-fast);
   cursor: pointer;
   opacity: 0;
   animation: fadeInUp 1s ease-out forwards;
@@ -119,7 +119,7 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   animation-delay: 0.3s;
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: var(--space-2);
   letter-spacing: 0.3px;
 }
 
@@ -135,7 +135,7 @@
   animation-delay: 0.6s;
   line-height: 1.4;
   max-width: 600px;
-  margin: 0 auto 25px auto;
+  margin: 0 auto var(--space-6) auto;
 }
 
 @keyframes fadeInUp {
@@ -160,8 +160,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  padding-top: 16px;
+  gap: var(--space-5);
+  padding-top: var(--space-4);
   opacity: 0;
   animation: fadeInUp 1s ease-out forwards;
   animation-delay: 0.9s;
@@ -169,10 +169,10 @@
 
 .logos a {
   display: block;
-  transition: all 0.3s ease;
-  border-radius: 15px;
+  transition: all var(--transition-fast);
+  border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.6);
-  padding: 18px;
+  padding: var(--space-4);
   backdrop-filter: blur(15px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
@@ -188,7 +188,7 @@
   height: 130px;
   object-fit: contain;
   filter: brightness(0.95);
-  transition: all 0.3s ease;
+  transition: all var(--transition-fast);
 }
 
 .logos a:hover img {
@@ -216,7 +216,7 @@
   height: auto;
   min-width: 300px;
   min-height: 150px;
-  transition: all 0.5s ease;
+  transition: all var(--transition-slow);
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
   animation: float 6s ease-in-out infinite;
 }
@@ -249,11 +249,11 @@
 
 @media (max-width: 1020px) {
   .logos {
-    gap: 30px;
+    gap: var(--space-7);
   }
 
   .logos a {
-    padding: 15px;
+    padding: var(--space-4);
   }
 
   .logos img {
@@ -263,7 +263,7 @@
   
   .main-logo {
     width: 400px;
-    margin-bottom: 30px;
+    margin-bottom: var(--space-7);
   }
 }
 
@@ -279,12 +279,12 @@
   
   .logos {
     justify-content: center;
-    gap: 25px;
+    gap: var(--space-6);
   }
   
   .main-logo {
     width: 320px;
-    margin-bottom: 25px;
+    margin-bottom: var(--space-6);
   }
 }
 
@@ -296,13 +296,13 @@
   
   .logos {
     flex-direction: row;
-    gap: 20px;
+    gap: var(--space-5);
     flex-wrap: wrap;
     justify-content: center;
   }
   
   .logos a {
-    padding: 12px;
+    padding: var(--space-3);
   }
   
   .logos img {
@@ -312,6 +312,6 @@
   
   .main-logo {
     width: 280px;
-    margin-bottom: 20px;
+    margin-bottom: var(--space-5);
   }
 }

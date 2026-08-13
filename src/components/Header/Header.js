@@ -6,17 +6,28 @@ import { faInstagram, faFacebook, faYoutube } from '@fortawesome/free-brands-svg
 import { faBars, faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { TextReaderContext } from '../../context/TextReaderContext';
 
-const Header = () => {
-  const { isTextReaderEnabled } = useContext(TextReaderContext);
+const SECTIONS = [
+  { id: 'home', label: 'Home' },
+  { id: 'trabalhos', label: 'Trabalhos' },
+  { id: 'sobreNos', label: 'Sobre Nós' },
+  { id: 'materiais', label: 'Materiais' },
+  { id: 'equipe', label: 'Equipe' },
+  { id: 'colaboradores', label: 'Parcerias' },
+];
 
-  const handleTextRead = (text) => {
-      if (isTextReaderEnabled) {
-          window.speechSynthesis.cancel();
-          const utterance = new SpeechSynthesisUtterance(text);
-          utterance.lang = "pt-BR";
-          window.speechSynthesis.speak(utterance);
-      }
-  };
+const EXTERNAL_LINKS = [
+  { href: 'https://www.gov.br/ibc/pt-br', label: 'Instituto Benjamin Constant' },
+  { href: 'https://www.instagram.com/cienciaaoalcancedasmaos', label: 'Ciência ao Alcance das Mãos' },
+];
+
+const SOCIAL_LINKS = [
+  { href: 'https://www.instagram.com/universo.acessivel/', icon: faInstagram, label: 'Nosso Instagram' },
+  { href: 'https://www.facebook.com/universo.acessivel', icon: faFacebook, label: 'Nosso Facebook' },
+  { href: 'https://www.youtube.com/@universoacessivel8272', icon: faYoutube, label: 'Nosso YouTube' },
+];
+
+const Header = () => {
+  const { speak } = useContext(TextReaderContext);
 
   const [activeSection, setActiveSection] = useState('');
   const [menuOpen, setMenuOpen] = useState(false);
@@ -45,216 +56,130 @@ const Header = () => {
   const handleLinkClick = (e, sectionId) => {
     e.preventDefault();
     const element = document.querySelector(sectionId);
-  
+
     if (element) {
       const headerOffset = parseFloat(getComputedStyle(document.documentElement).fontSize) * 5; // 5em: header height + 1em margin
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - headerOffset;
-  
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth',
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
       });
+
+      element.setAttribute('tabindex', '-1');
+      element.focus({ preventScroll: true });
     }
-  
+
     setMenuOpen(false);
     setLinkDropdownActive(false);
   };
-  
+
   const handleDropdown = (e) => {
     e.preventDefault();
     setLinkDropdownActive(!linkDropdownActive); // Toggle dropdown visibility
   };
 
+  const sectionLink = ({ id, label }) => (
+    <div className="text-box" key={id}>
+      <a
+        href={`#${id}`}
+        className={activeSection === id ? 'active' : ''}
+        aria-current={activeSection === id ? 'true' : undefined}
+        onClick={(e) => handleLinkClick(e, `#${id}`)}
+        onMouseEnter={(e) => speak(e.currentTarget.textContent)}
+      >
+        {label}
+      </a>
+    </div>
+  );
+
+  const dropdownToggle = (
+    <button
+      type="button"
+      className="links-dropdown-toggle"
+      onClick={handleDropdown}
+      aria-expanded={linkDropdownActive}
+      onMouseEnter={(e) => speak(e.currentTarget.textContent)}
+    >
+      Links
+      <FontAwesomeIcon icon={linkDropdownActive ? faChevronUp : faChevronDown} style={{ paddingLeft: '5px' }} />
+    </button>
+  );
+
+  const externalLink = ({ href, label }) => (
+    <a
+      key={href}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      onMouseEnter={(e) => speak(e.currentTarget.textContent)}
+    >
+      {label}
+    </a>
+  );
+
   return (
-    <div className="header-container">
+    <header className="header-container">
       <div className="header-content">
-        <img id="logoHeader" src={logo} alt="Logotipo do projeto." />
-        <div className="nav-links">
+        <img id="logoHeader" src={logo} alt="Universo Acessível" />
+        <nav className="nav-links" aria-label="Navegação principal">
+          {SECTIONS.map(sectionLink)}
           <div className="text-box">
-            <a
-              href="#home"
-              className={activeSection === 'home' ? 'active' : ''}
-              onClick={(e) => handleLinkClick(e, '#home')}
-              onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
-            >
-              Home
-            </a>
-          </div>
-          <div className="text-box">
-            <a
-              href="#trabalhos"
-              className={activeSection === 'trabalhos' ? 'active' : ''}
-              onClick={(e) => handleLinkClick(e, '#trabalhos')}
-              onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
-            >
-              Trabalhos
-            </a>
-          </div>
-          <div className="text-box">
-            <a
-              href="#sobreNos"
-              className={activeSection === 'sobreNos' ? 'active' : ''}
-              onClick={(e) => handleLinkClick(e, '#sobreNos')}
-              onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
-            >
-              Sobre Nós
-            </a>
-          </div>
-          <div className="text-box">
-            <a
-              href="#materiais"
-              className={activeSection === 'materiais' ? 'active' : ''}
-              onClick={(e) => handleLinkClick(e, '#materiais')}
-              onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
-            >
-              Materiais
-            </a>
-          </div>
-          <div className="text-box">
-            <a
-              href="#equipe"
-              className={activeSection === 'equipe' ? 'active' : ''}
-              onClick={(e) => handleLinkClick(e, '#equipe')}
-              onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
-            >
-              Equipe
-            </a>
-          </div>
-          <div className="text-box">
-            <a
-              href="#colaboradores"
-              className={activeSection === 'colaboradores' ? 'active' : ''}
-              onClick={(e) => handleLinkClick(e, '#colaboradores')}
-              onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
-            >
-              Parcerias
-            </a>
-          </div>
-          <div className="text-box">
-            <a
-              href="#links"
-              className={activeSection === 'links' ? 'active' : ''}
-              onClick={handleDropdown}
-              onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
-            >
-              Links
-              <FontAwesomeIcon icon={linkDropdownActive ? faChevronUp : faChevronDown} style={{ paddingLeft: '5px' }} />
-            </a>
+            {dropdownToggle}
             {linkDropdownActive && (
               <div className="dropdown-menu">
-                <a 
-                  href="https://www.gov.br/ibc/pt-br"
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
-                >
-                Instituto Benjamin Constant
-                </a>
-                <a 
-                  href="https://www.instagram.com/cienciaaoalcancedasmaos" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  onMouseEnter={(e) => handleTextRead(e.currentTarget.textContent)}
-                >
-                Ciência ao Alcance das Mãos
-                </a>
+                {EXTERNAL_LINKS.map(externalLink)}
               </div>
             )}
           </div>
-        </div>
-        
+        </nav>
+
         <div style={{ display: 'flex', gap: '40px' }}>
           <div className="social-icons">
-            <a href="https://www.instagram.com/universo.acessivel/" target="_blank" rel="noopener noreferrer" onMouseEnter={() => handleTextRead('Nosso Instagram')}>
-              <FontAwesomeIcon icon={faInstagram} style={{color: "#FFFFFF"}} />
-            </a> 
-            <a href="https://www.facebook.com/universo.acessivel" target="_blank" rel="noopener noreferrer" onMouseEnter={() => handleTextRead('Nosso Facebook')}>
-              <FontAwesomeIcon icon={faFacebook} style={{color: "#FFFFFF"}} />
-            </a>
-            <a href="https://www.youtube.com/@universoacessivel8272" target="_blank" rel="noopener noreferrer" onMouseEnter={() => handleTextRead('Nosso YouTube')}>
-              <FontAwesomeIcon icon={faYoutube} style={{color: "#FFFFFF"}} />
-            </a>
+            {SOCIAL_LINKS.map(({ href, icon, label }) => (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                onMouseEnter={() => speak(label)}
+              >
+                <FontAwesomeIcon icon={icon} style={{ color: "#FFFFFF" }} />
+              </a>
+            ))}
           </div>
 
-          <div className="sandwich-bar" onClick={() => setMenuOpen(!menuOpen)}>
-            <FontAwesomeIcon icon={faBars} style={{color: "#FFFFFF"}} />
-          </div>
+          <button
+            type="button"
+            className="sandwich-bar"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-expanded={menuOpen}
+            aria-controls="menu-mobile"
+            aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+          >
+            <FontAwesomeIcon icon={faBars} style={{ color: "#FFFFFF" }} />
+          </button>
         </div>
       </div>
 
       {menuOpen && (
-        <div className="mobile-menu">
+        <nav className="mobile-menu" id="menu-mobile" aria-label="Navegação principal">
+          {SECTIONS.map(sectionLink)}
           <div className="text-box">
-            <a
-              href="#home"
-              className={activeSection === 'home' ? 'active' : ''}
-              onClick={(e) => handleLinkClick(e, '#home')}
-            >
-              Home
-            </a>
+            {dropdownToggle}
           </div>
-          <div className="text-box">
-            <a
-              href="#trabalhos"
-              className={activeSection === 'trabalhos' ? 'active' : ''}
-              onClick={(e) => handleLinkClick(e, '#trabalhos')}
-            >
-              Trabalhos
-            </a>
-          </div>
-          <div className="text-box">
-            <a
-              href="#sobreNos"
-              className={activeSection === 'sobreNos' ? 'active' : ''}
-              onClick={(e) => handleLinkClick(e, '#sobreNos')}
-            >
-              Sobre Nós
-            </a>
-          </div>
-          <div className="text-box">
-            <a
-              href="#materiais"
-              className={activeSection === 'materiais' ? 'active' : ''}
-              onClick={(e) => handleLinkClick(e, '#materiais')}
-            >
-              Materiais
-            </a>
-          </div>
-          <div className="text-box">
-            <a
-              href="#equipe"
-              className={activeSection === 'equipe' ? 'active' : ''}
-              onClick={(e) => handleLinkClick(e, '#equipe')}
-            >
-              Equipe
-            </a>
-          </div>
-          <div className="text-box">
-            <a
-              href="#colaboradores"
-              className={activeSection === 'colaboradores' ? 'active' : ''}
-              onClick={(e) => handleLinkClick(e, '#colaboradores')}
-            >
-              Colaboradores
-            </a>
-          </div>
-          <div className="text-box">
-            <a href="#links" onClick={handleDropdown}>
-              Links
-              <FontAwesomeIcon icon={linkDropdownActive ? faChevronUp : faChevronDown} style={{ paddingLeft: '5px' }} />
-            </a>
+          {linkDropdownActive && (
+            <div className="mobile-dropdown-menu">
+              {EXTERNAL_LINKS.map(externalLink)}
             </div>
-              {linkDropdownActive && (
-                <div className="mobile-dropdown-menu">
-                  <a href="https://www.gov.br/ibc/pt-br" target="_blank" rel="noopener noreferrer">
-                    Instituto Benjamin Constant
-                  </a>
-                  <a href="https://www.instagram.com/cienciaaoalcancedasmaos"  target="_blank" rel="noopener noreferrer">Ciência ao Alcance das Mãos</a>
-                </div>)}
-        </div>
+          )}
+        </nav>
       )}
-    </div>
+    </header>
   );
 };
 
