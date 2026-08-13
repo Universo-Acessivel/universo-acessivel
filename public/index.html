@@ -29,10 +29,6 @@
   <body>
     <noscript>Você precisa habilitar o JavaScript para usar este site.</noscript>
     <div id="root"></div>
-
-    <!-- VLibras: tradutor de português para Libras mantido pelo governo federal.
-         Fica fora do #root porque o widget manipula o próprio DOM e o React
-         removeria os nós dele a cada render. -->
     <div vw class="enabled">
       <div vw-access-button class="active"></div>
       <div vw-plugin-wrapper>
@@ -40,9 +36,6 @@
       </div>
     </div>
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <!-- Construir aqui, durante o parsing, e não no evento load: o plugin monta
-         o widget com document.write e vira no-op silencioso depois que o
-         documento fecha. -->
     <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
     <!--
       This HTML file is a template.

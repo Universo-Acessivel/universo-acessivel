@@ -2,8 +2,6 @@ import React, { createContext, useCallback, useEffect, useState } from 'react';
 
 export const TextReaderContext = createContext();
 
-// Mesma ordem de precedência que um leitor de tela usa: rótulo explícito
-// primeiro, conteúdo visível como fallback.
 const accessibleText = (el) => {
     if (!el || el === document.body) return '';
     const label =
@@ -29,9 +27,6 @@ export const TextReaderProvider = ({ children }) => {
         window.speechSynthesis.cancel();
     };
 
-    // Os componentes já falam no onMouseEnter, então quem usa mouse é atendido.
-    // Este listener dá a mesma resposta a quem navega por teclado, que é o
-    // público do leitor. Fica em um lugar só porque focusin sobe até o document.
     useEffect(() => {
         if (!isTextReaderEnabled) return;
         const handleFocusIn = (e) => speak(accessibleText(e.target));

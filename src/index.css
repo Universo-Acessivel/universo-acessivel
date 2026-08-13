@@ -17,7 +17,6 @@ code {
     monospace;
 }
 
-/* Texto que só o leitor de tela lê. */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -31,9 +30,6 @@ code {
   border: 0;
 }
 
-/* Primeiro item da ordem de tabulação. Sem ele o teclado atravessa os treze
-   links do header antes de chegar ao conteúdo. Fica escondido até receber foco
-   e sobe acima do header, que está em z-index 100000. */
 .skip-link {
   position: absolute;
   top: -100px;
@@ -52,14 +48,11 @@ code {
   top: 0;
 }
 
-/* Anel de foco padrão. Componentes que precisam de outra cor sobrescrevem. */
 :focus-visible {
   outline: 3px solid var(--color-focus);
   outline-offset: 2px;
 }
 
-/* As seções recebem tabindex -1 quando viram alvo do menu, só para o foco
-   acompanhar a rolagem. Elas não devem desenhar anel por isso. */
 main section:focus {
   outline: none;
 }

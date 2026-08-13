@@ -6,8 +6,6 @@ import { faInstagram, faFacebook, faYoutube } from '@fortawesome/free-brands-svg
 import { faBars, faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { TextReaderContext } from '../../context/TextReaderContext';
 
-// Os menus de desktop e de mobile mostravam a mesma lista escrita duas vezes,
-// e "colaboradores" aparecia como "Parcerias" num e "Colaboradores" no outro.
 const SECTIONS = [
   { id: 'home', label: 'Home' },
   { id: 'trabalhos', label: 'Trabalhos' },
@@ -71,9 +69,6 @@ const Header = () => {
         behavior: prefersReducedMotion ? 'auto' : 'smooth',
       });
 
-      // Rolar a página não move o foco, então quem usa teclado continuava no
-      // link do menu. tabIndex -1 deixa a seção receber foco sem entrar na
-      // ordem de tabulação.
       element.setAttribute('tabindex', '-1');
       element.focus({ preventScroll: true });
     }

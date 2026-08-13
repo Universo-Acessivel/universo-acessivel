@@ -36,7 +36,6 @@ test('a lupa ajusta --font-delta e para no limite', () => {
   fireEvent.click(aumentar);
   expect(delta()).toBe('4px');
 
-  // No teto a escala não passa de 4px e o botão desabilita.
   expect(aumentar).toBeDisabled();
 
   fireEvent.click(screen.getByRole('button', { name: 'Diminuir fonte' }));

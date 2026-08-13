@@ -1,21 +1,11 @@
-/* A barra fica encostada na borda direita, empilhada logo acima do botão do
-   VLibras, com o mesmo tamanho, o mesmo raio e o mesmo azul dele.
-
-   As medidas vêm do widget: botão de 40px, raio de 8px, 10px de folga da borda
-   e centro vertical em 50% da viewport. O VLibras ocupa de 50%-20px a 50%+20px,
-   então ancorar o rodapé desta barra em 50%-28px deixa 8px entre as duas. */
 .a11y-bar {
     position: fixed;
     right: var(--a11y-edge);
     bottom: 50%;
     margin-bottom: 28px;
-    /* Um degrau abaixo do VLibras, que usa 2147483645. */
     z-index: 2147483644;
 }
 
-/* Fora do fluxo. Como as ferramentas ficam montadas o tempo todo, no fluxo elas
-   reservariam 152px mesmo fechadas e empurrariam o botão para fora do
-   alinhamento com o VLibras. */
 .a11y-tools {
     position: absolute;
     right: 0;
@@ -25,16 +15,6 @@
     gap: var(--space-2);
 }
 
-/* Cada ferramenta sai de cima do próprio botão de acessibilidade e sobe até o
-   lugar dela. O deslocamento inicial é a distância até o botão, 48px por
-   degrau, então as três partem do mesmo ponto.
-
-   É transição e não keyframe porque keyframe só roda na entrada, e fechar
-   precisa animar também. Fechadas ficam com visibility hidden, que sai da
-   ordem de tabulação e da árvore de acessibilidade; o atraso de 0.35s nela
-   cobre o percurso mais o maior stagger, 250ms + 80ms.
-
-   A regra global de prefers-reduced-motion em index.css zera isto. */
 .a11y-tools .a11y-button {
     opacity: 0;
     visibility: hidden;
@@ -80,10 +60,9 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    transition: filter var(--transition-fast);
 }
 
-.a11y-button:hover:not(:disabled) {
+.a11y-tools .a11y-button:hover:not(:disabled) {
     filter: brightness(1.1);
 }
 
@@ -92,8 +71,6 @@
     cursor: not-allowed;
 }
 
-/* Os ícones de lupa e áudio são SVGs escuros, então precisam inverter para
-   aparecer sobre o azul. */
 .a11y-button img {
     width: 100%;
     height: 100%;
@@ -106,23 +83,6 @@
     height: 100%;
 }
 
-/* O rótulo é uma pílula inteira que desliza, igual à do VLibras.
-
-   Lá o truque é o pai ter overflow hidden e o botão crescer de 40px para 200px
-   no hover, então a pílula desliza dentro de uma janela que abre junto e nunca
-   aparece nada fora da tela. Aqui a janela é esta wrapper, que não anima e por
-   isso pode usar width max-content, sem precisar cravar a largura do texto.
-
-   Duas tentativas antes desta erraram: deslocar a pílula para a direita a
-   deixava fora da viewport, e era esse pedaço que entrava pela parede; animar
-   clip-path movia o recorte junto com ela, o que lê como fade e não como
-   deslize. */
-/* A janela vai até a borda direita do botão, não até a folga antes dele. Se
-   parasse antes, existiria uma faixa morta de 8px e a pílula nasceria do nada
-   ao lado do botão em vez de sair de baixo dele. O padding à direita estende a
-   janela por cima do botão sem mexer na largura do conteúdo, e o z-index
-   negativo joga tudo atrás da face azul. A folga final vem de a pílula ocupar
-   só a caixa de conteúdo, que termina 48px antes. */
 .a11y-tooltip-clip {
     position: absolute;
     right: 0;
@@ -148,9 +108,6 @@
     font-size: 15px;
     line-height: 1;
     white-space: nowrap;
-    /* Escondida atrás do botão. São 100% da própria largura mais a folga: só
-       com os 100% a pílula parava 8px à esquerda da face azul e sobrava uma
-       tira do corpo dela aparecendo, de canto reto, ao lado do botão. */
     transform: translateX(calc(100% + var(--space-2)));
     transition: transform var(--transition-slow);
 }
@@ -161,12 +118,11 @@
 }
 
 @media screen and (max-width: 768px) {
-    .a11y-tooltip {
+    .a11y-tooltip-clip {
         display: none;
     }
 }
 
-/* High contrast mode support */
 @media (prefers-contrast: high) {
     .a11y-button,
     .a11y-tooltip {

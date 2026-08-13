@@ -62,8 +62,6 @@
   font-size: 20px;
 }
 
-/* "Links" abre e fecha um menu, então é button e não âncora. Estas regras só
-   repõem a aparência que o <a> tinha. */
 .text-box .links-dropdown-toggle {
   background: none;
   border: none;
@@ -88,7 +86,6 @@
   color: white;
 }
 
-/* Anel de foco visível no header, que é escuro e translúcido. */
 .header-container a:focus-visible,
 .header-container button:focus-visible {
   outline: 3px solid var(--color-focus);
@@ -142,10 +139,7 @@
 }
 
 .dropdown-menu {
-  background-color: var(--color-ink); /* Cor de fundo */
-  position: absolute; /* Posicionamento */
-  top: 100%; /* Posicionar logo abaixo do item de menu */
-  z-index: 1;
+  background-color: var(--color-ink);  position: absolute;  top: 100%;  z-index: 1;
   display: flex;
   flex-direction: column;
 }
@@ -155,14 +149,12 @@
   color: white;
   text-decoration: none;
   transition: background-color 0.3s;
-  width: 100%; /* Ou defina uma largura específica, se necessário */
-  box-sizing: border-box;
+  width: 100%;  box-sizing: border-box;
   border-top: 0.5px solid rgb(70, 70, 70);
 }
 
 .dropdown-menu a:hover {
-  background-color: #444; /* Efeito ao passar o mouse */
-}
+  background-color: #444;}
 
 .mobile-dropdown-menu {
   width: 100%;

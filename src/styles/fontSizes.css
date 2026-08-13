@@ -1,25 +1,12 @@
-/* Tamanho de fontes para o site todo.
-
-   Os botões de lupa da barra de acessibilidade ajustam --font-delta em
-   document.documentElement (Sidebar.js) e o valor soma em cima de cada tamanho
-   base. Antes cada regra existia duas vezes, aqui e numa tag <style> dentro do
-   Sidebar, e a cópia do Sidebar ganhava por vir depois no documento. Os valores
-   abaixo são os que a cópia do Sidebar aplicava, então nada muda na tela. */
-
 :root {
     --font-delta: 0px;
 }
 
-/* Os títulos de seção viraram h2 para o site ter estrutura de cabeçalho.
-   Isto remove só o que o user agent acrescenta a um h2: a margem vertical e o
-   negrito, que duplicaria o peso da Gravity-Bold. margin-block preserva a
-   margem lateral que .expo-title e .mh-title definem. */
 h2.section-title {
     margin-block: 0;
     font-weight: normal;
 }
 
-/* Título de cada seção */
 .section-title{
     font-size: calc(48px + var(--font-delta));
     transition: font-size 0.5s;
@@ -35,13 +22,11 @@ h2.section-title {
     transition: font-size 0.5s;
 }
 
-/* Header */
 .social-icons a {
     font-size: calc(24px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
-/* Introduction */
 .title{
     font-size: calc(64px + var(--font-delta));
     transition: font-size 0.5s;
@@ -53,7 +38,6 @@ h2.section-title {
     transition: font-size 0.5s;
 }
 
-/* Description */
 .project-description{
     font-size: calc(32px + var(--font-delta));
     transition: font-size 0.5s;
@@ -64,25 +48,21 @@ h2.section-title {
     transition: font-size 0.5s;
 }
 
-/* Material produzido */
 .job-description{
     font-size: calc(18px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
-/* Menções Honrosas */
 .mh-text {
     font-size: calc(16px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
-/* Parcerias */
 .institutions-name{
     font-size: calc(20px + var(--font-delta));
     transition: font-size 0.5s;
 }
 
-/* Footer */
 .footer-text{
     font-size: calc(20px + var(--font-delta));
     transition: font-size 0.5s;

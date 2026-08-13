@@ -17,9 +17,6 @@ const Sidebar = () => {
 
     const { isTextReaderEnabled, toggleTextReader } = useContext(TextReaderContext);
 
-    // Um custom property no root em vez da tag <style> que reescrevia todas as
-    // regras de fontSizes.css. As regras ficam num arquivo só e classe nova
-    // passa a escalar sozinha.
     useEffect(() => {
         document.documentElement.style.setProperty('--font-delta', `${fontDelta}px`);
     }, [fontDelta]);
@@ -30,10 +27,6 @@ const Sidebar = () => {
 
     return (
         <div className="a11y-bar">
-            {/* Sempre montadas, porque desmontar no fechamento não deixa nada
-                para animar de saída. Fechadas elas ficam com visibility hidden,
-                que já as tira da ordem de tabulação e da árvore de
-                acessibilidade. */}
             <div
                 className={`a11y-tools ${sidebarVisible ? 'is-open' : ''}`}
                 id="ferramentas-acessibilidade"
