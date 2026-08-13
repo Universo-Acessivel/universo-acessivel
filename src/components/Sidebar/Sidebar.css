@@ -97,6 +97,18 @@
     stroke: #ffffff;
 }
 
+/* Vinha da tag <style> que ficava dentro do Sidebar.js e ganhava de .toggle-icon
+   por vir depois no documento. É o tamanho real do ícone na tela. */
+.toggle-icon.white-icon {
+    color: white;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .sidebar-container.hidden {
     transform: translateX(-100%);
 }
