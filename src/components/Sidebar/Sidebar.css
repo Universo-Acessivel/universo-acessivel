@@ -60,12 +60,16 @@
     height: 100%;
 }
 
-/* Mesma ideia do rótulo do VLibras: aparece à esquerda no hover e no foco de
-   teclado. */
+/* O rótulo do VLibras não faz fade, ele desliza para fora de trás do botão.
+   Em repouso este fica deslocado para a direita o suficiente para sumir atrás
+   do botão (largura própria + o botão + a folga) e com z-index negativo, que o
+   joga atrás do fundo do pai. O pai não abre contexto de empilhamento, então o
+   negativo funciona. Sai da direita para a esquerda no hover e no foco. */
 .a11y-tooltip {
     position: absolute;
     right: calc(100% + var(--space-2));
     top: 0;
+    z-index: -1;
     height: var(--a11y-size);
     display: flex;
     align-items: center;
@@ -77,10 +81,10 @@
     font-size: 15px;
     line-height: 1;
     white-space: nowrap;
-    opacity: 0;
     pointer-events: none;
-    transform: translateX(var(--space-2));
-    transition: opacity var(--transition-fast), transform var(--transition-fast);
+    opacity: 0;
+    transform: translateX(calc(100% + var(--a11y-size) + var(--space-2)));
+    transition: transform var(--transition-slow), opacity var(--transition-slow);
 }
 
 .a11y-toggle:hover .a11y-tooltip,
