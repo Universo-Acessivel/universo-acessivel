@@ -30,40 +30,45 @@ const Sidebar = () => {
 
     return (
         <div className="a11y-bar">
-            {sidebarVisible && (
-                <div className="a11y-tools" id="ferramentas-acessibilidade">
-                    <button
-                        type="button"
-                        className="a11y-button"
-                        onClick={increaseFontSize}
-                        disabled={fontDelta >= FONT_LIMIT}
-                        title='Aumentar a fonte'
-                        aria-label="Aumentar fonte"
-                    >
-                        <img src={lupaMais} alt="" />
-                    </button>
-                    <button
-                        type="button"
-                        className="a11y-button"
-                        onClick={decreaseFontSize}
-                        disabled={fontDelta <= -FONT_LIMIT}
-                        title='Diminuir a fonte'
-                        aria-label="Diminuir fonte"
-                    >
-                        <img src={lupaMenos} alt="" />
-                    </button>
-                    <button
-                        type="button"
-                        className="a11y-button"
-                        onClick={toggleTextReader}
-                        title={isTextReaderEnabled ? 'Pausar áudio' : 'Reproduzir áudio'}
-                        aria-pressed={isTextReaderEnabled}
-                        aria-label={isTextReaderEnabled ? 'Pausar leitor de tela' : 'Ativar leitor de tela'}
-                    >
-                        <img src={isTextReaderEnabled ? audioIcon : notAudioIcon} alt="" />
-                    </button>
-                </div>
-            )}
+            {/* Sempre montadas, porque desmontar no fechamento não deixa nada
+                para animar de saída. Fechadas elas ficam com visibility hidden,
+                que já as tira da ordem de tabulação e da árvore de
+                acessibilidade. */}
+            <div
+                className={`a11y-tools ${sidebarVisible ? 'is-open' : ''}`}
+                id="ferramentas-acessibilidade"
+            >
+                <button
+                    type="button"
+                    className="a11y-button"
+                    onClick={increaseFontSize}
+                    disabled={fontDelta >= FONT_LIMIT}
+                    title='Aumentar a fonte'
+                    aria-label="Aumentar fonte"
+                >
+                    <img src={lupaMais} alt="" />
+                </button>
+                <button
+                    type="button"
+                    className="a11y-button"
+                    onClick={decreaseFontSize}
+                    disabled={fontDelta <= -FONT_LIMIT}
+                    title='Diminuir a fonte'
+                    aria-label="Diminuir fonte"
+                >
+                    <img src={lupaMenos} alt="" />
+                </button>
+                <button
+                    type="button"
+                    className="a11y-button"
+                    onClick={toggleTextReader}
+                    title={isTextReaderEnabled ? 'Pausar áudio' : 'Reproduzir áudio'}
+                    aria-pressed={isTextReaderEnabled}
+                    aria-label={isTextReaderEnabled ? 'Pausar leitor de tela' : 'Ativar leitor de tela'}
+                >
+                    <img src={isTextReaderEnabled ? audioIcon : notAudioIcon} alt="" />
+                </button>
+            </div>
 
             <button
                 type="button"

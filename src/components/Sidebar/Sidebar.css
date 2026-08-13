@@ -9,50 +9,63 @@
     right: var(--a11y-edge);
     bottom: 50%;
     margin-bottom: 28px;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
     /* Um degrau abaixo do VLibras, que usa 2147483645. */
     z-index: 2147483644;
 }
 
+/* Fora do fluxo. Como as ferramentas ficam montadas o tempo todo, no fluxo elas
+   reservariam 152px mesmo fechadas e empurrariam o botão para fora do
+   alinhamento com o VLibras. */
 .a11y-tools {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + var(--space-2));
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
 }
 
 /* Cada ferramenta sai de cima do próprio botão de acessibilidade e sobe até o
-   lugar dela. O deslocamento inicial é a distância de cada uma até o botão,
-   48px por degrau, então as três partem do mesmo ponto. A de baixo abre
-   primeiro. A regra global de prefers-reduced-motion em index.css zera isto. */
+   lugar dela. O deslocamento inicial é a distância até o botão, 48px por
+   degrau, então as três partem do mesmo ponto.
+
+   É transição e não keyframe porque keyframe só roda na entrada, e fechar
+   precisa animar também. Fechadas ficam com visibility hidden, que sai da
+   ordem de tabulação e da árvore de acessibilidade; o atraso de 0.35s nela
+   cobre o percurso mais o maior stagger, 250ms + 80ms.
+
+   A regra global de prefers-reduced-motion em index.css zera isto. */
 .a11y-tools .a11y-button {
-    animation: a11y-tool-in 0.25s ease backwards;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(var(--a11y-travel)) scale(0.6);
+    transition: transform 0.25s ease var(--a11y-delay),
+                opacity 0.25s ease var(--a11y-delay),
+                visibility 0s linear 0.35s;
+}
+
+.a11y-tools.is-open .a11y-button {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: transform 0.25s ease var(--a11y-delay),
+                opacity 0.25s ease var(--a11y-delay),
+                visibility 0s;
 }
 
 .a11y-tools .a11y-button:nth-child(1) {
     --a11y-travel: 144px;
-    animation-delay: 80ms;
+    --a11y-delay: 80ms;
 }
 
 .a11y-tools .a11y-button:nth-child(2) {
     --a11y-travel: 96px;
-    animation-delay: 40ms;
+    --a11y-delay: 40ms;
 }
 
 .a11y-tools .a11y-button:nth-child(3) {
     --a11y-travel: 48px;
-}
-
-@keyframes a11y-tool-in {
-    from {
-        opacity: 0;
-        transform: translateY(var(--a11y-travel)) scale(0.6);
-    }
-    to {
-        opacity: 1;
-        transform: none;
-    }
+    --a11y-delay: 0ms;
 }
 
 .a11y-button {
@@ -104,12 +117,21 @@
    deixava fora da viewport, e era esse pedaço que entrava pela parede; animar
    clip-path movia o recorte junto com ela, o que lê como fade e não como
    deslize. */
+/* A janela vai até a borda direita do botão, não até a folga antes dele. Se
+   parasse antes, existiria uma faixa morta de 8px e a pílula nasceria do nada
+   ao lado do botão em vez de sair de baixo dele. O padding à direita estende a
+   janela por cima do botão sem mexer na largura do conteúdo, e o z-index
+   negativo joga tudo atrás da face azul. A folga final vem de a pílula ocupar
+   só a caixa de conteúdo, que termina 48px antes. */
 .a11y-tooltip-clip {
     position: absolute;
-    right: calc(100% + var(--space-2));
+    right: 0;
     top: 0;
+    z-index: -1;
     height: var(--a11y-size);
     width: max-content;
+    box-sizing: content-box;
+    padding-right: calc(var(--a11y-size) + var(--space-2));
     overflow: hidden;
     pointer-events: none;
 }
