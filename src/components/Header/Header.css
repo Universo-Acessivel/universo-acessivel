@@ -1,6 +1,6 @@
 .header-container {
   color: white;
-  padding: 10px 0;
+  padding: var(--space-2) 0;
   position: fixed;
   top: 0;
   width: 100%;
@@ -28,11 +28,11 @@
   display: flex;
   height: 130%;
   align-items: center;
-  margin-right: 20px;
+  margin-right: var(--space-5);
 }
 
 .nav-links a {
-  padding: 0 15px;
+  padding: 0 var(--space-4);
   font-weight: 700;
 }
 
@@ -40,7 +40,7 @@
   height: 100%;
   display: flex;
   align-items: center;
-  transition: background-color 0.5s ease;
+  transition: background-color var(--transition-slow);
 }
 
 .text-box:hover,
@@ -68,14 +68,14 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0 15px;
+  padding: 0 var(--space-4);
   font-weight: 700;
 }
 
 .social-icons a {
   color: white;
   text-decoration: none;
-  margin-left: 15px;
+  margin-left: var(--space-4);
   font-size: 1.5rem;
 }
 
@@ -91,7 +91,7 @@
 /* Anel de foco visível no header, que é escuro e translúcido. */
 .header-container a:focus-visible,
 .header-container button:focus-visible {
-  outline: 3px solid #ffd700;
+  outline: 3px solid var(--color-focus);
   outline-offset: -3px;
 }
 
@@ -105,7 +105,7 @@
   flex-direction: column;
   align-items: center;
   padding: 0;
-  border: 1px solid #696969;
+  border: 1px solid var(--color-muted);
   z-index: 1;
 }
 
@@ -113,7 +113,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid #696969;
+  border-bottom: 1px solid var(--color-muted);
 }
 
 .mobile-menu .text-box:last-child {
@@ -142,7 +142,7 @@
 }
 
 .dropdown-menu {
-  background-color: #333; /* Cor de fundo */
+  background-color: var(--color-ink); /* Cor de fundo */
   position: absolute; /* Posicionamento */
   top: 100%; /* Posicionar logo abaixo do item de menu */
   z-index: 1;
@@ -151,7 +151,7 @@
 }
 
 .dropdown-menu a {
-  padding: 10px;
+  padding: var(--space-2);
   color: white;
   text-decoration: none;
   transition: background-color 0.3s;
@@ -166,16 +166,16 @@
 
 .mobile-dropdown-menu {
   width: 100%;
-  background-color: #333;
+  background-color: var(--color-ink);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0;
-  border-top: 1px solid #696969;
+  border-top: 1px solid var(--color-muted);
 }
 
 .mobile-dropdown-menu a {
-  padding: 10px;
+  padding: var(--space-2);
   width: 100%;
   color: white;
   text-decoration: none;
@@ -207,7 +207,7 @@
   .sandwich-bar {
     display: block;
     font-size: 1.5rem;
-    margin-right: 15px;
+    margin-right: var(--space-4);
   }
 }
 

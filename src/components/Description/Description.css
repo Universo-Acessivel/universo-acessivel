@@ -25,7 +25,7 @@
 }
 
 .teacher-info {
-    margin-top: 20px; /* Optional: Add some space between the text and the description */
+    margin-top: var(--space-5); /* Optional: Add some space between the text and the description */
     text-align: center;
     color: rgb(0, 0, 0);
     font-weight: bolder;
@@ -37,7 +37,7 @@
     .project-description{
         height: 300px;
         overflow-y: auto;
-        padding-right: 10px;
+        padding-right: var(--space-2);
     }
 
     .description-container {
@@ -45,6 +45,6 @@
     }
 
     .teacher-info{
-        margin: 60px 48px 0px 48px;
+        margin: var(--space-15) var(--space-12) 0px var(--space-12);
     }
 }

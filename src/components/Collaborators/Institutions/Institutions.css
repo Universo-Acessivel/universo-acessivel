@@ -15,8 +15,8 @@
 .institutions-name{
     font-family: 'Gravity-Bold';
     text-align: center;
-    margin-top: 20px;
-    transition: all 0.5s ease;
+    margin-top: var(--space-5);
+    transition: all var(--transition-slow);
 }
 
 .institutions-images{
@@ -25,7 +25,7 @@
     align-items: center;
     width: 300px;
     min-height: 300px;
-    margin-top: 20px;
+    margin-top: var(--space-5);
 }
 
 @media (max-width: 1010px){

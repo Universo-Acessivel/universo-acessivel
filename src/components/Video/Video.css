@@ -17,9 +17,9 @@
 }
 
 .video-description {
-    color: #696969;
+    color: var(--color-muted);
     width: 400px;
-    padding: 40px 0px;
+    padding: var(--space-10) 0px;
 }
 
 #YT-video{
@@ -52,7 +52,7 @@
     .video-text {
         width: auto;
         text-align: center;
-        padding-top: 20px;
+        padding-top: var(--space-5);
         margin: 0% 10%
     }
 

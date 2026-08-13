@@ -9,7 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f3f3f3;
+  background-color: var(--color-surface);
 }
 
 code {
@@ -39,8 +39,8 @@ code {
   top: -100px;
   left: 8px;
   z-index: 100001;
-  padding: 12px 20px;
-  background: #1f0aff;
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-brand);
   color: #fff;
   font-weight: 700;
   text-decoration: none;
@@ -54,7 +54,7 @@ code {
 
 /* Anel de foco padrão. Componentes que precisam de outra cor sobrescrevem. */
 :focus-visible {
-  outline: 3px solid #ffd700;
+  outline: 3px solid var(--color-focus);
   outline-offset: 2px;
 }
 

@@ -9,19 +9,19 @@
     max-width: 296px; /* Defina a largura fixa da imagem */
     height: 549px; /* Defina a altura fixa da imagem */
     object-fit: cover; /* Faz a imagem preencher a área, cortando se necessário */
-    transition: width 0.3s ease; /* Adicione uma transição suave no tamanho da imagem */
+    transition: width var(--transition-fast); /* Adicione uma transição suave no tamanho da imagem */
 }
 
 .job-title{
     font-family: 'Gravity-Bold';
-    padding-top: 25px;
+    padding-top: var(--space-6);
     text-align: center;
 }
 
 .job-description{
-    color: #696969;
+    color: var(--color-muted);
     max-width: 296px;
-    padding-top: 12px;
+    padding-top: var(--space-3);
 }
 
 @media screen and (max-width: 766px) {

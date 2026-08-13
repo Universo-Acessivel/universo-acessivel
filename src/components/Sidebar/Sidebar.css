@@ -9,12 +9,12 @@
 .sidebar-container {
     width: 120px;
     height: 220px;
-    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    background: linear-gradient(135deg, var(--color-sidebar-from) 0%, var(--color-sidebar-to) 100%);
     display: flex;
     border-radius: 0 12px 12px 0;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-fast);
 }
 
 .sidebar-buttons{
@@ -23,17 +23,17 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 15px 10px;
-    gap: 15px;
+    padding: var(--space-4) var(--space-2);
+    gap: var(--space-4);
 }
 
 .sidebar-icon{
     width: 40px;
     height: 40px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 8px;
-    border-radius: 8px;
+    transition: all var(--transition-fast);
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 1);
@@ -75,11 +75,11 @@
     height: 60px;
     padding: 0;
     border: none;
-    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    background: linear-gradient(135deg, var(--color-sidebar-from) 0%, var(--color-sidebar-to) 100%);
     color: white;
-    border-radius: 50%;
+    border-radius: var(--radius-round);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
+    transition: all var(--transition-fast);
     cursor: pointer;
     z-index: 1001;
     border: 2px solid rgba(255, 255, 255, 0.2);
@@ -125,18 +125,8 @@
     left: 140px;
 }
 
-/* Focus states for accessibility.
-   :focus-visible em vez de :focus para o anel aparecer na navegação por
-   teclado sem piscar a cada clique de mouse. */
-.accessibility-toggle:focus-visible {
-    outline: 3px solid #ffd700;
-    outline-offset: 2px;
-}
-
-.sidebar-icon:focus-visible {
-    outline: 2px solid #ffd700;
-    outline-offset: 2px;
-}
+/* O anel de foco vem da regra global :focus-visible em index.css. Estas duas
+   regras repetiam a mesma cor com larguras diferentes, 3px e 2px. */
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {    
@@ -158,14 +148,10 @@
         height: 14px;
     }
     
-    .accessibility-label {
-        font-size: 5px;
-    }
-    
     .sidebar-icon {
         width: 35px;
         height: 35px;
-        padding: 6px;
+        padding: var(--space-1);
     }
     
     .sidebar-icon:hover {
